@@ -620,12 +620,114 @@
     }
 
     @media (max-width: 840px) {
-      .nav { flex-wrap: wrap; }
-      .nav-links { width: 100%; justify-content: flex-start; padding-top: 6px; }
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 18px;
+        justify-content: start;
+        padding-top: 4px;
+        font-size: 1rem;
+      }
+
+      .nav-links a {
+        padding: 2px 0;
+      }
+
+      .topbar .btn {
+        width: 100%;
+      }
+
       h1 { max-width: none; }
-      .hero { padding-top: 52px; }
+      .hero { padding-top: 34px; }
       .hero-copy, .hero-side, .panel, .profile-card, .audience-card, .social-card, .footer-cta { padding: 22px; }
       .section-head { align-items: start; }
+      .announcement {
+        border-radius: 22px;
+        line-height: 1.45;
+      }
+
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        right: 14px;
+        bottom: 92px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(calc(100% - 24px), var(--container));
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      .brand-title {
+        font-size: 0.95rem;
+      }
+
+      .brand small {
+        font-size: 0.8rem;
+      }
+
+      .nav-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 14px;
+        font-size: 0.95rem;
+      }
+
+      .hero-copy,
+      .hero-side,
+      .panel,
+      .profile-card,
+      .audience-card,
+      .social-card,
+      .footer-cta {
+        border-radius: 24px;
+        padding: 18px;
+      }
+
+      .announcement,
+      .eyebrow {
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        gap: 10px;
+      }
+
+      .hero-actions .btn,
+      .hero-actions .btn-outline {
+        width: 100%;
+      }
+
+      .logo-box {
+        min-height: 180px;
+      }
+
+      .social-links,
+      .contact-list {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -633,7 +735,7 @@
   <header class="topbar">
     <div class="container nav">
       <a href="#inicio" class="brand" aria-label="GeoTática">
-        <img src="logo-geotatica.png" alt="Logo GeoTática" />
+        <img src="/mnt/data/logo-geotatica.png.png" alt="Logo GeoTática" />
         <div>
           <div class="brand-title">GeoTática</div>
           <small>Conecte o espaço às suas decisões</small>
@@ -658,7 +760,7 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="card hero-copy">
-          <div class="announcement"><strong>Demo gratuita</strong> Hub com 100 fontes de dados geográficos organizadas por categorias para apoiar rotinas de geoprocessamento, análise espacial e estudos territoriais.</div>
+          <div class="announcement"><strong>Hub de Fontes</strong> Acesso gratuito a 100 fontes de dados geográficos organizadas por categorias para apoiar rotinas de geoprocessamento, análise espacial e estudos territoriais.</div>
           <div class="eyebrow">Geotecnologias • Inteligência territorial • Dados espaciais</div>
           <h1>Site oficial da GeoTática</h1>
           <p class="lead">
@@ -666,7 +768,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir demo gratuita</a>
+            <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar a Hub de Fontes</a>
             <a class="btn-outline" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
           </div>
 
@@ -688,7 +790,7 @@
 
         <div class="card hero-side">
           <div class="logo-box">
-            <img src="logo-geotatica.png" alt="Logo GeoTática" />
+            <img src="/mnt/data/logo-geotatica.png.png" alt="Logo GeoTática" />
           </div>
           <div class="hero-mini-grid">
             <div class="hero-mini">
@@ -855,7 +957,7 @@
       <div class="container about-grid">
         <aside class="profile-card">
           <div class="profile-photo">
-            <img src="danielle-perfil.jpg" alt="Foto de Danielle Correa" />
+            <img src="/mnt/data/danielle-perfil.png.jpeg" alt="Foto de Danielle Correa" />
           </div>
         </aside>
 
@@ -996,7 +1098,7 @@
 
       <div class="hero-actions" style="margin-top: 26px;">
         <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Quero conversar no WhatsApp</a>
-        <a class="btn-outline" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir demo gratuita</a>
+        <a class="btn-outline" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar a Hub de Fontes</a>
       </div>
 
       <div class="contact-list">
