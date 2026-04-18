@@ -6,7 +6,7 @@
   <title>Unidade I — Cartografia e Geoprocessamento | Aula 1 — Mapas e Cartas Topográficas</title>
   <meta name="description" content="OnePage da Aula 1: Cartografia, Mapas, Cartas Topográficas, Plantas, Componentes do Mapa e Mosaicos." />
 
-  <!-- CSS DO SEU MODELO (mantido) -->
+  <!-- CSS do modelo (mesma linguagem visual do seu index) -->
   <style>
     :root {
       --bg: #f7fbff;
@@ -144,8 +144,8 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 10px;
-      padding: 12px 16px;
-      border-radius: 999px;
+      padding: 14px 20px;
+      border-radius: 32px;
       background: linear-gradient(135deg, rgba(47,103,216,0.10), rgba(124,89,211,0.08), rgba(40,167,125,0.10));
       border: 1px solid rgba(47,103,216,0.10);
       color: var(--muted);
@@ -207,8 +207,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
+      padding: 10px 18px;
+      border-radius: 26px;
       background: rgba(124,89,211,0.08);
       border: 1px solid rgba(124,89,211,0.12);
       color: var(--purple);
@@ -223,7 +223,7 @@
     h1 {
       margin-top: 18px;
       font-size: clamp(2.6rem, 5vw, 5rem);
-      max-width: 20ch;
+      max-width: 18ch;
       letter-spacing: -0.045em;
     }
 
@@ -234,7 +234,7 @@
 
     .lead {
       margin: 20px 0 0;
-      max-width: 74ch;
+      max-width: 70ch;
       color: var(--muted);
       font-size: 1.08rem;
     }
@@ -470,11 +470,13 @@
 </head>
 
 <body>
-  <!-- HEADER / NAV -->
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="container nav">
-      #inicio
-        logo-geotatica.png
+      <a href="#inicio" class="brand" aria-label="Aula 1 - Mapas e Cartas Topográficas">
+        <!-- Opcional: se você tiver um logo para a aula, coloque aqui.
+             Se não tiver, pode remover o <img>. -->
+        <img src="../logo-geotatica.png" alt="Logo" onerror="this.style.display='none'"/>
         <div>
           <div class="brand-title">Unidade I — Cartografia</div>
           <small>Aula 1 — Mapas e Cartas Topográficas</small>
@@ -482,17 +484,18 @@
       </a>
 
       <nav class="nav-links" aria-label="Navegação principal">
-        #cartografiaCartografia</a>
-        #mapasMapas</a>
-        #componentesComponentes</a>
-        #cartaCarta</a>
-        #plantaPlanta</a>
-        #mosaicoMosaico</a>
-        #materialPPTX</a>
-        #referenciasReferências</a>
+        <a href="#cartografia">Cartografia</a>
+        <a href="#mapas">Mapas</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#carta">Carta</a>
+        <a href="#planta">Planta</a>
+        <a href="#mosaico">Mosaico</a>
+        <a href="#material">PPTX</a>
+        <a href="#referencias">Referências</a>
       </nav>
 
-      #materialBaixar PPTX</a>
+      <!-- Botão no topo: busca o PPTX DENTRO DA MESMA PASTA DA AULA -->
+      <a class="btn" href="./1.1%20Cartography_Essentials.pptx" download>Baixar PPTX</a>
     </div>
   </header>
 
@@ -517,8 +520,8 @@
           </p>
 
           <div class="hero-actions">
-            #cartografiaComeçar pela Cartografia</a>
-            #componentesVer Componentes do Mapa</a>
+            <a class="btn" href="#cartografia">Começar pela Cartografia</a>
+            <a class="btn-outline" href="#material">Ir para o PPTX</a>
           </div>
 
           <div class="hero-points">
@@ -539,7 +542,8 @@
 
         <div class="card hero-side">
           <div class="logo-box">
-            logo-geotatica.png
+            <!-- Opcional: imagem/ícone. Se não tiver, pode remover -->
+            <img src="../logo-geotatica.png" alt="Logo" onerror="this.style.display='none'"/>
           </div>
 
           <div class="hero-mini-grid">
@@ -804,37 +808,33 @@
           <div>
             <h2>Material (PPTX)</h2>
             <p>
-              Para o download funcionar, coloque o arquivo PPTX na mesma pasta do <code>index.html</code> no repositório.
+              Os botões abaixo procuram o arquivo <b>1.1 Cartography_Essentials.pptx</b> dentro desta pasta da Aula 1.
             </p>
           </div>
         </div>
 
         <div class="grid-2">
           <article class="panel">
-            <h3>Baixar a apresentação</h3>
-            <p>Download/abertura do arquivo da aula:</p>
+            <h3>Baixar / Abrir</h3>
+            <p>Se o arquivo estiver na mesma pasta deste <code>index.html</code>, os links funcionam direto.</p>
+
             <div class="hero-actions" style="margin-top: 16px;">
-              1.1 Cartography_Essentials.pptxBaixar PPTX</a>
-              1.1 Cartography_Essentials.pptxAbrir PPTX</a>
+              <a class="btn" href="./1.1%20Cartography_Essentials.pptx" download>Baixar PPTX</a>
+              <a class="btn-outline" href="./1.1%20Cartography_Essentials.pptx">Abrir PPTX</a>
             </div>
+
             <p style="margin-top:12px;">
               <small style="color: var(--muted);">
-                Dica: se renomear o arquivo para não ter espaço (ex.: <b>1.1_Cartography_Essentials.pptx</b>), você evita problemas de URL.
+                Dica: se você renomear o arquivo para <b>1.1_Cartography_Essentials.pptx</b>, dá para trocar o link para <code>./1.1_Cartography_Essentials.pptx</code> sem usar <code>%20</code>.
               </small>
             </p>
           </article>
 
           <article class="panel">
-            <h3>Visualização embutida (opcional)</h3>
+            <h3>Observação</h3>
             <p>
-              Se quiser ver dentro da página, normalmente é melhor exportar para PDF e embutir o PDF.
-              (Aqui deixei somente um espaço reservado, sem URL externa.)
+              Alguns navegadores não exibem PPTX “embutido” como PDF. Por isso, o botão de download é o mais confiável.
             </p>
-            <div style="margin-top:14px; border-radius: 18px; overflow:hidden; border:1px solid rgba(47,103,216,0.10); background:#fff; min-height: 120px; display:grid; place-items:center;">
-              <small style="color: var(--muted); text-align:center; padding: 18px;">
-                Placeholder para embed (PDF ou viewer).<br/>Remova este card se não for usar.
-              </small>
-            </div>
           </article>
         </div>
       </div>
@@ -866,7 +866,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -879,25 +878,20 @@
       </p>
 
       <div class="hero-actions" style="margin-top: 26px;">
-        #inicioVoltar ao topo</a>
-        #materialIr para o PPTX</a>
+        <a class="btn" href="#inicio">Voltar ao topo</a>
+        <a class="btn-outline" href="#material">Ir para o PPTX</a>
       </div>
     </div>
 
     <div class="footer-bar">
       <div>© <span id="year"></span> OnePage — Aula 1 (Cartografia e Geoprocessamento).</div>
       <div class="footer-links">
-        #cartografiaCartografia</a>
-        #mapasMapas</a>
-        #cartaCarta</a>
-        #mosaicoMosaico</a>
-        #materialPPTX</a>
+        <a href="#cartografia">Cartografia</a>
+        <a href="#mapas">Mapas</a>
+        <a href="#carta">Carta</a>
+        <a href="#mosaico">Mosaico</a>
+        <a href="#material">PPTX</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
