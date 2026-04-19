@@ -6,7 +6,7 @@
   <title>Unidade I — Cartografia e Geoprocessamento | Aula 1 — Mapas e Cartas Topográficas</title>
   <meta name="description" content="OnePage da Aula 1: Cartografia, Mapas, Cartas Topográficas, Plantas, Componentes do Mapa e Mosaicos." />
 
-  <!-- CSS do modelo (mesma linguagem visual do seu index) -->
+  <!-- CSS do modelo (mantido) + inserções (vídeo + contatos) -->
   <style>
     :root {
       --bg: #f7fbff;
@@ -466,25 +466,47 @@
       .hero-copy, .hero-side, .panel, .footer-cta { padding: 22px; }
       .section-head { align-items: start; }
     }
-    /* ===== Contatos (Aula 01) ===== */
-.social-links, .contact-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
 
-.social-chip {
-  padding: 10px 14px;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(47,103,216,0.10);
-  color: var(--blue);
-  box-shadow: var(--shadow);
-  font-size: 0.94rem;
-}
+    /* ==========================
+       INSERÇÃO 1: VÍDEO (RESPONSIVO)
+       ========================== */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(47,103,216,0.10);
+      background: rgba(255,255,255,0.72);
+      box-shadow: var(--shadow);
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
-.social-chip svg { width: 18px; height: 18px; }
-``
+    /* ==========================
+       INSERÇÃO 2: CONTATOS (CHIPS)
+       ========================== */
+    .social-links, .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .social-chip {
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(47,103,216,0.10);
+      color: var(--blue);
+      box-shadow: var(--shadow);
+      font-size: 0.94rem;
+    }
+    .social-chip svg { width: 18px; height: 18px; }
   </style>
 </head>
 
@@ -492,10 +514,9 @@
   <!-- TOPBAR -->
   <header class="topbar">
     <div class="container nav">
-      <a href="#inicio" class="brand" aria-label="Aula 1 - Mapas e Cartas Topográficas">
-        <!-- Opcional: se você tiver um logo para a aula, coloque aqui.
-             Se não tiver, pode remover o <img>. -->
-        <img src="../logo-geotatica.png" alt="Logo" onerror="this.style.display='none'"/>
+      <a href="#inicio" class="brand" aria-label="Aula 01 - Início">
+        <!-- se o logo estiver na raiz do projeto (onepage-Geotatica/), o caminho correto a partir de aula 01/ é ../ -->
+        <img src="../logo-geotatica.png" alt="Logo GeoTática" />
         <div>
           <div class="brand-title">Unidade I — Cartografia</div>
           <small>Aula 1 — Mapas e Cartas Topográficas</small>
@@ -503,17 +524,19 @@
       </a>
 
       <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#video">Vídeo</a>
         <a href="#cartografia">Cartografia</a>
         <a href="#mapas">Mapas</a>
         <a href="#componentes">Componentes</a>
         <a href="#carta">Carta</a>
         <a href="#planta">Planta</a>
         <a href="#mosaico">Mosaico</a>
-        <a href="#material">PPTX</a>
+        <a href="#material">Material</a>
         <a href="#referencias">Referências</a>
+        <a href="#contato">Contato</a>
       </nav>
 
-      <!-- Botão no topo: busca o PPTX DENTRO DA MESMA PASTA DA AULA -->
+      <!-- botão rápido para o PPTX (na mesma pasta) -->
       <a class="btn" href="./1.1%20Cartography_Essentials.pptx" download>Baixar PPTX</a>
     </div>
   </header>
@@ -539,8 +562,9 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#cartografia">Começar pela Cartografia</a>
-            <a class="btn-outline" href="#material">Ir para o PPTX</a>
+            <a class="btn" href="#video">Assistir ao vídeo</a>
+            <a class="btn-outline" href="#material">Baixar material</a>
+            <a class="btn-outline" href="#contato">Meus contatos</a>
           </div>
 
           <div class="hero-points">
@@ -561,8 +585,7 @@
 
         <div class="card hero-side">
           <div class="logo-box">
-            <!-- Opcional: imagem/ícone. Se não tiver, pode remover -->
-            <img src="../logo-geotatica.png" alt="Logo" onerror="this.style.display='none'"/>
+            <img src="../logo-geotatica.png" alt="Logo GeoTática" />
           </div>
 
           <div class="hero-mini-grid">
@@ -575,6 +598,57 @@
               <p>Leitura e produção de informação espacial em contextos técnicos e acadêmicos.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSERÇÃO: VÍDEO -->
+    <section class="section" id="video">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Vídeo da Aula</h2>
+            <p>Assista ao vídeo da Aula 01 no YouTube diretamente por aqui.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Aula 01 — Mapas e Cartas Topográficas</h3>
+            <p>Se preferir, abra em outra aba pelo botão abaixo.</p>
+
+            <div class="hero-actions" style="margin-top: 16px;">
+              <a class="btn" href="https://youtu.be/FC552qTKbuE" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a>
+              <a class="btn-outline" href="#material">Ir para o material (PPTX)</a>
+            </div>
+
+            <div style="margin-top:16px;" class="video-wrap">
+              <!-- Privacy-enhanced mode (youtube-nocookie) -->
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/FC552qTKbuE?rel=0"
+                title="Aula 01 — Mapas e Cartas Topográficas"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <p style="margin-top:12px;">
+              <small style="color: var(--muted);">
+                O embed usa “Privacidade Aprimorada” (youtube-nocookie), recomendado para incorporar vídeos. 
+              </small>
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>O que você vai ver nesta aula</h3>
+            <div class="check-list">
+              <div class="check-item"><span class="dot"></span><div><b>Cartografia</b> como ciência e arte.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Mapas</b> e suas características.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Componentes do mapa</b> (título, legenda, escala, orientação, coordenadas, fonte).</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Carta e Planta</b> (diferenças por escala e detalhe).</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Mosaico</b> (conceito, tipos e aplicações).</div></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -827,7 +901,7 @@
           <div>
             <h2>Material (PPTX)</h2>
             <p>
-              Os botões abaixo procuram o arquivo <b>1.1 Cartography_Essentials.pptx</b> dentro desta pasta da Aula 1.
+              Os botões abaixo procuram o arquivo <b>1.1 Cartography_Essentials.pptx</b> dentro desta pasta da Aula 01.
             </p>
           </div>
         </div>
@@ -839,12 +913,12 @@
 
             <div class="hero-actions" style="margin-top: 16px;">
               <a class="btn" href="./1.1%20Cartography_Essentials.pptx" download>Baixar PPTX</a>
-              <a class="btn-outline" href="./1.1%20Cartography_Essentials.pptx">Abrir PPTX</a>
+              <a class="btn-outline" href="./1.1%20Cartography_Essentials.pptx" target="_blank" rel="noopener noreferrer">Abrir PPTX</a>
             </div>
 
             <p style="margin-top:12px;">
               <small style="color: var(--muted);">
-                Dica: se você renomear o arquivo para <b>1.1_Cartography_Essentials.pptx</b>, dá para trocar o link para <code>./1.1_Cartography_Essentials.pptx</code> sem usar <code>%20</code>.
+                Dica: se renomear o arquivo para <b>1.1_Cartography_Essentials.pptx</b>, você pode trocar o link para <code>./1.1_Cartography_Essentials.pptx</code> sem <code>%20</code>.
               </small>
             </p>
           </article>
@@ -852,7 +926,7 @@
           <article class="panel">
             <h3>Observação</h3>
             <p>
-              Alguns navegadores não exibem PPTX “embutido” como PDF. Por isso, o botão de download é o mais confiável.
+              Alguns navegadores não exibem PPTX diretamente. O download é o método mais confiável.
             </p>
           </article>
         </div>
@@ -885,83 +959,75 @@
         </div>
       </div>
     </section>
+
+    <!-- INSERÇÃO: CONTATOS -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="footer-cta">
+          <div class="eyebrow" style="margin-top: 0;">Contato</div>
+          <h2 style="margin-top: 16px;">Vamos conversar sobre geotecnologias</h2>
+          <p>
+            Quer tirar dúvidas sobre a aula, sugerir temas para as próximas ou conversar sobre projetos?
+            Me chama pelos canais abaixo.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 26px;">
+            <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2001%20no%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+
+            <a class="btn-outline" href="mailto:geo.daniellecorrea@gmail.com">
+              Enviar e-mail
+            </a>
+          </div>
+
+          <div class="contact-list">
+            <a class="social-chip" href="mailto:geo.daniellecorrea@gmail.com">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 3.2-7.36 5.78a1 1 0 0 1-1.24 0L4 7.2V6l8 6.28L20 6Z"/></svg>
+              geo.daniellecorrea@gmail.com
+            </a>
+
+            <a class="social-chip" href="tel:+5531993065319">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 15.46a1.7 1.7 0 0 0-1.2-.5h-3.57a1.7 1.7 0 0 0-1.2.5l-1.27 1.27a13.85 13.85 0 0 1-6.5-6.5l1.27-1.27a1.7 1.7 0 0 0 .5-1.2V4.2A1.7 1.7 0 0 0 7.33 2.5H4.2A1.7 1.7 0 0 0 2.5 4.2 17.3 17.3 0 0 0 19.8 21.5a1.7 1.7 0 0 0 1.7-1.7v-3.14a1.7 1.7 0 0 0-.5-1.2Z"/></svg>
+              (31) 99306-5319
+            </a>
+
+            <a class="social-chip" href="https://www.linkedin.com/company/34876970" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.22a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.33 18h-2.66v-4.18c0-1-.02-2.28-1.39-2.28-1.4 0-1.62 1.09-1.62 2.21V18H9.99V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.52-1.39c2.7 0 3.2 1.78 3.2 4.1Z"/></svg>
+              LinkedIn
+            </a>
+
+            <a class="social-chip" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.39 1.72H7.86a4.14 4.14 0 0 0-4.14 4.14v8.28a4.14 4.14 0 0 0 4.14 4.14h8.28a4.14 4.14 0 0 0 4.14-4.14V7.86a4.14 4.14 0 0 0-4.14-4.14ZM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3Zm0 1.62A3.08 3.08 0 1 0 15.08 12 3.09 3.09 0 0 0 12 8.92Zm4.95-2.88a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/></svg>
+              Instagram
+            </a>
+
+            <a class="social-chip" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.8V8.2L16.4 12Z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-
-   <section class="section" id="contato">
-  <div class="container">
-    <div class="footer-cta">
-      <div class="eyebrow" style="margin-top: 0;">Contato</div>
-      <h2 style="margin-top: 16px;">Vamos conversar sobre geotecnologias</h2>
-      <p>
-        Quer tirar dúvidas sobre a aula, sugerir temas para as próximas ou conversar sobre projetos?
-        Fique à vontade para me chamar pelos canais abaixo.
-      </p>
-
-      <div class="hero-actions" style="margin-top: 26px;">
-        <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2001%20no%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">
-          Falar no WhatsApp
-        </a>
-
-        <a class="btn-outline" href="mailto:geo.daniellecorrea@gmail.com">
-          Enviar e-mail
-        </a>
-      </div>
-
-      <div class="contact-list">
-        <a class="social-chip" href="mailto:geo.daniellecorrea@gmail.com">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 3.2-7.36 5.78a1 1 0 0 1-1.24 0L4 7.2V6l8 6.28L20 6Z"/></svg>
-          geo.daniellecorrea@gmail.com
-        </a>
-
-        <a class="social-chip" href="tel:+5531993065319">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 15.46a1.7 1.7 0 0 0-1.2-.5h-3.57a1.7 1.7 0 0 0-1.2.5l-1.27 1.27a13.85 13.85 0 0 1-6.5-6.5l1.27-1.27a1.7 1.7 0 0 0 .5-1.2V4.2A1.7 1.7 0 0 0 7.33 2.5H4.2A1.7 1.7 0 0 0 2.5 4.2 17.3 17.3 0 0 0 19.8 21.5a1.7 1.7 0 0 0 1.7-1.7v-3.14a1.7 1.7 0 0 0-.5-1.2Z"/></svg>
-          (31) 99306-5319
-        </a>
-
-        <a class="social-chip" href="https://www.linkedin.com/company/34876970" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.22a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.33 18h-2.66v-4.18c0-1-.02-2.28-1.39-2.28-1.4 0-1.62 1.09-1.62 2.21V18H9.99V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.52-1.39c2.7 0 3.2 1.78 3.2 4.1Z"/></svg>
-          LinkedIn
-        </a>
-
-        <a class="social-chip" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.39 1.72H7.86a4.14 4.14 0 0 0-4.14 4.14v8.28a4.14 4.14 0 0 0 4.14 4.14h8.28a4.14 4.14 0 0 0 4.14-4.14V7.86a4.14 4.14 0 0 0-4.14-4.14ZM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3Zm0 1.62A3.08 3.08 0 1 0 15.08 12 3.09 3.09 0 0 0 12 8.92Zm4.95-2.88a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/></svg>
-          Instagram
-        </a>
-
-        <a class="social-chip" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.8V8.2L16.4 12Z"/></svg>
-          YouTube
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER -->
-  <footer class="container" id="contato">
-    <div class="footer-cta">
-      <div class="eyebrow" style="margin-top: 0;">Encerramento</div>
-      <h2 style="margin-top: 16px;">Bons estudos!</h2>
-      <p>
-        Esta onepage resume os conceitos principais da Aula 1. Para personalizar o visual, altere apenas as variáveis em <code>:root</code>.
-      </p>
-
-      <div class="hero-actions" style="margin-top: 26px;">
-        <a class="btn" href="#inicio">Voltar ao topo</a>
-        <a class="btn-outline" href="#material">Ir para o PPTX</a>
-      </div>
-    </div>
-
+  <footer class="container" id="rodape">
     <div class="footer-bar">
-      <div>© <span id="year"></span> OnePage — Aula 1 (Cartografia e Geoprocessamento).</div>
+      <div>© <span id="year"></span> GeoTática — Aula 01.</div>
       <div class="footer-links">
-        <a href="#cartografia">Cartografia</a>
-        <a href="#mapas">Mapas</a>
-        <a href="#carta">Carta</a>
-        <a href="#mosaico">Mosaico</a>
-        <a href="#material">PPTX</a>
+        <a href="#inicio">Início</a>
+        <a href="#video">Vídeo</a>
+        <a href="#material">Material</a>
+        <a href="#contato">Contato</a>
       </div>
     </div>
   </footer>
-</section>
-``
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
