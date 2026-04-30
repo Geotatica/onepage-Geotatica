@@ -12,27 +12,30 @@
 
   <style>
     :root {
-      --bg: #f4f6fb;
-      --bg-soft: #eef2f8;
+      --bg: #f4f8fd;
+      --bg-soft: #edf3fb;
       --surface: #ffffff;
-      --surface-soft: #f8fafc;
-      --ink: #162033;
-      --ink-2: #263247;
-      --muted: #657084;
-      --muted-2: #8a94a6;
-      --line: #dde4f0;
-      --line-strong: #cbd5e6;
-      --navy: #111a33;
-      --blue: #2354d4;
-      --purple: #5d35b1;
-      --purple-dark: #43237f;
-      --green: #158565;
-      --green-soft: #e8f7f1;
-      --purple-soft: #f1ecff;
-      --blue-soft: #edf3ff;
+      --surface-soft: #f7faff;
+      --ink: #18243b;
+      --ink-2: #293753;
+      --muted: #62728d;
+      --muted-2: #8a96aa;
+      --line: #d7e2f0;
+      --line-strong: #c6d3e5;
+      --navy: #10203b;
+      --navy-2: #14284b;
+      --blue: #2a5bd7;
+      --blue-dark: #2047b8;
+      --purple: #6b45cf;
+      --purple-dark: #5232a7;
+      --green: #1b8f6b;
+      --green-dark: #167055;
+      --green-soft: #e8f6f0;
+      --purple-soft: #f0eaff;
+      --blue-soft: #eaf1ff;
       --warning-soft: #fff7e6;
-      --shadow: 0 18px 48px rgba(17, 26, 51, 0.07);
-      --shadow-soft: 0 8px 22px rgba(17, 26, 51, 0.045);
+      --shadow: 0 18px 48px rgba(16, 32, 59, 0.08);
+      --shadow-soft: 0 10px 28px rgba(16, 32, 59, 0.05);
       --radius: 14px;
       --radius-lg: 18px;
       --container: 1160px;
@@ -63,9 +66,10 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(16, 32, 59, 0.04);
     }
 
     .nav {
@@ -137,7 +141,7 @@
 
     .nav-links a:hover {
       color: #fff;
-      background: var(--purple);
+      background: linear-gradient(135deg, var(--blue), var(--purple));
     }
 
     .btn {
@@ -157,25 +161,26 @@
     }
 
     .btn-primary {
-      background: var(--purple);
+      background: linear-gradient(135deg, var(--blue), var(--purple));
       color: #fff;
-      box-shadow: 0 12px 26px rgba(93, 53, 177, .22);
+      box-shadow: 0 14px 30px rgba(107, 69, 207, .24);
     }
 
     .btn-primary:hover {
-      background: var(--purple-dark);
+      background: linear-gradient(135deg, var(--blue-dark), var(--purple-dark));
       transform: translateY(-1px);
-      box-shadow: 0 16px 32px rgba(93, 53, 177, .28);
+      box-shadow: 0 18px 36px rgba(82, 50, 167, .30);
     }
 
     .btn-secondary {
       background: #fff;
-      color: var(--purple);
-      border-color: rgba(93, 53, 177, .24);
+      color: var(--blue);
+      border-color: rgba(42, 91, 215, .18);
     }
 
     .btn-secondary:hover {
       border-color: var(--purple);
+      color: var(--purple);
       transform: translateY(-1px);
       box-shadow: var(--shadow-soft);
     }
@@ -200,7 +205,7 @@
 
     .section-kicker {
       margin: 0 0 12px;
-      color: var(--purple);
+      color: var(--blue);
       text-transform: uppercase;
       letter-spacing: .12em;
       font-size: .76rem;
@@ -248,10 +253,11 @@
       background:
         linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
-        radial-gradient(circle at 78% 14%, rgba(93, 53, 177, .34), transparent 28%),
-        radial-gradient(circle at 16% 84%, rgba(35, 84, 212, .22), transparent 34%),
-        linear-gradient(135deg, #111a33 0%, #172447 48%, #10182e 100%);
-      background-size: 56px 56px, 56px 56px, auto, auto, auto;
+        radial-gradient(circle at 80% 16%, rgba(107, 69, 207, .34), transparent 26%),
+        radial-gradient(circle at 14% 82%, rgba(27, 143, 107, .18), transparent 30%),
+        radial-gradient(circle at 48% 18%, rgba(42, 91, 215, .22), transparent 28%),
+        linear-gradient(135deg, #10203b 0%, #172d54 54%, #0e1c35 100%);
+      background-size: 56px 56px, 56px 56px, auto, auto, auto, auto;
       padding: 76px 0 64px;
     }
 
@@ -282,8 +288,8 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: #4ade80;
-      box-shadow: 0 0 0 5px rgba(74,222,128,.16);
+      background: #45d39c;
+      box-shadow: 0 0 0 5px rgba(69,211,156,.16);
     }
 
     .hero-copy .lead {
@@ -329,8 +335,8 @@
       background: #ffffff;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 28px 90px rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 28px 90px rgba(8, 24, 48, .26);
+      border: 1px solid rgba(255,255,255,.20);
     }
 
     .preview-top {
@@ -340,7 +346,7 @@
       gap: 14px;
       padding: 16px 18px;
       border-bottom: 1px solid var(--line);
-      background: var(--surface-soft);
+      background: linear-gradient(90deg, rgba(42,91,215,.06), rgba(107,69,207,.06), rgba(27,143,107,.05));
     }
 
     .window-dots {
@@ -354,6 +360,9 @@
       border-radius: 999px;
       background: var(--line-strong);
     }
+    .window-dots span:nth-child(1) { background: #b9c6dc; }
+    .window-dots span:nth-child(2) { background: #9cb1d6; }
+    .window-dots span:nth-child(3) { background: #86d2b6; }
 
     .preview-label {
       color: var(--muted);
@@ -488,6 +497,7 @@
     .proof-item {
       padding: 22px 20px;
       border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0), rgba(42,91,215,.015));
     }
 
     .proof-item:last-child { border-right: 0; }
@@ -519,6 +529,7 @@
     .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .card {
+      position: relative;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -526,13 +537,28 @@
       padding: 24px;
     }
 
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(42,91,215,.65), rgba(107,69,207,.55), rgba(27,143,107,.55));
+      opacity: .65;
+    }
+
+    .card.clean::before { opacity: .4; }
+
     .card.clean {
       box-shadow: none;
     }
 
     .card.featured {
-      border-color: rgba(93, 53, 177, .26);
-      box-shadow: 0 18px 48px rgba(93, 53, 177, .10);
+      border-color: rgba(107, 69, 207, .22);
+      box-shadow: 0 18px 48px rgba(107, 69, 207, .10);
+      background: linear-gradient(180deg, #fff, #faf8ff);
     }
 
     .card h3 { margin-bottom: 10px; }
@@ -605,8 +631,8 @@
       height: 8px;
       margin-top: 9px;
       border-radius: 999px;
-      background: var(--purple);
-      box-shadow: 0 0 0 5px rgba(93, 53, 177, .08);
+      background: var(--blue);
+      box-shadow: 0 0 0 5px rgba(42, 91, 215, .08);
     }
 
     .version-actions { margin-top: auto; padding-top: 24px; }
@@ -660,8 +686,12 @@
     .quote-box {
       padding: 28px;
       border-radius: var(--radius-lg);
-      background: var(--navy);
+      background:
+        radial-gradient(circle at top right, rgba(107,69,207,.20), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(27,143,107,.12), transparent 28%),
+        linear-gradient(135deg, #10203b 0%, #13284b 100%);
       color: #fff;
+      border: 1px solid rgba(255,255,255,.08);
     }
 
     .quote-box h3 {
@@ -695,16 +725,22 @@
       font-size: .82rem;
       font-weight: 750;
     }
+    .tag:nth-child(3n+1) { background: var(--blue-soft); border-color: rgba(42,91,215,.12); color: var(--blue-dark); }
+    .tag:nth-child(3n+2) { background: var(--purple-soft); border-color: rgba(107,69,207,.12); color: var(--purple-dark); }
+    .tag:nth-child(3n) { background: var(--green-soft); border-color: rgba(27,143,107,.12); color: var(--green-dark); }
 
     .dark-section {
-      background: var(--navy);
+      background:
+        radial-gradient(circle at 85% 12%, rgba(107,69,207,.18), transparent 28%),
+        radial-gradient(circle at 12% 85%, rgba(27,143,107,.12), transparent 24%),
+        linear-gradient(135deg, #10203b 0%, #13284b 100%);
       color: #fff;
     }
 
     .dark-section h2,
     .dark-section h3 { color: #fff; }
 
-    .dark-section .section-kicker { color: #b9a5ff; }
+    .dark-section .section-kicker { color: #c5b6ff; }
     .dark-section .lead,
     .dark-section p { color: rgba(255,255,255,.72); }
 
@@ -713,6 +749,7 @@
       border: 1px solid rgba(255,255,255,.12);
       border-radius: var(--radius-lg);
       padding: 28px;
+      backdrop-filter: blur(8px);
     }
 
     .dark-card p { margin-bottom: 0; }
@@ -773,7 +810,7 @@
       gap: 14px;
     }
 
-    .footer-links a:hover { color: var(--purple); }
+    .footer-links a:hover { color: var(--blue); }
 
     .whatsapp-float {
       position: fixed;
@@ -802,12 +839,12 @@
       top: 0;
       height: 3px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--purple), var(--blue));
-      opacity: .85;
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+      opacity: .9;
     }
 
-    .process .step:nth-child(2)::after { background: linear-gradient(90deg, var(--blue), var(--green)); }
-    .process .step:nth-child(3)::after { background: linear-gradient(90deg, var(--green), var(--purple)); }
+    .process .step:nth-child(2)::after { background: linear-gradient(90deg, var(--purple), var(--green)); }
+    .process .step:nth-child(3)::after { background: linear-gradient(90deg, var(--green), var(--blue)); }
 
     @media (max-width: 1100px) {
       .nav { flex-wrap: wrap; padding: 14px 0; }
@@ -858,7 +895,7 @@
         <img src="logo-geotatica.png" alt="Logo GeoTática" />
         <div>
           <div class="brand-title">GeoTática</div>
-          <small>dados territoriais organizados</small>
+          <small>dados geográficos com curadoria</small>
         </div>
       </a>
 
@@ -882,7 +919,7 @@
           <div class="eyebrow">Beta disponível por 7 dias</div>
           <h1>Fontes geográficas e estatísticas organizadas para quem trabalha com território</h1>
           <p class="lead">
-            A GeoTática reúne fontes públicas, técnicas e institucionais em uma base de consulta para acelerar mapas, diagnósticos, pesquisas e decisões que dependem de leitura territorial.
+            A GeoTática organiza fontes públicas, técnicas e institucionais em uma base de consulta pensada para apoiar mapas, diagnósticos, pesquisas e decisões que dependem de leitura territorial.
           </p>
 
           <div class="hero-actions">
