@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>GeoTática | Aula 02 — Escala Cartográfica na Prática</title>
-  <meta name="description" content="Aula 02 da GeoTática sobre escala cartográfica: conceito, tipos, classificação, cálculo de distâncias, erro admissível e aplicações práticas." />
+  <title>GeoTática | Aula 01 — Mapas e Cartas Topográficas</title>
+  <meta name="description" content="Aula 01 da GeoTática sobre mapas, cartas topográficas, plantas, elementos cartográficos, leitura visual e fundamentos da representação espacial." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -517,21 +517,23 @@
       box-shadow: var(--shadow);
     }
 
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      background: #0f1d35;
+    .video-placeholder {
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        radial-gradient(circle at 80% 16%, rgba(107,69,207,.26), transparent 30%),
+        linear-gradient(135deg, #10203b, #14284b);
+      background-size: 40px 40px, 40px 40px, auto, auto;
+      color: #fff;
+      text-align: center;
     }
 
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    .video-placeholder h3 { color: #fff; margin-bottom: 8px; }
+    .video-placeholder p { color: rgba(255,255,255,.76); margin-bottom: 0; max-width: 580px; }
 
     .video-note {
       display: flex;
@@ -548,42 +550,6 @@
       color: var(--muted);
       font-size: .92rem;
       font-weight: 650;
-    }
-
-    .formula {
-      padding: 24px;
-      border-radius: 20px;
-      background:
-        radial-gradient(circle at 88% 18%, rgba(107,69,207,.16), transparent 28%),
-        radial-gradient(circle at 10% 88%, rgba(27,143,107,.13), transparent 28%),
-        linear-gradient(135deg, #10203b, #14284b);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .formula strong {
-      display: block;
-      color: #fff;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -.04em;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .formula p { color: rgba(255,255,255,.78); margin: 0; }
-
-    .formula-visual {
-      margin-top: 26px;
-      min-height: 210px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .formula-visual svg {
-      width: min(100%, 380px);
-      height: auto;
-      display: block;
     }
 
     .steps {
@@ -662,6 +628,57 @@
       word-break: break-word;
     }
 
+
+    .image-example-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .image-example-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .image-example-visual {
+      background: #f8fbff;
+      border-bottom: 1px solid var(--line);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .image-example-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-example-body {
+      padding: 16px 16px 18px;
+    }
+
+    .image-example-body h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .image-example-body p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 900px) {
+      .image-example-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .footer {
       margin-top: 46px;
       background: #fff;
@@ -703,26 +720,18 @@
     .footer-links a:hover { color: var(--blue); }
 
     @media (max-width: 1120px) {
-      .nav {
-        flex-wrap: wrap;
-        padding: 14px 0;
-      }
-
+      .nav { flex-wrap: wrap; padding: 14px 0; }
       .nav-links {
         order: 3;
         width: 100%;
         overflow-x: auto;
         justify-content: flex-start;
       }
-
       .lesson-hero,
       .lesson-layout {
         grid-template-columns: 1fr;
       }
-
-      .toc {
-        position: static;
-      }
+      .toc { position: static; }
     }
 
     @media (max-width: 860px) {
@@ -751,26 +760,26 @@
 
 <header class="topbar">
   <div class="container nav">
-    <a href="#inicio" class="brand" aria-label="GeoTática - Aula 02">
+    <a href="#inicio" class="brand" aria-label="GeoTática - Aula 01">
       <img src="./logo-geotatica.png" onerror="this.onerror=null;this.src='../logo-geotatica.png';" alt="Logo GeoTática" />
       <div>
         <div class="brand-title">GeoTática</div>
-        <small>Aula 02 — Escala Cartográfica</small>
+        <small>Aula 01 — Mapas e Cartas Topográficas</small>
       </div>
     </a>
 
     <nav class="nav-links" aria-label="Navegação principal">
       <a href="#video">Vídeo</a>
       <a href="#conceito">Conceito</a>
-      <a href="#tipos">Tipos</a>
-      <a href="#classificacao">Classificação</a>
-      <a href="#calculo">Cálculo</a>
-      <a href="#erro">Erro</a>
+      <a href="#tipos">Produtos</a>
+      <a href="#elementos">Elementos</a>
+      <a href="#cartas">Cartas</a>
+      <a href="#leitura">Leitura</a>
       <a href="#aplicacoes">Aplicações</a>
       <a href="#material">Material</a>
     </nav>
 
-    <a class="btn btn-primary" href="./1.2%20Escala.pdf" download>Baixar PDF</a>
+    <a class="btn btn-primary" href="./1.1%20Mapas%20e%20Cartas%20Topograficas.pdf" download>Baixar PDF</a>
   </div>
 </header>
 
@@ -780,40 +789,40 @@
     <div class="container lesson-hero">
       <div class="hero-main">
         <div class="kicker">Trilha de Cartografia e Geoprocessamento</div>
-        <h1>Escala cartográfica na prática</h1>
+        <h1>Mapas e cartas topográficas</h1>
         <p class="subtitle">
-          Uma aula para entender como a escala conecta o mapa ao terreno, define o nível de detalhe da representação e orienta cálculos simples de distância real.
+          Uma aula para entender os principais produtos cartográficos, seus elementos essenciais e como eles ajudam na leitura, interpretação e comunicação do espaço geográfico.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#video">Assistir aula</a>
           <a class="btn btn-secondary" href="#material">Baixar material</a>
-          <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2001/" target="_blank" rel="noopener noreferrer">Ver Aula 01</a>
+          <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
           <a class="btn btn-secondary" href="../">Voltar para a GeoTática</a>
         </div>
 
         <div class="hero-chips">
-          <span class="chip">Aula 02</span>
-          <span class="chip">escala numérica</span>
-          <span class="chip">escala gráfica</span>
-          <span class="chip">cálculo de distâncias</span>
-          <span class="chip">erro admissível</span>
+          <span class="chip">Aula 01</span>
+          <span class="chip">mapas</span>
+          <span class="chip">cartas topográficas</span>
+          <span class="chip">plantas</span>
+          <span class="chip">leitura cartográfica</span>
         </div>
       </div>
 
       <aside class="side-card">
         <div>
           <span class="label blue">Resumo</span>
-          <h3>A matemática do espaço</h3>
+          <h3>Antes da escala, vem a leitura do mapa</h3>
           <p class="lead">
-            A escala mostra quantas vezes a realidade foi reduzida para caber em um mapa, carta ou planta.
+            Mapas, cartas e plantas são formas de representar o território. Cada produto tem finalidade, escala, nível de detalhe e elementos próprios.
           </p>
         </div>
 
         <ul class="summary-list">
-          <li><span>1</span><div>Entender a relação entre mapa e terreno.</div></li>
-          <li><span>2</span><div>Diferenciar escala numérica e escala gráfica.</div></li>
-          <li><span>3</span><div>Aplicar cálculos e interpretar limites de precisão.</div></li>
+          <li><span>1</span><div>Reconhecer diferenças entre mapa, carta e planta.</div></li>
+          <li><span>2</span><div>Identificar elementos básicos de uma representação cartográfica.</div></li>
+          <li><span>3</span><div>Interpretar informações espaciais de forma mais crítica.</div></li>
         </ul>
 
         <div class="teacher">
@@ -835,10 +844,10 @@
           <div class="toc-title">Nesta aula</div>
           <a href="#video">Vídeo</a>
           <a href="#conceito">Conceito</a>
-          <a href="#tipos">Tipos de escala</a>
-          <a href="#classificacao">Classificação</a>
-          <a href="#calculo">Cálculo</a>
-          <a href="#erro">Erro admissível</a>
+          <a href="#tipos">Mapas, cartas e plantas</a>
+          <a href="#elementos">Elementos do mapa</a>
+          <a href="#cartas">Cartas topográficas</a>
+          <a href="#leitura">Leitura cartográfica</a>
           <a href="#aplicacoes">Aplicações</a>
           <a href="#material">Material</a>
           <a href="#referencias">Referências</a>
@@ -849,237 +858,221 @@
             <span class="label purple">Vídeo da aula</span>
             <h2>Comece pelo vídeo</h2>
             <p class="lead text-justify">
-              O vídeo apresenta os conceitos centrais de escala cartográfica e mostra como a relação entre mapa e realidade interfere no detalhamento, na generalização e na confiabilidade das análises espaciais.
+              O vídeo apresenta a diferença entre os principais produtos cartográficos e mostra por que mapas, cartas e plantas são instrumentos fundamentais para representar, analisar e comunicar informações sobre o território.
             </p>
 
             <div class="video-shell">
-              <div class="video-wrap">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/QvTfRNNUlMs?rel=0"
-                  title="Aula 02 — Escala Cartográfica na Prática"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  loading="lazy"></iframe>
+              <div class="video-placeholder">
+                <div>
+                  <h3>Aula 01 — Mapas e Cartas Topográficas</h3>
+                  <p>Insira aqui o link do vídeo da Aula 01 no YouTube quando quiser incorporar a aula diretamente nesta página.</p>
+                </div>
               </div>
               <div class="video-note">
-                <p>Aula 02 — Escala Cartográfica na Prática</p>
-                <a class="btn btn-secondary" href="https://youtu.be/QvTfRNNUlMs" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a>
+                <p>Aula 01 — Mapas e Cartas Topográficas</p>
+                <a class="btn btn-secondary" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">Abrir canal no YouTube</a>
               </div>
             </div>
           </article>
 
           <article class="lesson-block" id="conceito">
             <span class="label blue">Conceito</span>
-            <h2>O que é escala cartográfica?</h2>
+            <h2>Por que estudar mapas e cartas?</h2>
             <p class="text-justify">
-              A escala cartográfica é a relação de proporção entre uma medida representada no mapa e a medida correspondente no terreno. Ela indica quantas vezes a realidade foi reduzida para ser representada graficamente.
+              A cartografia organiza informações espaciais para representar fenômenos, orientar deslocamentos, apoiar análises e comunicar características do território. Um mapa não é apenas uma imagem: ele é uma construção técnica, simbólica e seletiva da realidade.
             </p>
             <p class="text-justify">
-              Em uma escala como <b>1:50.000</b>, uma unidade no mapa corresponde a 50.000 unidades no terreno. Se a unidade usada for centímetro, então 1 centímetro no mapa representa 50.000 centímetros na realidade.
+              Para interpretar corretamente um produto cartográfico, é preciso observar finalidade, escala, legenda, orientação, sistema de coordenadas, fonte dos dados e nível de generalização.
             </p>
 
             <div class="callout">
-              Sem escala, não é possível interpretar corretamente distâncias, áreas, nível de detalhe e limites de precisão de um mapa.
+              Todo mapa faz escolhas: o que mostrar, o que simplificar, o que destacar e como comunicar uma leitura do espaço.
             </div>
           </article>
 
           <article class="lesson-block" id="tipos">
-            <span class="label green">Tipos</span>
-            <h2>Escala numérica e escala gráfica</h2>
+            <span class="label green">Produtos cartográficos</span>
+            <h2>Mapa, carta e planta não são a mesma coisa</h2>
             <p class="text-justify">
-              As escalas podem ser apresentadas de formas diferentes. As duas mais comuns são a escala numérica, expressa por uma razão matemática, e a escala gráfica, representada por uma barra graduada.
-            </p>
-
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label blue">Escala numérica</span>
-                <h3>Relação em forma de razão</h3>
-                <p>Aparece como 1:n. Permite cálculos de distância, desde que as unidades sejam convertidas corretamente.</p>
-                <div class="tags">
-                  <span class="tag">1:10.000</span>
-                  <span class="tag">1:50.000</span>
-                  <span class="tag">1:250.000</span>
-                </div>
-              </div>
-
-              <div class="mini-card">
-                <span class="label green">Escala gráfica</span>
-                <h3>Leitura por barra graduada</h3>
-                <p>Permite medir distâncias diretamente no mapa e mantém a proporcionalidade em ampliações ou reduções.</p>
-                <div class="tags">
-                  <span class="tag">leitura visual</span>
-                  <span class="tag">ampliação</span>
-                  <span class="tag">impressão</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="lesson-block" id="classificacao">
-            <span class="label purple">Classificação</span>
-            <h2>Grande, média e pequena escala</h2>
-            <p class="text-justify">
-              A classificação das escalas depende do denominador. Escalas grandes têm denominadores menores e mostram mais detalhe. Escalas pequenas têm denominadores maiores, cobrem áreas extensas e exigem maior generalização.
+              Embora os termos sejam usados de forma parecida em conversas cotidianas, mapas, cartas e plantas têm finalidades e níveis de detalhamento diferentes. Entender essa diferença ajuda a escolher o produto adequado para cada tipo de análise.
             </p>
 
             <div class="grid-3">
               <div class="mini-card">
-                <span class="label blue">Escalas grandes</span>
-                <h3>Mais detalhe</h3>
-                <p>Usadas para áreas menores, como plantas, cadastros, lotes, quadras e infraestrutura.</p>
+                <span class="label blue">Mapa</span>
+                <h3>Visão geral</h3>
+                <p>Representa áreas maiores e costuma trazer uma leitura mais sintética do espaço, com maior generalização.</p>
                 <div class="tags">
-                  <span class="tag">1:500</span>
-                  <span class="tag">1:1.000</span>
-                  <span class="tag">1:5.000</span>
+                  <span class="tag">regional</span>
+                  <span class="tag">nacional</span>
+                  <span class="tag">temático</span>
                 </div>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Escalas médias</span>
-                <h3>Equilíbrio</h3>
-                <p>Comuns em cartas topográficas, com bom equilíbrio entre abrangência e nível de detalhe.</p>
+                <span class="label green">Carta</span>
+                <h3>Representação técnica</h3>
+                <p>Apresenta maior precisão e detalhamento, sendo muito utilizada em levantamentos, planejamento e análise territorial.</p>
                 <div class="tags">
-                  <span class="tag">1:25.000</span>
-                  <span class="tag">1:50.000</span>
-                  <span class="tag">1:100.000</span>
+                  <span class="tag">topográfica</span>
+                  <span class="tag">sistemática</span>
+                  <span class="tag">coordenadas</span>
                 </div>
               </div>
 
               <div class="mini-card">
-                <span class="label purple">Escalas pequenas</span>
-                <h3>Visão ampla</h3>
-                <p>Representam áreas maiores, com menor detalhe, como mapas regionais, nacionais e mundiais.</p>
+                <span class="label purple">Planta</span>
+                <h3>Detalhe local</h3>
+                <p>Representa áreas pequenas com alto nível de detalhe, comum em projetos, edificações, quadras, lotes e infraestrutura.</p>
                 <div class="tags">
-                  <span class="tag">1:500.000</span>
-                  <span class="tag">1:1.000.000</span>
+                  <span class="tag">local</span>
+                  <span class="tag">projeto</span>
+                  <span class="tag">detalhe</span>
                 </div>
+              </div>
+            </div>
+
+            <div class="image-example-gallery">
+              <div class="image-example-card">
+                <div class="image-example-visual">
+                  <img src="mapa.png" alt="Exemplo de mapa temático" loading="lazy">
+                </div>
+                <div class="image-example-body">
+                  <h3>Exemplo de mapa</h3>
+                  <p>Representação mais sintética e abrangente, útil para visualizar temas, regiões e padrões espaciais em escala mais ampla.</p>
+                </div>
+              </div>
+
+              <div class="image-example-card">
+                <div class="image-example-visual">
+                  <img src="carta.png" alt="Exemplo de carta topográfica" loading="lazy">
+                </div>
+                <div class="image-example-body">
+                  <h3>Exemplo de carta topográfica</h3>
+                  <p>Produto técnico com maior detalhamento, curvas de nível, hidrografia, vias, vegetação, coordenadas, legenda e escala.</p>
+                </div>
+              </div>
+
+              <div class="image-example-card">
+                <div class="image-example-visual">
+                  <img src="planta.png" alt="Exemplo de planta cartográfica" loading="lazy">
+                </div>
+                <div class="image-example-body">
+                  <h3>Exemplo de planta</h3>
+                  <p>Representação local, com grande escala e alto nível de detalhe, comum em quadras, lotes, edificações e projetos.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-block" id="elementos">
+            <span class="label purple">Elementos</span>
+            <h2>O que observar em um mapa?</h2>
+            <p class="text-justify">
+              A leitura cartográfica depende de elementos que orientam a interpretação. Eles ajudam o usuário a entender o que está sendo representado, onde está localizado, qual escala foi usada e quais símbolos traduzem as informações do mapa.
+            </p>
+
+            <div class="grid-2">
+              <div class="mini-card">
+                <span class="label blue">Elementos básicos</span>
+                <h3>Título, legenda, escala e orientação</h3>
+                <p>Esses elementos ajudam a identificar o tema, interpretar símbolos, estimar distâncias e localizar a direção norte.</p>
+              </div>
+
+              <div class="mini-card">
+                <span class="label green">Referência espacial</span>
+                <h3>Coordenadas, fonte e projeção</h3>
+                <p>A referência espacial informa como os dados foram posicionados, projetados e documentados.</p>
               </div>
             </div>
 
             <div class="callout">
-              Regra prática: quanto maior o denominador, menor o nível de detalhe e maior a área representada.
+              Para interpretar um mapa com mais segurança, observe primeiro o título, depois a legenda, a escala, a orientação e a referência espacial. Esses elementos ajudam a entender o que está sendo representado, em qual recorte e com que nível de detalhe.
             </div>
-          </article>
-
-          <article class="lesson-block" id="calculo">
-            <span class="label blue">Cálculo</span>
-            <h2>Como calcular distâncias reais</h2>
-            <p class="text-justify">
-              A relação entre distância no mapa e distância no terreno pode ser expressa pela fórmula <b>D = N × d</b>. O cálculo é simples, mas exige atenção às unidades.
-            </p>
 
             <div class="grid-2">
-              <div class="formula">
-                <strong>D = N × d</strong>
-                <p>D é a distância real no terreno, N é o denominador da escala e d é a distância medida no mapa.</p>
-
-                <div class="formula-visual" aria-hidden="true">
-                  <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <defs>
-                      <linearGradient id="pillGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#7aa5ff"/>
-                        <stop offset="100%" stop-color="#8f6dff"/>
-                      </linearGradient>
-                      <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="rgba(255,255,255,0.16)"/>
-                        <stop offset="100%" stop-color="rgba(255,255,255,0.07)"/>
-                      </linearGradient>
-                    </defs>
-
-                    <rect x="18" y="78" width="110" height="90" rx="20" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.16)"/>
-                    <path d="M40 138 L58 122 L78 133 L98 106" fill="none" stroke="#91b4ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="40" cy="138" r="5" fill="#8ad8bf"/>
-                    <circle cx="58" cy="122" r="5" fill="#8ad8bf"/>
-                    <circle cx="78" cy="133" r="5" fill="#8ad8bf"/>
-                    <circle cx="98" cy="106" r="5" fill="#8ad8bf"/>
-                    <rect x="32" y="92" width="58" height="12" rx="6" fill="rgba(255,255,255,0.14)"/>
-                    <text x="73" y="150" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="16" font-family="Manrope, sans-serif" font-weight="700">mapa</text>
-
-                    <line x1="138" y1="122" x2="282" y2="122" stroke="rgba(255,255,255,0.28)" stroke-width="3" stroke-dasharray="8 8"/>
-                    <circle cx="146" cy="122" r="5" fill="#ffffff"/>
-                    <circle cx="274" cy="122" r="5" fill="#ffffff"/>
-                    <rect x="170" y="99" width="80" height="34" rx="17" fill="url(#pillGrad)"/>
-                    <text x="210" y="121" text-anchor="middle" fill="#ffffff" font-size="16" font-family="Manrope, sans-serif" font-weight="800">N × d</text>
-
-                    <rect x="292" y="44" width="110" height="140" rx="22" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.16)"/>
-                    <circle cx="325" cy="90" r="17" fill="rgba(122,165,255,0.18)" stroke="rgba(122,165,255,0.58)" stroke-width="2"/>
-                    <path d="M325 74 C336 74 345 83 345 94 C345 107 325 127 325 127 C325 127 305 107 305 94 C305 83 314 74 325 74 Z" fill="#8f6dff"/>
-                    <circle cx="325" cy="94" r="6.5" fill="#ffffff"/>
-                    <path d="M344 130 L360 110 L376 136 L390 120" fill="none" stroke="#8ad8bf" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M308 138 Q326 124 344 138 T380 138" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="3"/>
-                    <text x="347" y="162" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="16" font-family="Manrope, sans-serif" font-weight="700">terreno</text>
-
-                    <rect x="148" y="156" width="124" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)"/>
-                    <text x="210" y="178" text-anchor="middle" fill="rgba(255,255,255,0.84)" font-size="15" font-family="Manrope, sans-serif" font-weight="700">D = distância real</text>
-                  </svg>
-                </div>
+              <div class="mini-card">
+                <span class="label blue">Leitura básica</span>
+                <h3>Elementos que orientam a interpretação</h3>
+                <p>Título, legenda, escala, orientação e coordenadas são os elementos mais imediatos para começar a leitura cartográfica.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Unidades</span>
-                <h3>Não pule a conversão</h3>
-                <p>Se a medida do mapa está em centímetros, o resultado inicial também estará em centímetros. Depois, converta para metros ou quilômetros.</p>
-                <div class="steps">
-                  <div class="step"><div class="step-num">1</div><p>Meça a distância no mapa.</p></div>
-                  <div class="step"><div class="step-num">2</div><p>Multiplique pelo denominador da escala.</p></div>
-                  <div class="step"><div class="step-num">3</div><p>Converta o resultado para a unidade desejada.</p></div>
-                </div>
+                <span class="label green">Perguntas úteis</span>
+                <h3>O que vale observar primeiro?</h3>
+                <p>Qual é o tema do mapa? Qual área está sendo representada? Que símbolos e cores estão sendo usados? Qual é a escala e a fonte das informações?</p>
               </div>
             </div>
           </article>
 
-          <article class="lesson-block" id="erro">
-            <span class="label purple">Precisão</span>
-            <h2>Erro admissível e limite gráfico</h2>
+          <article class="lesson-block" id="cartas">
+            <span class="label blue">Cartas topográficas</span>
+            <h2>Como uma carta topográfica organiza o terreno</h2>
             <p class="text-justify">
-              Todo produto cartográfico tem limitações. O erro admissível está relacionado ao menor traço distinguível no papel, frequentemente associado ao limite gráfico mínimo. Por isso, a escala interfere diretamente na precisão possível de uma representação.
+              A carta topográfica representa elementos naturais e antrópicos do território, como relevo, hidrografia, vias, edificações, limites, vegetação e outros elementos de referência. Ela é importante porque permite interpretar o espaço com maior precisão.
             </p>
 
             <div class="grid-2">
               <div class="mini-card">
-                <span class="label blue">Limite</span>
-                <h3>Nem tudo pode ser desenhado</h3>
-                <p>Feições muito pequenas podem não aparecer com fidelidade quando a escala não comporta esse nível de detalhe.</p>
+                <span class="label green">Relevo</span>
+                <h3>Curvas de nível e altitude</h3>
+                <p>As curvas de nível ajudam a interpretar declividade, formas do relevo, vales, divisores de água e áreas mais elevadas.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Escolha técnica</span>
-                <h3>Escala depende da finalidade</h3>
-                <p>Projetos, estudos ambientais, ensino, planejamento e engenharia exigem níveis diferentes de precisão e detalhamento.</p>
+                <span class="label purple">Ocupação</span>
+                <h3>Elementos naturais e construídos</h3>
+                <p>Hidrografia, vias, áreas urbanas, vegetação e limites são representados por símbolos e convenções cartográficas.</p>
               </div>
+            </div>
+          </article>
+
+          <article class="lesson-block" id="leitura">
+            <span class="label green">Leitura cartográfica</span>
+            <h2>Ler um mapa é interpretar escolhas</h2>
+            <p class="text-justify">
+              A leitura de mapas exige atenção ao objetivo da representação, ao recorte espacial, à escala e aos símbolos utilizados. A mesma área pode ser representada de formas diferentes conforme o propósito do mapa.
+            </p>
+
+            <div class="steps">
+              <div class="step"><div class="step-num">1</div><p>Observe o título e identifique o tema representado.</p></div>
+              <div class="step"><div class="step-num">2</div><p>Leia a legenda antes de interpretar as formas e cores.</p></div>
+              <div class="step"><div class="step-num">3</div><p>Verifique escala, orientação e fonte dos dados.</p></div>
+              <div class="step"><div class="step-num">4</div><p>Relacione os elementos do mapa com a finalidade da análise.</p></div>
             </div>
           </article>
 
           <article class="lesson-block" id="aplicacoes">
-            <span class="label green">Aplicações</span>
-            <h2>Escala muda a forma de observar o território</h2>
+            <span class="label purple">Aplicações</span>
+            <h2>Onde mapas e cartas são usados?</h2>
             <p class="text-justify">
-              Um mesmo fenômeno pode ser interpretado de formas diferentes dependendo da escala. Em uma escala local, aparecem detalhes que desaparecem em uma análise regional. Em uma escala nacional, o objetivo costuma ser reconhecer padrões gerais.
+              Mapas e cartas apoiam diferentes atividades profissionais, acadêmicas e institucionais. Eles servem para comunicar informações, orientar decisões e organizar análises sobre fenômenos espaciais.
             </p>
 
             <div class="grid-2">
               <div class="mini-card">
-                <h3>Planejamento urbano e engenharia</h3>
-                <p>Demandam escalas maiores quando o objetivo é detalhar lotes, vias, infraestrutura e projetos.</p>
+                <h3>Planejamento e gestão territorial</h3>
+                <p>Mapas ajudam a visualizar áreas, infraestrutura, conflitos de uso, limites, acessos e condicionantes espaciais.</p>
               </div>
 
               <div class="mini-card">
                 <h3>Meio ambiente e pesquisa</h3>
-                <p>Podem alternar entre escalas locais, municipais, regionais e nacionais conforme o fenômeno analisado.</p>
+                <p>Cartas e mapas apoiam diagnósticos ambientais, estudos de campo, análise de paisagem e interpretação de dados geográficos.</p>
               </div>
             </div>
           </article>
 
           <article class="lesson-block" id="material">
             <span class="label blue">Material</span>
-            <h2>Baixe o PDF da Aula 02</h2>
+            <h2>Baixe o PDF da Aula 01</h2>
             <p class="text-justify">
-              O material de apoio reúne os principais conceitos da aula e pode ser usado para revisar o conteúdo, acompanhar os exemplos e consultar as relações de cálculo durante os estudos.
+              O material de apoio reúne os principais conceitos da aula e pode ser usado para revisar o conteúdo, acompanhar os exemplos e consultar os elementos essenciais da representação cartográfica.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="./1.2%20Escala.pdf" download>Baixar PDF</a>
-              <a class="btn btn-secondary" href="./1.2%20Escala.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
-              <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2001/" target="_blank" rel="noopener noreferrer">Ver Aula 01</a>
+              <a class="btn btn-primary" href="./1.1%20Mapas%20e%20Cartas%20Topograficas.pdf" download>Baixar PDF</a>
+              <a class="btn btn-secondary" href="./1.1%20Mapas%20e%20Cartas%20Topograficas.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
+              <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
             </div>
           </article>
 
@@ -1087,38 +1080,36 @@
             <span class="label purple">Referências</span>
             <h2>Fontes utilizadas como apoio didático</h2>
             <p class="text-justify">
-              A aula foi organizada com apoio de materiais didáticos e técnicos de instituições públicas de ensino, pesquisa e produção cartográfica.
+              A aula foi organizada com apoio de referências didáticas e técnicas sobre cartografia, leitura de mapas e representação topográfica.
             </p>
 
             <div class="grid-3">
               <div class="mini-card reference-card">
-                <span class="label blue">IFRN</span>
-                <h3>Escala Cartográfica</h3>
-                <p>COSTA, Jordana. Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte.</p>
-                <p><a href="https://docente.ifrn.edu.br/jordanacosta/disciplinas/caico-1o-ano-2014/informatica/escala-cartografica" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
-              </div>
-
-              <div class="mini-card reference-card">
-                <span class="label purple">UNESP</span>
-                <h3>Escala Cartográfica</h3>
-                <p>WATANABE, Fernanda Sayuri Yoshino. Departamento de Cartografia, FCT/UNESP.</p>
-                <p><a href="https://www2.fct.unesp.br/docentes/carto/fernanda/Cartografia_EA/Aula2-EA-CAR-2020_Escala.pdf" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
-              </div>
-
-              <div class="mini-card reference-card">
-                <span class="label green">IBGE</span>
+                <span class="label blue">IBGE</span>
                 <h3>Noções Básicas de Cartografia</h3>
                 <p>Instituto Brasileiro de Geografia e Estatística. Manuais Técnicos em Geociências, nº 8. Rio de Janeiro: IBGE, 1999.</p>
+              </div>
+
+              <div class="mini-card reference-card">
+                <span class="label green">Cartografia</span>
+                <h3>Leitura e interpretação</h3>
+                <p>Materiais didáticos de apoio à leitura de mapas, cartas topográficas, escala, legenda, orientação e representação espacial.</p>
+              </div>
+
+              <div class="mini-card reference-card">
+                <span class="label purple">GeoTática</span>
+                <h3>Trilha de aulas</h3>
+                <p>Conteúdo organizado para apoiar estudos introdutórios em cartografia, geoprocessamento e análise territorial.</p>
               </div>
             </div>
           </article>
 
           <div class="dark-note">
             <h3>Continue pela GeoTática</h3>
-            <p>Esta aula faz parte da trilha de Cartografia e Geoprocessamento. Você também pode acessar a plataforma de fontes de dados geográficos e acompanhar novos conteúdos pelo YouTube e Instagram.</p>
+            <p>Esta aula abre a trilha de Cartografia e Geoprocessamento. Depois dela, siga para a Aula 02 sobre Escala Cartográfica e conheça também a plataforma de fontes de dados geográficos.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
-              <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2001/" target="_blank" rel="noopener noreferrer">Ver Aula 01</a>
+              <a class="btn btn-primary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
+              <a class="btn btn-secondary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
               <a class="btn btn-secondary" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a class="btn btn-secondary" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
@@ -1142,17 +1133,18 @@
     </div>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2002%20sobre%20Escala%20Cartogr%C3%A1fica%20no%20site%20da%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2001%20sobre%20Mapas%20e%20Cartas%20Topogr%C3%A1ficas%20no%20site%20da%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a class="btn btn-secondary" href="mailto:geo.daniellecorrea@gmail.com">E-mail</a>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <div>© <span id="year"></span> GeoTática — Aula 02.</div>
+    <div>© <span id="year"></span> GeoTática — Aula 01.</div>
     <div class="footer-links">
       <a href="#inicio">Início</a>
       <a href="#video">Vídeo</a>
       <a href="#material">Material</a>
+      <a href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Aula 02</a>
       <a href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">YouTube</a>
       <a href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
