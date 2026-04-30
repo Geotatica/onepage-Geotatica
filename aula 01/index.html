@@ -517,6 +517,23 @@
       box-shadow: var(--shadow);
     }
 
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #0f1d35;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .video-placeholder {
       min-height: 260px;
       display: grid;
@@ -862,15 +879,17 @@
             </p>
 
             <div class="video-shell">
-              <div class="video-placeholder">
-                <div>
-                  <h3>Aula 01 — Mapas e Cartas Topográficas</h3>
-                  <p>https://www.youtube.com/watch?v=FC552qTKbuE&t=2s</p>
-                </div>
+              <div class="video-wrap">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/FC552qTKbuE?rel=0"
+                  title="Aula 01 — Mapas e Cartas Topográficas"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  loading="lazy"
+                  allowfullscreen></iframe>
               </div>
               <div class="video-note">
                 <p>Aula 01 — Mapas e Cartas Topográficas</p>
-                <a class="btn btn-secondary" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">Abrir canal no YouTube</a>
+                <a class="btn btn-secondary" href="https://youtu.be/FC552qTKbuE" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a>
               </div>
             </div>
           </article>
