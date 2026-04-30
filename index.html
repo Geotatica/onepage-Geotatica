@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GeoTática | Fontes geográficas e estatísticas organizadas para quem trabalha com território</title>
-  <meta name="description" content="GeoTática organiza fontes geográficas e estatísticas para geoprocessamento, análise espacial, estudos territoriais, pesquisa, consultoria e tomada de decisão." />
+  <title>GeoTática | Inteligência territorial, dados geográficos e geotecnologias</title>
+  <meta name="description" content="Site oficial da GeoTática: inteligência territorial, geotecnologias, curadoria de dados geográficos e estatísticos, aulas, conteúdos técnicos e plataforma de fontes." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
       --muted-2: #8a96aa;
       --line: #d7e2f0;
       --line-strong: #c6d3e5;
+
       --navy: #10203b;
       --navy-2: #14284b;
       --blue: #2a5bd7;
@@ -30,10 +31,11 @@
       --purple-dark: #5232a7;
       --green: #1b8f6b;
       --green-dark: #167055;
+
       --green-soft: #e8f6f0;
       --purple-soft: #f0eaff;
       --blue-soft: #eaf1ff;
-      --warning-soft: #fff7e6;
+
       --shadow: 0 18px 48px rgba(16, 32, 59, 0.08);
       --shadow-soft: 0 10px 28px rgba(16, 32, 59, 0.05);
       --radius: 14px;
@@ -42,10 +44,15 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(42,91,215,.06), transparent 24%),
+        radial-gradient(circle at 92% 14%, rgba(107,69,207,.06), transparent 26%),
+        var(--bg);
       color: var(--ink);
       font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
@@ -55,7 +62,7 @@
 
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    strong { color: var(--ink); }
+    p { margin-top: 0; }
 
     .container {
       width: min(calc(100% - 40px), var(--container));
@@ -98,11 +105,11 @@
     }
 
     .brand-title {
+      color: var(--navy);
       font-size: 1rem;
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -0.02em;
-      color: var(--navy);
     }
 
     .brand small {
@@ -110,7 +117,7 @@
       margin-top: 2px;
       color: var(--muted);
       font-size: 0.77rem;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     .nav-links {
@@ -122,7 +129,7 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       background: #fff;
-      box-shadow: 0 4px 16px rgba(17, 26, 51, 0.04);
+      box-shadow: 0 4px 16px rgba(16, 32, 59, 0.04);
     }
 
     .nav-links a {
@@ -134,7 +141,7 @@
       border-radius: 999px;
       color: var(--ink-2);
       font-size: 0.88rem;
-      font-weight: 700;
+      font-weight: 750;
       transition: .18s ease;
       white-space: nowrap;
     }
@@ -155,7 +162,7 @@
       border: 1px solid transparent;
       font-size: 0.94rem;
       font-weight: 800;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border .18s ease;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border .18s ease, color .18s ease;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -190,38 +197,16 @@
       color: #fff;
     }
 
-    .section {
-      padding: 72px 0;
-    }
-
-    .section.compact {
-      padding: 54px 0;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 26px;
-    }
-
-    .section-kicker {
-      margin: 0 0 12px;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .76rem;
-      font-weight: 800;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { margin-top: 0; }
 
     h1 {
       margin-bottom: 22px;
-      max-width: 820px;
+      max-width: 860px;
       color: #fff;
-      font-size: clamp(2.05rem, 4.45vw, 3.8rem);
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
       line-height: 1.06;
-      letter-spacing: -0.035em;
-      font-weight: 720;
+      letter-spacing: -0.04em;
+      font-weight: 760;
     }
 
     h2 {
@@ -243,8 +228,58 @@
     .lead {
       color: var(--muted);
       font-size: 1.06rem;
-      max-width: 680px;
+      max-width: 720px;
       margin-bottom: 0;
+    }
+
+    .text-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    .card .text-justify {
+      max-width: none;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section.compact { padding: 54px 0; }
+
+    .section-head {
+      max-width: 1080px;
+      margin-bottom: 28px;
+    }
+
+    .section-head .lead {
+      max-width: 980px;
+    }
+
+    .section-head.narrow {
+      max-width: 780px;
+    }
+
+    .section-head.narrow .lead {
+      max-width: 720px;
+    }
+
+    .section-head.wide {
+      max-width: 1080px;
+    }
+
+    .section-head.wide .lead {
+      max-width: 980px;
+    }
+
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .76rem;
+      font-weight: 800;
     }
 
     .hero {
@@ -258,13 +293,13 @@
         radial-gradient(circle at 48% 18%, rgba(42, 91, 215, .22), transparent 28%),
         linear-gradient(135deg, #10203b 0%, #172d54 54%, #0e1c35 100%);
       background-size: 56px 56px, 56px 56px, auto, auto, auto, auto;
-      padding: 76px 0 64px;
+      padding: 78px 0 66px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
+      gap: 38px;
       align-items: center;
     }
 
@@ -328,10 +363,10 @@
       background: rgba(255,255,255,.075);
       border: 1px solid rgba(255,255,255,.12);
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 750;
     }
 
-    .product-preview {
+    .ecosystem-panel {
       background: #ffffff;
       border-radius: 24px;
       overflow: hidden;
@@ -339,7 +374,7 @@
       border: 1px solid rgba(255,255,255,.20);
     }
 
-    .preview-top {
+    .panel-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -358,8 +393,8 @@
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: var(--line-strong);
     }
+
     .window-dots span:nth-child(1) { background: #b9c6dc; }
     .window-dots span:nth-child(2) { background: #9cb1d6; }
     .window-dots span:nth-child(3) { background: #86d2b6; }
@@ -372,8 +407,208 @@
       text-transform: uppercase;
     }
 
-    .preview-body {
+    .panel-body {
       padding: 20px;
+    }
+
+    .ecosystem-title {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ecosystem-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .eco-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+    }
+
+    .ecosystem-item:nth-child(2) .eco-icon { background: linear-gradient(135deg, var(--green), var(--blue)); }
+    .ecosystem-item:nth-child(3) .eco-icon { background: linear-gradient(135deg, var(--purple), var(--green)); }
+
+    .ecosystem-item b {
+      display: block;
+      color: var(--navy);
+      font-size: .96rem;
+      line-height: 1.2;
+    }
+
+    .ecosystem-item small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 1.38;
+    }
+
+    .mini-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .mini-strip span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 650;
+    }
+
+    .strip {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .proof-item {
+      padding: 22px 20px;
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0), rgba(42,91,215,.015));
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.58rem;
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .proof-item span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(42,91,215,.65), rgba(107,69,207,.55), rgba(27,143,107,.55));
+      opacity: .58;
+    }
+
+    .card.clean {
+      box-shadow: none;
+    }
+
+    .card.clean::before { opacity: .35; }
+
+    .card.featured {
+      border-color: rgba(107, 69, 207, .22);
+      box-shadow: 0 18px 48px rgba(107, 69, 207, .10);
+      background: linear-gradient(180deg, #fff, #faf8ff);
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 16px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .mini-label.blue {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-color: rgba(42,91,215,.14);
+    }
+
+    .mini-label.purple {
+      color: var(--purple);
+      background: var(--purple-soft);
+      border-color: rgba(107,69,207,.16);
+    }
+
+    .mini-label.green {
+      color: var(--green);
+      background: var(--green-soft);
+      border-color: rgba(27,143,107,.16);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .platform-preview {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .searchbar {
@@ -466,148 +701,6 @@
     .badge.purple { background: var(--purple-soft); color: var(--purple); }
     .badge.blue { background: var(--blue-soft); color: var(--blue); }
 
-    .preview-footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: .8rem;
-      font-weight: 650;
-    }
-
-    .preview-footer span {
-      padding: 7px 9px;
-      border-radius: 999px;
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-    }
-
-    .strip {
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-
-    .proof-item {
-      padding: 22px 20px;
-      border-right: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0), rgba(42,91,215,.015));
-    }
-
-    .proof-item:last-child { border-right: 0; }
-
-    .proof-item strong {
-      display: block;
-      color: var(--navy);
-      font-size: 1.7rem;
-      line-height: 1;
-      letter-spacing: -.045em;
-      font-weight: 800;
-    }
-
-    .proof-item span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: .9rem;
-      font-weight: 650;
-    }
-
-    .grid-2, .grid-3, .grid-4 {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-    .card {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      padding: 24px;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      top: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(42,91,215,.65), rgba(107,69,207,.55), rgba(27,143,107,.55));
-      opacity: .65;
-    }
-
-    .card.clean::before { opacity: .4; }
-
-    .card.clean {
-      box-shadow: none;
-    }
-
-    .card.featured {
-      border-color: rgba(107, 69, 207, .22);
-      box-shadow: 0 18px 48px rgba(107, 69, 207, .10);
-      background: linear-gradient(180deg, #fff, #faf8ff);
-    }
-
-    .card h3 { margin-bottom: 10px; }
-    .card p { color: var(--muted); margin-bottom: 0; }
-
-    .mini-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 16px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .76rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .mini-label.purple {
-      color: var(--purple);
-      background: var(--purple-soft);
-      border-color: rgba(93, 53, 177, .16);
-    }
-
-    .mini-label.green {
-      color: var(--green);
-      background: var(--green-soft);
-      border-color: rgba(21, 133, 101, .16);
-    }
-
-    .version-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .version-card .number {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--navy);
-      font-size: clamp(2rem, 4.6vw, 3.55rem);
-      line-height: .95;
-      letter-spacing: -.07em;
-      font-weight: 800;
-    }
-
     .list {
       display: grid;
       gap: 12px;
@@ -635,99 +728,23 @@
       box-shadow: 0 0 0 5px rgba(42, 91, 215, .08);
     }
 
-    .version-actions { margin-top: auto; padding-top: 24px; }
-
-    .process {
-      counter-reset: step;
-      gap: 16px;
+    .version-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
 
-    .step {
-      position: relative;
-      padding: 22px 22px 20px;
-      box-shadow: none;
-      border-color: #d7dfec;
-    }
-
-    .step-number {
-      width: 32px;
-      height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      border-radius: 9px;
-      background: var(--navy);
-      color: #fff;
-      font-size: .78rem;
+    .version-card .number {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4.6vw, 3.55rem);
+      line-height: .95;
+      letter-spacing: -.07em;
       font-weight: 800;
     }
 
-    .step h3 {
-      margin-bottom: 8px;
-      font-size: 1rem;
-      line-height: 1.22;
-    }
-
-    .step p {
-      max-width: 34ch;
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.48;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .quote-box {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at top right, rgba(107,69,207,.20), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(27,143,107,.12), transparent 28%),
-        linear-gradient(135deg, #10203b 0%, #13284b 100%);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .quote-box h3 {
-      color: #fff;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      letter-spacing: -.035em;
-      margin-bottom: 14px;
-    }
-
-    .quote-box p {
-      color: rgba(255,255,255,.72);
-      margin: 0;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 20px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      padding: 0 11px;
-      border-radius: 999px;
-      color: var(--ink-2);
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      font-size: .82rem;
-      font-weight: 750;
-    }
-    .tag:nth-child(3n+1) { background: var(--blue-soft); border-color: rgba(42,91,215,.12); color: var(--blue-dark); }
-    .tag:nth-child(3n+2) { background: var(--purple-soft); border-color: rgba(107,69,207,.12); color: var(--purple-dark); }
-    .tag:nth-child(3n) { background: var(--green-soft); border-color: rgba(27,143,107,.12); color: var(--green-dark); }
+    .version-actions { margin-top: auto; padding-top: 24px; }
 
     .dark-section {
       background:
@@ -753,6 +770,30 @@
     }
 
     .dark-card p { margin-bottom: 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 11px;
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      font-size: .82rem;
+      font-weight: 750;
+    }
+
+    .tag:nth-child(3n+1) { background: var(--blue-soft); border-color: rgba(42,91,215,.12); color: var(--blue-dark); }
+    .tag:nth-child(3n+2) { background: var(--purple-soft); border-color: rgba(107,69,207,.12); color: var(--purple-dark); }
+    .tag:nth-child(3n) { background: var(--green-soft); border-color: rgba(27,143,107,.12); color: var(--green-dark); }
 
     .profile {
       display: grid;
@@ -790,7 +831,7 @@
     }
 
     .footer-cta h2 { margin-bottom: 10px; }
-    .footer-cta p { margin-bottom: 0; color: var(--muted); max-width: 720px; }
+    .footer-cta p { margin-bottom: 0; color: var(--muted); max-width: 740px; }
 
     .footer-bottom {
       display: flex;
@@ -829,23 +870,6 @@
 
     .whatsapp-float svg { width: 28px; height: 28px; }
 
-
-
-    .process .step::after {
-      content: "";
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      top: 0;
-      height: 3px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--blue), var(--purple));
-      opacity: .9;
-    }
-
-    .process .step:nth-child(2)::after { background: linear-gradient(90deg, var(--purple), var(--green)); }
-    .process .step:nth-child(3)::after { background: linear-gradient(90deg, var(--green), var(--blue)); }
-
     @media (max-width: 1100px) {
       .nav { flex-wrap: wrap; padding: 14px 0; }
       .brand { min-width: auto; }
@@ -853,7 +877,8 @@
       .hero-grid,
       .split,
       .profile { grid-template-columns: 1fr; }
-      .product-preview { max-width: 620px; }
+      .ecosystem-panel,
+      .platform-preview { max-width: 640px; }
       .proof-grid { grid-template-columns: repeat(2, 1fr); }
       .proof-item:nth-child(2) { border-right: 0; }
       .proof-item:nth-child(1), .proof-item:nth-child(2) { border-bottom: 1px solid var(--line); }
@@ -869,6 +894,7 @@
     }
 
     @media (max-width: 560px) {
+      .text-justify { text-align: left; }
       .container { width: min(calc(100% - 28px), var(--container)); }
       .nav { gap: 12px; }
       .nav > .btn { width: 100%; }
@@ -876,9 +902,7 @@
       .version-actions .btn,
       .footer-cta .btn { width: 100%; }
       h1 { font-size: clamp(2rem, 12vw, 3.15rem); }
-      .card, .dark-card, .quote-box { padding: 20px; }
-      .step { padding: 20px; }
-      .step p { max-width: none; }
+      .card, .dark-card { padding: 20px; }
       .proof-grid { grid-template-columns: 1fr; }
       .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
       .proof-item:last-child { border-bottom: 0; }
@@ -895,20 +919,20 @@
         <img src="logo-geotatica.png" alt="Logo GeoTática" />
         <div>
           <div class="brand-title">GeoTática</div>
-          <small>dados geográficos com curadoria</small>
+          <small>inteligência territorial aplicada</small>
         </div>
       </a>
 
       <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#ecossistema">Ecossistema</a>
         <a href="#plataforma">Plataforma</a>
-        <a href="#versoes">Versões</a>
-        <a href="#funciona">Como funciona</a>
         <a href="#conteudos">Conteúdos</a>
         <a href="#aplicacoes">Aplicações</a>
         <a href="#danielle">Sobre</a>
+        <a href="#contato">Contato</a>
       </nav>
 
-      <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Testar beta</a>
+      <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar beta</a>
     </div>
   </header>
 
@@ -916,37 +940,140 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Beta disponível por 7 dias</div>
-          <h1>Fontes geográficas e estatísticas organizadas para quem trabalha com território</h1>
-          <p class="lead">
-            A GeoTática organiza fontes públicas, técnicas e institucionais em uma base de consulta pensada para apoiar mapas, diagnósticos, pesquisas e decisões que dependem de leitura territorial.
+          <div class="eyebrow">Site oficial da GeoTática</div>
+          <h1>Geotecnologias, dados e inteligência territorial em um só ecossistema</h1>
+          <p class="lead text-justify">
+            A GeoTática reúne curadoria de dados, conteúdos técnicos e aplicações em geotecnologias para apoiar quem trabalha com território, mapas, análise espacial, meio ambiente, pesquisa e tomada de decisão.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#plataforma">Conhecer a plataforma</a>
+            <a class="btn btn-secondary" href="#conteudos">Ver aulas e materiais</a>
+          </div>
+
+          <div class="hero-meta" aria-label="Resumo da GeoTática">
+            <span>curadoria de fontes</span>
+            <span>conteúdo técnico</span>
+            <span>análise territorial</span>
+            <span>GeoTática por Danielle Corrêa</span>
+          </div>
+        </div>
+
+        <aside class="ecosystem-panel" aria-label="Visão geral do ecossistema GeoTática">
+          <div class="panel-top">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="preview-label">GeoTática</div>
+          </div>
+
+          <div class="panel-body">
+            <p class="ecosystem-title">O que você encontra por aqui</p>
+
+            <div class="ecosystem-grid">
+              <div class="ecosystem-item">
+                <div class="eco-icon">01</div>
+                <div>
+                  <b>Plataforma de dados</b>
+                  <small>Hub com fontes geográficas e estatísticas organizadas por tema, aplicação e tipo de dado.</small>
+                </div>
+              </div>
+
+              <div class="ecosystem-item">
+                <div class="eco-icon">02</div>
+                <div>
+                  <b>Conteúdos e aulas</b>
+                  <small>Materiais de cartografia, geoprocessamento, análise espacial e leitura territorial aplicada.</small>
+                </div>
+              </div>
+
+              <div class="ecosystem-item">
+                <div class="eco-icon">03</div>
+                <div>
+                  <b>Inteligência territorial</b>
+                  <small>Discussões técnicas para conectar dados espaciais, contexto e decisão.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="mini-strip">
+              <span>dados</span>
+              <span>mapas</span>
+              <span>território</span>
+              <span>formação aplicada</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Resumo da GeoTática">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>2.185</strong><span>fontes na plataforma beta</span></div>
+        <div class="proof-item"><strong>100</strong><span>fontes abertas na versão gratuita</span></div>
+        <div class="proof-item"><strong>29</strong><span>temas para busca e organização</span></div>
+        <div class="proof-item"><strong>2</strong><span>aulas públicas já organizadas em onepages</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="ecossistema">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Ecossistema GeoTática</p>
+          <h2>Um espaço para conectar dados geográficos, conteúdos técnicos e inteligência territorial</h2>
+          <p class="lead text-justify">
+            A GeoTática reúne curadoria de fontes, conteúdos aplicados e referências em geotecnologias para apoiar profissionais, estudantes, pesquisadores e equipes que trabalham com mapas, dados espaciais e análise territorial. O site funciona como ponto de entrada para conhecer a plataforma de dados, acessar aulas e acompanhar a produção técnica da marca.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card clean">
+            <span class="mini-label blue">Curadoria de dados</span>
+            <h3>Fontes geográficas e estatísticas com contexto</h3>
+            <p>Organização de portais, bases, catálogos e serviços úteis para quem precisa iniciar estudos, mapas, diagnósticos e análises territoriais.</p>
+          </article>
+
+          <article class="card clean">
+            <span class="mini-label green">Formação aplicada</span>
+            <h3>Aulas e materiais para aprender fazendo</h3>
+            <p>Conteúdos sobre cartografia, escala, geotecnologias e conceitos espaciais, com linguagem técnica, mas acessível.</p>
+          </article>
+
+          <article class="card clean">
+            <span class="mini-label purple">Inteligência territorial</span>
+            <h3>Dados espaciais conectados ao problema real</h3>
+            <p>Discussões e materiais voltados a planejamento, meio ambiente, pesquisa, negócio, governança e tomada de decisão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="plataforma">
+      <div class="container split">
+        <div class="section-head narrow">
+          <p class="section-kicker">Produto em destaque</p>
+          <h2>Plataforma GeoTática de Dados</h2>
+          <p class="lead text-justify">
+            A primeira entrega pública do ecossistema é o Hub de Fontes de Dados Geográficos e Estatísticos. Ele foi criado para reduzir a busca dispersa por fontes e apoiar a etapa inicial de trabalhos com mapas, diagnósticos, pesquisa, consultoria e análise espacial.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Testar beta por 7 dias</a>
             <a class="btn btn-secondary" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar versão gratuita</a>
           </div>
-
-          <div class="hero-meta" aria-label="Resumo da plataforma">
-            <span>2.185 fontes na beta</span>
-            <span>100 fontes abertas</span>
-            <span>29 temas</span>
-            <span>acesso por login</span>
-          </div>
         </div>
 
-        <aside class="product-preview" aria-label="Prévia conceitual da plataforma GeoTática">
-          <div class="preview-top">
+        <aside class="platform-preview" aria-label="Prévia conceitual da plataforma">
+          <div class="panel-top">
             <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="preview-label">Hub GeoTática</div>
+            <div class="preview-label">Hub de Fontes</div>
           </div>
-          <div class="preview-body">
+
+          <div class="panel-body">
             <div class="searchbar">Pesquisar por fonte, tema, território ou tipo de dado</div>
 
             <div class="preview-stats">
               <div class="preview-stat"><strong>2.185</strong><span>fontes beta</span></div>
               <div class="preview-stat"><strong>29</strong><span>temas</span></div>
-              <div class="preview-stat"><strong>7 dias</strong><span>teste gratuito</span></div>
+              <div class="preview-stat"><strong>7 dias</strong><span>acesso beta</span></div>
             </div>
 
             <div class="source-list">
@@ -957,6 +1084,7 @@
                 </div>
                 <span class="badge blue">tema</span>
               </div>
+
               <div class="source-row">
                 <div>
                   <b>Socioeconômico e estatístico</b>
@@ -964,6 +1092,7 @@
                 </div>
                 <span class="badge purple">estatística</span>
               </div>
+
               <div class="source-row">
                 <div>
                   <b>Imagens de satélite e cobertura da terra</b>
@@ -972,179 +1101,88 @@
                 <span class="badge green">geodado</span>
               </div>
             </div>
-
-            <div class="preview-footer">
-              <span>filtros temáticos</span>
-              <span>links revisados</span>
-              <span>fontes brasileiras e globais</span>
-            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="strip" aria-label="Indicadores da GeoTática">
-      <div class="container proof-grid">
-        <div class="proof-item"><strong>2.185</strong><span>fontes geográficas e estatísticas na versão beta</span></div>
-        <div class="proof-item"><strong>100</strong><span>fontes abertas na versão gratuita</span></div>
-        <div class="proof-item"><strong>29</strong><span>temas para orientar busca, análise e aplicação</span></div>
-        <div class="proof-item"><strong>7 dias</strong><span>acesso gratuito à beta mediante cadastro</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="plataforma">
-      <div class="container split">
-        <div class="section-head">
-          <p class="section-kicker">Plataforma</p>
-          <h2>Uma base de consulta para reduzir a busca dispersa por dados territoriais</h2>
-          <p class="lead">
-            Antes do mapa, do indicador ou do relatório, quase sempre existe uma etapa demorada: encontrar uma fonte confiável. O Hub GeoTática encurta esse caminho ao organizar bases por tema, tipo de dado, aplicação e contexto territorial.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card clean">
-            <span class="mini-label purple">Curadoria</span>
-            <h3>Fontes selecionadas para uso técnico</h3>
-            <p>Curadoria voltada a geoprocessamento, análise espacial, ensino, pesquisa, estudos ambientais, planejamento e inteligência territorial.</p>
-          </article>
-          <article class="card clean">
-            <span class="mini-label green">Aplicação</span>
-            <h3>Menos busca solta, mais tempo de análise</h3>
-            <p>A plataforma apoia a etapa inicial dos projetos, quando a equipe precisa localizar dados, comparar fontes e começar a análise com mais segurança.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section compact" id="versoes">
+    <section class="section" id="versoes">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Versões</p>
-          <h2>Escolha a entrada mais adequada ao seu momento</h2>
-          <p class="lead">A versão aberta ajuda a conhecer a curadoria. A beta permite testar a base ampliada e avaliar seu uso em rotinas técnicas reais.</p>
+        <div class="section-head wide">
+          <p class="section-kicker">Como acessar</p>
+          <h2>Duas portas de entrada para conhecer a curadoria</h2>
+          <p class="lead text-justify">
+            A versão gratuita apresenta uma amostra aberta da curadoria. A versão beta permite testar a base ampliada por 7 dias, com acesso por login.
+          </p>
         </div>
 
         <div class="grid-2">
           <article class="card version-card">
             <span class="mini-label green">Acesso aberto</span>
             <span class="number">100</span>
-            <h3>Amostra gratuita para conhecer a curadoria</h3>
-            <p>Uma versão pública para navegar, consultar fontes e entender como a organização da base funciona na prática.</p>
+            <h3>Fontes gratuitas para começar</h3>
+            <p>Uma versão pública para conhecer a proposta, navegar por fontes selecionadas e entender como a GeoTática organiza referências para uso técnico.</p>
             <ul class="list">
-              <li>acesso sem cadastro;</li>
-              <li>fontes públicas e gratuitas;</li>
-              <li>boa entrada para estudantes, professores e profissionais que querem conhecer a proposta;</li>
-              <li>indicada para acesso rápido, divulgação e primeiros testes.</li>
+              <li>Sem cadastro</li>
+              <li>Boa para estudantes, profissionais e primeiras consultas</li>
+              <li>Amostra da lógica de organização da plataforma</li>
             </ul>
             <div class="version-actions">
-              <a class="btn btn-secondary" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar versão gratuita</a>
+              <a class="btn btn-secondary" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir versão gratuita</a>
             </div>
           </article>
 
-          <article class="card version-card featured">
+          <article class="card featured version-card">
             <span class="mini-label purple">Beta controlado</span>
             <span class="number">2.185</span>
-            <h3>Base ampliada para testar por 7 dias</h3>
-            <p>A versão beta libera a base ampliada da GeoTática, com acesso individual por login e 7 dias gratuitos para avaliação.</p>
+            <h3>Fontes na versão beta</h3>
+            <p>A base ampliada reúne fontes geográficas e estatísticas para testar a escala da curadoria, os filtros temáticos e a utilidade prática do repositório.</p>
             <ul class="list">
-              <li>2.185 fontes organizadas;</li>
-              <li>29 temas para busca e classificação;</li>
-              <li>fontes geográficas, estatísticas, ambientais, socioeconômicas e territoriais;</li>
-              <li>indicada para profissionais, consultorias, equipes técnicas, ensino e pesquisa aplicada.</li>
+              <li>7 dias de acesso gratuito</li>
+              <li>Cadastro individual por login</li>
+              <li>29 temas organizados para busca e análise</li>
             </ul>
             <div class="version-actions">
-              <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Testar beta por 7 dias</a>
+              <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Solicitar acesso beta</a>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section compact" id="funciona">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Como funciona</p>
-          <h2>Do primeiro filtro ao dado pronto para consulta</h2>
-          <p class="lead">A navegação foi pensada para diminuir o caminho entre a pergunta técnica e a fonte que pode ajudar na resposta.</p>
-        </div>
-
-        <div class="grid-3 process">
-          <article class="card step">
-            <span class="step-number">01</span>
-            <h3>Escolha por onde começar</h3>
-            <p>Use a versão gratuita para conhecer a proposta ou acesse a beta para testar a base ampliada por 7 dias.</p>
-          </article>
-          <article class="card step">
-            <span class="step-number">02</span>
-            <h3>Filtre com intenção técnica</h3>
-            <p>Procure por tema, aplicação, tipo de dado e recorte territorial, sem depender de uma busca aberta do zero.</p>
-          </article>
-          <article class="card step">
-            <span class="step-number">03</span>
-            <h3>Vá para a fonte original</h3>
-            <p>Acesse portais, catálogos e bases oficiais a partir de uma trilha de consulta mais organizada.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark-section" id="curadoria">
-      <div class="container split">
-        <div class="quote-box">
-          <h3>Encontrar a fonte certa é metade do trabalho. Organizar essa busca é o que transforma dado em análise.</h3>
-          <p>A GeoTática reúne fontes dispersas em uma trilha de consulta mais clara, útil para quem precisa produzir mapas, diagnósticos, indicadores e leitura territorial com mais consistência.</p>
-        </div>
-
-        <div>
-          <p class="section-kicker">Curadoria técnica</p>
-          <h2>Curadoria para transformar busca em repertório técnico</h2>
-          <p class="lead">
-            A base reúne fontes úteis para estudos ambientais, planejamento urbano e regional, sensoriamento remoto, cartografia, indicadores, diagnósticos socioeconômicos e análises territoriais.
-          </p>
-          <div class="tags">
-            <span class="tag">geoprocessamento</span>
-            <span class="tag">dados estatísticos</span>
-            <span class="tag">fontes públicas</span>
-            <span class="tag">bases globais</span>
-            <span class="tag">sensoriamento remoto</span>
-            <span class="tag">meio ambiente</span>
-            <span class="tag">socioeconômico</span>
-            <span class="tag">planejamento territorial</span>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="conteudos">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head wide">
           <p class="section-kicker">Conteúdos</p>
-          <h2>Conteúdos aplicados para estudar e praticar geotecnologias</h2>
-          <p class="lead">Além da base de fontes, a GeoTática reúne aulas e materiais para apoiar quem estuda, ensina ou aplica cartografia e geotecnologias no dia a dia.</p>
+          <h2>Aulas e materiais para aproximar técnica e prática</h2>
+          <p class="lead text-justify">
+            Além da plataforma, a GeoTática reúne materiais didáticos e conteúdos de apoio para quem quer estudar cartografia, geoprocessamento e análise territorial com exemplos mais aplicados.
+          </p>
         </div>
 
         <div class="grid-3">
-          <article class="card">
-            <span class="mini-label">Aula 1</span>
+          <article class="card clean">
+            <span class="mini-label blue">Aula 01</span>
             <h3>Mapas e Cartas Topográficas</h3>
-            <p>Fundamentos de cartografia, mapas, cartas, plantas, componentes cartográficos, mosaicos e leitura espacial.</p>
+            <p>Introdução a mapas, cartas, plantas, componentes cartográficos, leitura visual e referências essenciais para começar a estudar cartografia.</p>
             <div class="version-actions">
               <a class="btn btn-secondary" href="./aula%2001/">Abrir Aula 1</a>
             </div>
           </article>
-          <article class="card">
-            <span class="mini-label">Aula 2</span>
+
+          <article class="card clean">
+            <span class="mini-label green">Aula 02</span>
             <h3>Escala Cartográfica na Prática</h3>
-            <p>Escala numérica e gráfica, cálculo cartométrico, erro admissível e exemplos de aplicação em mapas e projetos.</p>
+            <p>Conceito de escala, escala numérica e gráfica, cálculo cartométrico, erro admissível e aplicações práticas em mapas e estudos territoriais.</p>
             <div class="version-actions">
               <a class="btn btn-secondary" href="./aula%2002/">Abrir Aula 2</a>
             </div>
           </article>
-          <article class="card">
-            <span class="mini-label">Canal</span>
-            <h3>YouTube GeoTática</h3>
-            <p>Vídeos sobre dados geográficos, cartografia, geoprocessamento e inteligência territorial, com linguagem aplicada.</p>
+
+          <article class="card clean">
+            <span class="mini-label purple">Canal</span>
+            <h3>YouTube e redes sociais</h3>
+            <p>Vídeos, posts e materiais complementares para acompanhar a evolução da GeoTática, das aulas e da plataforma de dados.</p>
             <div class="version-actions">
               <a class="btn btn-secondary" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">Ver canal</a>
             </div>
@@ -1153,31 +1191,47 @@
       </div>
     </section>
 
-    <section class="section compact" id="aplicacoes">
+    <section class="section dark-section" id="aplicacoes">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head wide">
           <p class="section-kicker">Aplicações</p>
-          <h2>Onde a base entra no trabalho técnico</h2>
-          <p class="lead">A curadoria ajuda quando é preciso localizar fontes antes de montar mapas, indicadores, diagnósticos, relatórios ou análises espaciais.</p>
+          <h2>Onde a GeoTática pode apoiar</h2>
+          <p class="lead text-justify">
+            O ponto comum é o território. A partir dele, a GeoTática organiza dados, conteúdos e referências para diferentes usos técnicos.
+          </p>
         </div>
 
         <div class="grid-4">
-          <article class="card clean">
-            <h3>Consultorias e equipes técnicas</h3>
-            <p>Estudos ambientais, licenciamento, infraestrutura, mineração, energia, agricultura e projetos territoriais.</p>
+          <article class="dark-card">
+            <h3>Geoprocessamento</h3>
+            <p>Fontes, conceitos e referências para análise espacial, mapas, bases GIS e leitura territorial.</p>
           </article>
-          <article class="card clean">
-            <h3>Analistas GIS e geógrafos</h3>
-            <p>Bases, portais, geosserviços, estatísticas e referências para compor análises espaciais.</p>
+
+          <article class="dark-card">
+            <h3>Meio ambiente</h3>
+            <p>Dados e conteúdos úteis para estudos ambientais, diagnóstico, planejamento e apoio técnico.</p>
           </article>
-          <article class="card clean">
+
+          <article class="dark-card">
             <h3>Pesquisa e ensino</h3>
-            <p>Fontes para aulas, TCCs, artigos, projetos de extensão, investigação acadêmica e formação aplicada.</p>
+            <p>Materiais para estudantes, docentes, pesquisadores e profissionais em formação ou transição.</p>
           </article>
-          <article class="card clean">
+
+          <article class="dark-card">
             <h3>Gestão e decisão</h3>
-            <p>Evidências territoriais organizadas para apoiar leitura de contexto, planejamento e priorização.</p>
+            <p>Organização de dados espaciais para apoiar planejamento, indicadores, comunicação e tomada de decisão.</p>
           </article>
+        </div>
+
+        <div class="tags">
+          <span class="tag">dados geográficos</span>
+          <span class="tag">fontes estatísticas</span>
+          <span class="tag">cartografia</span>
+          <span class="tag">sensoriamento remoto</span>
+          <span class="tag">meio ambiente</span>
+          <span class="tag">planejamento territorial</span>
+          <span class="tag">análise espacial</span>
+          <span class="tag">governança de dados</span>
         </div>
       </div>
     </section>
@@ -1189,20 +1243,38 @@
         </aside>
 
         <article class="card">
-          <p class="section-kicker">Quem está por trás</p>
+          <span class="mini-label purple">Quem está por trás</span>
           <h2>Danielle Corrêa</h2>
-          <p class="lead">
-            Geógrafa com atuação em geoprocessamento, inteligência territorial, modelagem ambiental, governança de dados, indicadores e BI. A GeoTática nasce dessa prática: organizar fontes, traduzir dados espaciais e aproximar a informação territorial de decisões concretas.
+          <p class="lead text-justify">
+            Profissional com 10+ anos de experiência em empresas de grande porte, com atuação no setor público e privado. Trabalha com geotecnologias aplicadas à gestão de ativos e território, apoio a licenciamento, estruturação de dados espaciais, indicadores, BI, gestão de projetos e tomada de decisão.
           </p>
+
           <ul class="list">
-            <li>experiência em contextos públicos e privados;</li>
-            <li>atuação com GIS, análise espacial, estruturação de bases e projetos;</li>
-            <li>produção de conteúdos aplicados sobre cartografia, dados espaciais e geotecnologias;</li>
-            <li>curadoria técnica voltada a estudos, mapas, diagnósticos e decisões territoriais.</li>
+            <li>Atuação em geoprocessamento, inteligência territorial, análise ambiental, gestão de ativos, governança documental e rotinas de acompanhamento técnico.</li>
+            <li>Experiência com projetos e portfólio, incluindo práticas de PMBOK 7, FEL, Agile, cronogramas, riscos, stakeholders, priorização e indicadores.</li>
+            <li>Entrega valor conectando dados espaciais ao negócio: bases GIS, padronização, qualidade da informação, dashboards em Power BI e relatórios executivos.</li>
+            <li>Vivência em gestão imobiliária, mineração, administração pública, meio ambiente, planejamento urbano/territorial, ESG e desenvolvimento territorial.</li>
+            <li>Criação da GeoTática como um espaço para reunir curadoria de fontes, conteúdos técnicos e aplicações em inteligência territorial.</li>
           </ul>
+
+          <div class="tags">
+            <span class="tag">ArcGIS Pro</span>
+            <span class="tag">QGIS</span>
+            <span class="tag">AutoCAD</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">KPIs</span>
+            <span class="tag">PMBOK 7</span>
+            <span class="tag">FEL</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Gestão territorial</span>
+            <span class="tag">Mineração</span>
+            <span class="tag">Meio ambiente</span>
+            <span class="tag">Setor público</span>
+          </div>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://www.linkedin.com/in/danielle-correa-gc/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
-            <a class="btn btn-secondary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Quero%20conversar%20sobre%20a%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
           </div>
         </article>
       </div>
@@ -1210,33 +1282,35 @@
   </main>
 
   <footer class="footer" id="contato">
-    <div class="container">
-      <div class="footer-cta">
-        <div>
-          <p class="section-kicker">Contato</p>
-          <h2>Precisa encontrar dados territoriais com mais clareza?</h2>
-          <p>Teste a beta por 7 dias, acesse a amostra gratuita ou entre em contato para conversar sobre fontes, geoprocessamento, análise espacial, conteúdos técnicos e parcerias.</p>
-        </div>
-        <div class="hero-actions" style="margin-top:0;">
-          <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Testar beta</a>
-          <a class="btn btn-secondary" href="mailto:geo.daniellecorrea@gmail.com">Enviar e-mail</a>
-        </div>
+    <div class="container footer-cta">
+      <div>
+        <p class="section-kicker">Contato</p>
+        <h2>Quer conhecer a plataforma, acompanhar os conteúdos ou conversar sobre dados territoriais?</h2>
+        <p class="text-justify">
+          Use os canais oficiais da GeoTática para acessar a plataforma, acompanhar as aulas, seguir as redes ou entrar em contato com Danielle Corrêa.
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        <div>© <span id="year"></span> GeoTática. Dados territoriais organizados.</div>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/company/34876970" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="mailto:geo.daniellecorrea@gmail.com">E-mail</a>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:geo.daniellecorrea@gmail.com">E-mail</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© <span id="year"></span> GeoTática. Inteligência territorial aplicada.</div>
+      <div class="footer-links">
+        <a href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Beta</a>
+        <a href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Versão gratuita</a>
+        <a href="https://www.linkedin.com/company/34876970" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Quero%20conversar%20sobre%20a%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
-    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.35c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.6.07-.27-.14-1.15-.42-2.18-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.34.98 2.64 1.11 2.82.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.57.65.2 1.24.17 1.7.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"></path><path d="M16.02 3.2c-7.08 0-12.82 5.74-12.82 12.82 0 2.27.6 4.49 1.74 6.43L3.1 28.8l6.54-1.71a12.77 12.77 0 0 0 6.38 1.73h.01c7.08 0 12.82-5.74 12.82-12.82S23.1 3.2 16.02 3.2Zm0 23.48h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.39a10.68 10.68 0 0 1-1.64-5.77c0-5.92 4.82-10.74 10.75-10.74 2.87 0 5.57 1.12 7.6 3.14a10.7 10.7 0 0 1 3.15 7.6c0 5.93-4.82 10.75-10.75 10.75Z"></path></svg>
+  <a class="whatsapp-float" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.35c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.6.07-.27-.14-1.15-.42-2.18-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.34.98 2.64 1.11 2.82.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.57.65.2 1.24.17 1.7.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"></path><path d="M16.02 3.2c-7.08 0-12.82 5.74-12.82 12.82 0 2.27.6 4.49 1.74 6.43L3.1 28.8l6.54-1.71a12.77 12.77 0 0 0 6.38 1.73h.01c7.08 0 12.82-5.74 12.82-12.82S23.1 3.2 16.02 3.2Zm0 23.48h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.39a10.68 10.68 0 0 1-1.64-5.77c0-5.92 4.82-10.74 10.75-10.74 2.87 0 5.57 1.12 7.6 3.14a10.7 10.7 0 0 1 3.15 7.6c0 5.93-4.82 10.75-10.75 10.75Z"></path></svg>
   </a>
 
   <script>
