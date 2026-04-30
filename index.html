@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GeoTática | Inteligência territorial, geotecnologias e dados geográficos</title>
-  <meta name="description" content="Site oficial da GeoTática. Fontes de Dados Geográficos com 100 fontes de dados geográficos gratuitas, inteligência territorial, geoprocessamento, análise espacial, consultoria e conteúdos aplicados." />
+  <title>GeoTática | Dados geográficos, inteligência territorial e geotecnologias</title>
+  <meta name="description" content="Site oficial da GeoTática. Hub de Fontes de Dados Geográficos, inteligência territorial, geoprocessamento, análise espacial e conteúdos aplicados." />
   <style>
     :root {
       --bg: #f7fbff;
@@ -101,12 +101,34 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 0.96rem;
+      gap: 10px;
+      font-size: 0.92rem;
+      max-width: 660px;
     }
 
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), #6842c2);
+      border: 1px solid rgba(124, 89, 211, 0.22);
+      box-shadow: 0 10px 22px rgba(124, 89, 211, 0.18);
+      font-weight: 700;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+      box-shadow: 0 14px 26px rgba(124, 89, 211, 0.24);
+      outline: none;
+    }
 
     .btn, .btn-outline, .social-chip {
       display: inline-flex;
@@ -315,7 +337,6 @@
     }
 
     .hero-mini p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-
 
 
     .hero-note {
@@ -665,19 +686,25 @@
       .nav-links {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 18px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
         justify-content: start;
         padding-top: 4px;
-        font-size: 1rem;
+        font-size: 0.94rem;
+        max-width: none;
       }
 
       .nav-links a {
-        padding: 2px 0;
+        width: 100%;
+        padding: 10px 12px;
       }
 
       .topbar .btn {
         width: 100%;
+      }
+
+      .nav-links {
+        align-items: stretch;
       }
 
       h1 { max-width: none; }
@@ -717,8 +744,8 @@
 
       .nav-links {
         grid-template-columns: 1fr 1fr;
-        gap: 8px 14px;
-        font-size: 0.95rem;
+        gap: 8px;
+        font-size: 0.92rem;
       }
 
       .hero-copy,
@@ -773,37 +800,6 @@
         margin: 0 auto;
       }
     }
-    /* =====================================
-   MENU COMO BOTÕES – GEO TÁTICA
-===================================== */
-
-.nav-links a {
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-/* Botão ghost (informativo) */
-.nav-links a.menu-ghost {
-  background: rgba(124, 89, 211, 0.06);
-  border: 1px solid rgba(124, 89, 211, 0.14);
-  color: var(--purple);
-}
-
-/* Botão principal do menu */
-.nav-links a.menu-btn {
-  background: linear-gradient(135deg, #7c59d3, #6a4bc3);
-  color: #fff;
-  border: none;
-  box-shadow: 0 8px 18px rgba(124, 89, 211, 0.25);
-}
-
-.nav-links a.menu-btn:hover,
-.nav-links a.menu-ghost:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(124, 89, 211, 0.32);
-}
   </style>
 </head>
 <body>
@@ -817,21 +813,14 @@
         </div>
       </a>
 
-      
-<nav class="nav-links" aria-label="Navegação principal">
-  <a href="#sobre" class="menu-ghost">Sobre</a>
-  <a href="#solucoes" class="menu-btn">Soluções</a>
-  <a href="#fontes" class="menu-btn">Hub de Fontes</a>
-  <a href="#danielle-correia" class="menu-ghost">Danielle</a>
-  <a href="#publico" class="menu-ghost">Público</a>
-  <a href="#redes" class="menu-ghost">Redes</a>
-  <a href="#contato" class="menu-ghost">Contato</a>
-
-  <!-- Aulas -->
-  <a href="./aula 01/">Aula 1</a>
-  <a href="./aula 02/">Aula 2</a>
-</nav>
-
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#fontes">Plataforma</a>
+        <a href="#aulas">Conteúdos</a>
+        <a href="#solucoes">Aplicações</a>
+        <a href="#danielle-correia">Danielle</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
 
       <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Quero%20conversar%20sobre%20a%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">Quero conversar</a>
@@ -842,34 +831,30 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="card hero-copy">
-          <div class="announcement"><strong>Fontes de Dados Geográficos</strong> Acesso gratuito a 100 fontes de dados geográficos organizadas na plataforma por categorias para apoiar rotinas de geoprocessamento, análise espacial e estudos territoriais.</div>
-          <div class="eyebrow">Geotecnologias • Inteligência territorial • Dados espaciais</div>
-          <h1>Dados geográficos organizados para decisões territoriais melhores</h1>
-
-<p class="lead">
-  A GeoTática conecta curadoria técnica, análise espacial e leitura territorial
-  para apoiar profissionais, equipes e projetos que dependem de informação
-  geográfica confiável.
-</p>
+          <div class="announcement"><strong>Hub GeoTática</strong> 100 fontes de dados geográficos reunidas para consulta, estudo e aplicação em rotinas de geoprocessamento.</div>
+          <div class="eyebrow">Curadoria • Cartografia • Inteligência territorial</div>
+          <h1>Dados geográficos organizados para decisões territoriais mais inteligentes</h1>
+          <p class="lead">
+            A GeoTática reúne fontes, conteúdos e referências para quem trabalha com território. A proposta é reduzir a busca dispersa por dados e apoiar análises, mapas, diagnósticos e projetos com mais clareza técnica.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar a Fontes de Dados Geográficos</a>
-            <a class="btn-outline" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar fontes de dados</a>
+            <a class="btn-outline" href="#aulas">Ver conteúdos e aulas</a>
           </div>
 
           <div class="hero-points">
             <div class="hero-point">
-              <strong>100 fontes</strong>
-              <span>demo gratuita já disponível para consulta online</span>
-              <a class="btn" href="aula 01/">Abrir Aula 1</a>
+              <strong>Curadoria</strong>
+              <span>fontes organizadas por tema, uso e contexto territorial</span>
             </div>
             <div class="hero-point">
-              <strong>8 categorias</strong>
-              <span>fontes organizadas por tema, uso e contexto de análise</span>
+              <strong>Formação</strong>
+              <span>aulas e materiais aplicados de cartografia e geotecnologias</span>
             </div>
             <div class="hero-point">
-              <strong>Global + BR</strong>
-              <span>bases nacionais e internacionais em um só ambiente</span>
+              <strong>Aplicação</strong>
+              <span>repertório técnico para estudos, mapas e tomada de decisão</span>
             </div>
           </div>
         </div>
@@ -880,12 +865,12 @@
           </div>
           <div class="hero-mini-grid">
             <div class="hero-mini">
-              <h3>Curadoria com contexto</h3>
-              <p>Fontes organizadas para quem precisa sair da busca dispersa e chegar mais rápido ao dado certo, com utilidade prática para estudos, mapas e análises.</p>
+              <h3>Para quem precisa encontrar dados</h3>
+              <p>Um ponto de partida para estudantes, analistas, consultorias e equipes que dependem de fontes geográficas confiáveis.</p>
             </div>
             <div class="hero-mini">
-              <h3>Contato direto</h3>
-              <p>Quando surgir uma dúvida sobre fontes, aplicações ou possibilidades de uso, o caminho até a conversa é simples, rápido e sem intermediários.</p>
+              <h3>Para quem precisa explicar território</h3>
+              <p>Conteúdos e referências para transformar dados espaciais em leitura territorial compreensível e aplicável.</p>
             </div>
           </div>
 
@@ -907,79 +892,87 @@
             </div>
             <div>
               <h3>Do dado ao território</h3>
-              <p>A GeoTática transforma fontes dispersas em informação útil para leitura espacial, planejamento e decisões mais seguras.</p>
+              <p>A GeoTática conecta fonte, método e comunicação para apoiar decisões com base espacial.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="sobre">
+    <section class="section" id="fontes">
       <div class="container">
         <div class="section-head">
           <div>
-            <section class="section" id="aula1">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Conteúdos — Aula 1</h2>
-        <p>
-          Acesse a one page da <b>Unidade I — Cartografia e Geoprocessamento</b>:
-          <b>Aula 1 — Mapas e Cartas Topográficas</b>.
-        </p>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <article class="panel">
-        <span class="feature-number">01</span>
-        <h3>Aula 1 — Mapas e Cartas Topográficas</h3>
-        <p>
-          Definição de cartografia (ciência e arte), mapas, cartas, plantas,
-          componentes do mapa, mosaicos e referências.
-        </p>
-
-        <div class="hero-actions" style="margin-top: 16px;">
-          <a class="btn" href="./aula%2001/">Abrir OnePage da Aula 1</a>
-          <a class="btn-outline" href="aula 01/#material">Ir direto ao Material</a>
-        </div>
-      </article>
-
-      <article class="panel">
-        <span class="feature-number">02</span>
-        <h3>Dica de organização</h3>
-        <p>
-          Para manter o projeto escalável, você pode criar uma pasta por aula:
-          <b>/aula 01</b>, <b>/aula-2</b>, <b>/aula-3</b>… e linkar todas aqui.
-        </p>
-
-        <div class="tags" style="margin-top: 14px;">
-          <span class="tag">Cartografia</span>
-          <span class="tag">Mapas</span>
-          <span class="tag">Cartas</span>
-          <span class="tag">Mosaico</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<!-- AULA 02 -->
-<article class="panel">
-  <span class="feature-number">02</span>
-  <h3>Aula 2 — Escala Cartográfica</h3>
-  <p>
-    Conceito de escala cartográfica, tipos de escala (numérica e gráfica),
-    classificação em grande, média e pequena, cálculo cartométrico,
-    erro admissível e aplicações práticas.
-  </p>
-  <div class="hero-actions" style="margin-top: 16px;">
-    <a class="btn" href="./aula 02/">Abrir OnePage da Aula 2</a>
-    <a class="btn-outline" href="./aula 02/#material">Ir direto ao Material</a>
-  </div>
-</article>
-            <h2>Sobre a GeoTática</h2>
+            <h2>Hub GeoTática de Fontes de Dados Geográficos</h2>
             <p>
-              A GeoTática é uma iniciativa voltada a inteligência territorial, geotecnologias, curadoria aplicada e difusão de conhecimento. O objetivo é tornar dados geográficos mais acessíveis, úteis e integrados ao processo de tomada de decisão em contextos ambientais, urbanos, regionais e corporativos.
+              Uma plataforma de consulta para localizar fontes geográficas com mais rapidez, contexto e organização. A demonstração gratuita reúne 100 fontes e funciona como porta de entrada para estudos, mapas, diagnósticos e projetos territoriais.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>O que você encontra</h3>
+            <div class="check-list">
+              <div class="check-item"><span class="dot"></span><div><b>100 fontes geográficas gratuitas</b> reunidas em uma interface de consulta.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Fontes nacionais e internacionais</b> para diferentes escalas de análise.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Busca e filtros</b> para reduzir o tempo gasto em portais dispersos.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Organização temática</b> voltada a geoprocessamento, análise espacial e leitura territorial.</div></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Por que isso importa</h3>
+            <div class="check-list">
+              <div class="check-item"><span class="dot"></span><div><b>Clareza</b> para identificar fontes úteis sem depender apenas de buscas genéricas.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Agilidade</b> em estudos ambientais, diagnósticos territoriais, pesquisas e projetos.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Contexto técnico</b> para entender melhor o tipo de fonte e sua aplicação possível.</div></div>
+              <div class="check-item"><span class="dot"></span><div><b>Autonomia</b> para estudantes, analistas GIS, consultorias e equipes técnicas.</div></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="hub-highlight">
+          <div class="hub-box">
+            <h3>Comece pela demonstração gratuita</h3>
+            <p style="color: var(--muted); margin: 0 0 14px 0;">
+              A demonstração permite conhecer a organização das fontes, testar a navegação e avaliar como o Hub pode apoiar sua rotina técnica.
+            </p>
+            <div class="hero-actions" style="margin-top: 0;">
+              <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar o Hub</a>
+              <a class="btn-outline" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Quero%20saber%20mais%20sobre%20o%20Hub%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">Tirar dúvidas</a>
+            </div>
+          </div>
+
+          <div class="hub-stats">
+            <div class="metric">
+              <strong>100</strong>
+              <span>fontes disponíveis na demonstração gratuita</span>
+            </div>
+            <div class="metric">
+              <strong>BR + global</strong>
+              <span>bases nacionais e internacionais no mesmo espaço</span>
+            </div>
+            <div class="metric">
+              <strong>Busca</strong>
+              <span>consulta por fonte, tema e contexto de uso</span>
+            </div>
+            <div class="metric">
+              <strong>Uso técnico</strong>
+              <span>foco em análise espacial, mapas e estudos territoriais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="aulas">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Conteúdos aplicados de cartografia e geotecnologias</h2>
+            <p>
+              Além da curadoria de fontes, a GeoTática reúne materiais didáticos para apoiar estudantes, profissionais e equipes técnicas na leitura e aplicação de conceitos cartográficos.
             </p>
           </div>
         </div>
@@ -987,24 +980,35 @@
         <div class="grid-3">
           <article class="panel">
             <span class="feature-number">01</span>
-            <h3>Hub de fontes com utilidade prática</h3>
+            <h3>Aula 1 — Mapas e Cartas Topográficas</h3>
             <p>
-              A GeoTática reúne uma demo gratuita com 100 fontes de dados geográficos, organizada por categorias e com foco em consulta rápida, escaneabilidade e aplicabilidade no cotidiano técnico.
+              Introdução a mapas, cartas topográficas, plantas, componentes do mapa, mosaicos, referências cartográficas e aplicações práticas.
             </p>
+            <div class="hero-actions" style="margin-top: 16px;">
+              <a class="btn" href="./aula%2001/">Abrir Aula 1</a>
+            </div>
           </article>
+
           <article class="panel">
             <span class="feature-number">02</span>
-            <h3>Leitura territorial com base técnica</h3>
+            <h3>Aula 2 — Escala Cartográfica na prática</h3>
             <p>
-              A marca se posiciona na interseção entre geoprocessamento, sensoriamento remoto, dados espaciais, planejamento e inteligência territorial.
+              Conceito de escala cartográfica, tipos de escala, cálculo cartométrico, erro admissível e decisões práticas na leitura de mapas.
             </p>
+            <div class="hero-actions" style="margin-top: 16px;">
+              <a class="btn" href="./aula%2002/">Abrir Aula 2</a>
+            </div>
           </article>
+
           <article class="panel">
             <span class="feature-number">03</span>
-            <h3>Conteúdo, autoridade e proximidade</h3>
+            <h3>Canal GeoTática</h3>
             <p>
-              O site oficial integra sua produção técnica, sua marca pessoal e canais de comunicação como LinkedIn, Instagram, YouTube e WhatsApp.
+              Vídeos e materiais complementares para traduzir conceitos técnicos de cartografia, dados espaciais e inteligência territorial.
             </p>
+            <div class="hero-actions" style="margin-top: 16px;">
+              <a class="btn-outline" href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">Ver YouTube</a>
+            </div>
           </article>
         </div>
       </div>
@@ -1014,9 +1018,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Onde a GeoTática gera valor</h2>
+            <h2>Aplicações práticas</h2>
             <p>
-              A one page foi estruturada para deixar claro o que a GeoTática oferece, para quem faz sentido e por que vale clicar na demo ou iniciar uma conversa.
+              A GeoTática apoia rotinas em que dados espaciais precisam sair da etapa de busca e chegar à análise, ao mapa, ao diagnóstico e à comunicação técnica.
             </p>
           </div>
         </div>
@@ -1028,15 +1032,15 @@
           </div>
           <div class="metric">
             <strong>Dados</strong>
-            <span>governança, organização e interoperabilidade da informação geográfica</span>
+            <span>organização, qualidade e interoperabilidade da informação geográfica</span>
           </div>
           <div class="metric">
-            <strong>Curadoria</strong>
-            <span>seleção de fontes úteis para estudos, projetos e investigações</span>
+            <strong>Mapas</strong>
+            <span>representação cartográfica, comunicação visual e apoio à interpretação</span>
           </div>
           <div class="metric">
             <strong>Decisão</strong>
-            <span>apoio a equipes que precisam reduzir tempo de busca e aumentar confiança</span>
+            <span>suporte a equipes que precisam transformar informação espacial em ação</span>
           </div>
         </div>
 
@@ -1053,69 +1057,39 @@
       </div>
     </section>
 
-    <section class="section" id="fontes">
+    <section class="section" id="sobre">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Fontes de Dados Geográficos de Dados Geográficos</h2>
+            <h2>Uma marca organizada em três frentes</h2>
             <p>
-              A demo gratuita da GeoTática organiza fontes geográficas em um ambiente único e mais leve, ajudando profissionais a encontrar dados confiáveis sem depender de buscas dispersas.
+              A GeoTática conecta curadoria, formação e aplicação técnica para apoiar quem precisa trabalhar melhor com dados geográficos e leitura territorial.
             </p>
           </div>
         </div>
 
-        <div class="grid-2">
+        <div class="grid-3">
           <article class="panel">
-            <h3>O que já está disponível</h3>
-            <div class="check-list">
-              <div class="check-item"><span class="dot"></span><div><b>100 fontes geográficas gratuitas</b> reunidas em uma única interface.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>8 categorias</b> cobrindo Brasil, bases globais, satélite, clima, elevação, biodiversidade, oceano e urbano.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>Busca e filtros</b> para reduzir o tempo gasto procurando links dispersos.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>Foco em geoprocessamento, análise espacial e apoio à decisão</b> com recorte técnico real.</div></div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <h3>Por que isso importa</h3>
-            <div class="check-list">
-              <div class="check-item"><span class="dot"></span><div><b>Mais clareza</b> para encontrar rapidamente dados úteis.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>Mais agilidade</b> em estudos, diagnósticos e projetos.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>Mais confiança</b> ao trabalhar com fontes públicas e consolidadas.</div></div>
-              <div class="check-item"><span class="dot"></span><div><b>Mais autonomia</b> para estudantes, analistas e equipes técnicas.</div></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="hub-highlight">
-          <div class="hub-box">
-            <h3>Entrada principal sugerida</h3>
-            <p style="color: var(--muted); margin: 0 0 14px 0;">
-              A demo gratuita funciona como porta de entrada para novos usuários. Ela mostra valor logo no primeiro contato e fortalece o posicionamento da GeoTática como fonte confiável e aplicável.
+            <span class="feature-number">01</span>
+            <h3>Curadoria de fontes</h3>
+            <p>
+              Organização de bases, portais e referências para reduzir a busca dispersa por dados geográficos e facilitar o início das análises.
             </p>
-            <div class="hero-actions" style="margin-top: 0;">
-              <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Ver a hub agora</a>
-              <a class="btn-outline" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Quero%20saber%20mais%20sobre%20a%20Hub%20de%20Fontes." target="_blank" rel="noopener noreferrer">Tirar dúvidas</a>
-            </div>
-          </div>
-
-          <div class="hub-stats">
-            <div class="metric">
-              <strong>10+ anos</strong>
-              <span>trajetória técnica apresentada na própria hub</span>
-            </div>
-            <div class="metric">
-              <strong>1 clique</strong>
-              <span>para sair da página e testar a demo</span>
-            </div>
-            <div class="metric">
-              <strong>BR + global</strong>
-              <span>fontes nacionais e internacionais no mesmo espaço</span>
-            </div>
-            <div class="metric">
-              <strong>Uso real</strong>
-              <span>foco em profissionais, equipes e projetos</span>
-            </div>
-          </div>
+          </article>
+          <article class="panel">
+            <span class="feature-number">02</span>
+            <h3>Formação aplicada</h3>
+            <p>
+              Conteúdos didáticos sobre cartografia, geoprocessamento e dados espaciais, com linguagem técnica acessível e foco em uso prático.
+            </p>
+          </article>
+          <article class="panel">
+            <span class="feature-number">03</span>
+            <h3>Inteligência territorial</h3>
+            <p>
+              Apoio à leitura crítica do território, integração de dados e comunicação de resultados para estudos, projetos e decisões.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -1132,13 +1106,13 @@
           <div class="eyebrow">Quem está por trás da GeoTática</div>
           <h2 style="margin-top: 16px;">Danielle Corrêa</h2>
           <p class="lead" style="max-width: none; margin-top: 16px;">
-            Geógrafa com atuação em geoprocessamento, geotecnologias, inteligência territorial, modelagem ambiental, governança de dados e BI, articulando leitura crítica do território, organização da informação e repertório técnico aplicado.
+            Geógrafa com atuação em geoprocessamento, geotecnologias, inteligência territorial, modelagem ambiental, governança de dados e BI. A GeoTática nasce dessa combinação entre leitura crítica do território, organização da informação e comunicação técnica.
           </p>
 
           <div class="check-list">
-            <div class="check-item"><span class="dot"></span><div><b>Experiência em contextos públicos e privados</b>, com atuação em empresas e equipes técnicas.</div></div>
+            <div class="check-item"><span class="dot"></span><div><b>10+ anos de experiência</b> em contextos públicos e privados, com atuação em empresas e equipes técnicas.</div></div>
             <div class="check-item"><span class="dot"></span><div><b>Vivência com GIS, dados e projetos</b>, integrando análise espacial, estruturação de bases e suporte à decisão.</div></div>
-            <div class="check-item"><span class="dot"></span><div><b>Olhar híbrido</b> entre técnica, território, gestão, indicadores e comunicação profissional.</div></div>
+            <div class="check-item"><span class="dot"></span><div><b>Produção técnica e educacional</b> voltada à cartografia, dados espaciais e inteligência territorial.</div></div>
             <div class="check-item"><span class="dot"></span><div><b>Contato direto</b> com a pessoa que idealiza, estrutura e evolui a GeoTática.</div></div>
           </div>
 
@@ -1154,9 +1128,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Quem costuma consumir esse tipo de site</h2>
+            <h2>Para quem a GeoTática foi criada</h2>
             <p>
-              A GeoTática fala principalmente com pessoas e equipes que precisam encontrar dados geográficos, entender território e apoiar decisões com base técnica.
+              A proposta conversa com pessoas e equipes que precisam encontrar dados geográficos, interpretar o território e comunicar resultados com base técnica.
             </p>
           </div>
         </div>
@@ -1165,19 +1139,19 @@
           <article class="audience-card">
             <h3>Consultorias e equipes técnicas</h3>
             <p>
-              Profissionais que trabalham com estudos ambientais, licenciamento, engenharia, energia, mineração, agricultura, planejamento e infraestrutura.
+              Estudos ambientais, licenciamento, engenharia, energia, mineração, agricultura, planejamento e infraestrutura.
             </p>
           </article>
           <article class="audience-card">
             <h3>Analistas GIS, geógrafos e planejadores</h3>
             <p>
-              Usuários que valorizam acesso rápido a fontes confiáveis, categorização clara, busca direta e contato com quem entende do tema.
+              Profissionais que precisam de fontes confiáveis, categorização clara e repertório para análise espacial.
             </p>
           </article>
           <article class="audience-card">
             <h3>Pesquisa, ensino e formação aplicada</h3>
             <p>
-              Estudantes, pesquisadores, docentes e profissionais em transição que buscam repertório atualizado, bases públicas e orientação prática.
+              Estudantes, pesquisadores, docentes e profissionais em transição que buscam materiais acessíveis e aplicáveis.
             </p>
           </article>
         </div>
@@ -1190,7 +1164,7 @@
           <div>
             <h2>Redes e contatos oficiais</h2>
             <p>
-              A GeoTática também compartilha conteúdos, atualizações, dicas e materiais em redes sociais. Acompanhe os canais oficiais e entre em contato pelos meios abaixo.
+              Acompanhe os canais oficiais da GeoTática para conteúdos, atualizações, aulas e materiais sobre dados geográficos, mapas e inteligência territorial.
             </p>
           </div>
         </div>
@@ -1209,7 +1183,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.39 1.72H7.86a4.14 4.14 0 0 0-4.14 4.14v8.28a4.14 4.14 0 0 0 4.14 4.14h8.28a4.14 4.14 0 0 0 4.14-4.14V7.86a4.14 4.14 0 0 0-4.14-4.14ZM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3Zm0 1.62A3.08 3.08 0 1 0 15.08 12 3.09 3.09 0 0 0 12 8.92Zm4.95-2.88a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/></svg>
             </div>
             <h3>Instagram</h3>
-            <p>Conteúdos visuais, dicas, curiosidades, materiais práticos e divulgação da hub de fontes.</p>
+            <p>Conteúdos visuais, dicas, materiais práticos e divulgação do Hub GeoTática.</p>
           </article>
 
           <article class="social-card">
@@ -1258,14 +1232,14 @@
   <footer class="container" id="contato">
     <div class="footer-cta">
       <div class="eyebrow" style="margin-top: 0;">Contato e próximos passos</div>
-      <h2 style="margin-top: 16px;">Vamos conversar sobre território, dados e decisões</h2>
+      <h2 style="margin-top: 16px;">Precisa encontrar, organizar ou interpretar dados territoriais?</h2>
       <p>
-        Se você atua com geoprocessamento, estudos ambientais, análise espacial, dados territoriais ou quer explorar a Fontes de Dados Geográficos, entre em contato. A GeoTática está aberta a conexões, parcerias, projetos e trocas técnicas.
+        Entre em contato para conversar sobre fontes de dados, geoprocessamento, análise espacial, conteúdos técnicos ou possibilidades de parceria com a GeoTática.
       </p>
 
       <div class="hero-actions" style="margin-top: 26px;">
-        <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Quero conversar no WhatsApp</a>
-        <a class="btn-outline" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar a Fontes de Dados Geográficos</a>
+        <a class="btn" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
+        <a class="btn-outline" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar o Hub de Fontes</a>
       </div>
 
       <div class="contact-list">
@@ -1296,8 +1270,9 @@
       <div>© <span id="year"></span> GeoTática. Site oficial.</div>
       <div class="footer-links">
         <a href="#inicio">Início</a>
-        <a href="#fontes">Fontes</a>
-        <a href="#redes">Redes</a>
+        <a href="#fontes">Plataforma</a>
+        <a href="#aulas">Conteúdos</a>
+        <a href="#solucoes">Aplicações</a>
         <a href="#contato">Contato</a>
       </div>
     </div>
