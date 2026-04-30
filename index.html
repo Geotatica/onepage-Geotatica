@@ -773,6 +773,37 @@
         margin: 0 auto;
       }
     }
+    /* =====================================
+   MENU COMO BOTÕES – GEO TÁTICA
+===================================== */
+
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Botão ghost (informativo) */
+.nav-links a.menu-ghost {
+  background: rgba(124, 89, 211, 0.06);
+  border: 1px solid rgba(124, 89, 211, 0.14);
+  color: var(--purple);
+}
+
+/* Botão principal do menu */
+.nav-links a.menu-btn {
+  background: linear-gradient(135deg, #7c59d3, #6a4bc3);
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 18px rgba(124, 89, 211, 0.25);
+}
+
+.nav-links a.menu-btn:hover,
+.nav-links a.menu-ghost:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(124, 89, 211, 0.32);
+}
   </style>
 </head>
 <body>
@@ -786,14 +817,15 @@
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Navegação principal">
-  <a href="#sobre">Sobre</a>
-  <a href="#solucoes">Soluções</a>
-  <a href="#fontes">Fontes de Dados Geográficos</a>
-  <a href="#danielle-correia">Danielle Corrêa</a>
-  <a href="#publico">Público</a>
-  <a href="#redes">Redes</a>
-  <a href="#contato">Contato</a>
+      
+<nav class="nav-links" aria-label="Navegação principal">
+  <a href="#sobre" class="menu-ghost">Sobre</a>
+  <a href="#solucoes" class="menu-btn">Soluções</a>
+  <a href="#fontes" class="menu-btn">Hub de Fontes</a>
+  <a href="#danielle-correia" class="menu-ghost">Danielle</a>
+  <a href="#publico" class="menu-ghost">Público</a>
+  <a href="#redes" class="menu-ghost">Redes</a>
+  <a href="#contato" class="menu-ghost">Contato</a>
 
   <!-- Aulas -->
   <a href="./aula 01/">Aula 1</a>
@@ -812,10 +844,13 @@
         <div class="card hero-copy">
           <div class="announcement"><strong>Fontes de Dados Geográficos</strong> Acesso gratuito a 100 fontes de dados geográficos organizadas na plataforma por categorias para apoiar rotinas de geoprocessamento, análise espacial e estudos territoriais.</div>
           <div class="eyebrow">Geotecnologias • Inteligência territorial • Dados espaciais</div>
-          <h1>Site oficial da GeoTática</h1>
-          <p class="lead">
-            A GeoTática conecta curadoria de fontes, análise espacial, estruturação de dados e visão territorial para apoiar profissionais, consultorias, equipes técnicas, pesquisadores e projetos que dependem de informação geográfica confiável.
-          </p>
+          <h1>Dados geográficos organizados para decisões territoriais melhores</h1>
+
+<p class="lead">
+  A GeoTática conecta curadoria técnica, análise espacial e leitura territorial
+  para apoiar profissionais, equipes e projetos que dependem de informação
+  geográfica confiável.
+</p>
 
           <div class="hero-actions">
             <a class="btn" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar a Fontes de Dados Geográficos</a>
