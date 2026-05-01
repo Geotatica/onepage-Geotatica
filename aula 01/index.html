@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>GeoTática | Aula 01 — Mapas e Cartas Topográficas</title>
-  <meta name="description" content="Aula 01 da GeoTática sobre mapas, cartas topográficas, plantas, elementos cartográficos, leitura visual e fundamentos da representação espacial." />
+  <title>GeoTática | Aula 01 — Mapas, Cartas e Plantas</title>
+  <meta name="description" content="Aula 01 da GeoTática sobre mapas, cartas topográficas e plantas: finalidade, escala, nível de detalhe, fonte, data, sistema de referência e leitura técnica de produtos cartográficos." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -696,6 +696,94 @@
       }
     }
 
+
+    .lesson-figure {
+      margin: 26px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lesson-figure img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #f8fbff;
+    }
+
+    .lesson-figure figcaption {
+      padding: 14px 16px 16px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.5;
+      border-top: 1px solid var(--line);
+      background: var(--paper-soft);
+    }
+
+    .lesson-figure figcaption strong {
+      color: var(--navy);
+    }
+
+    .table-wrap {
+      margin-top: 22px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 780px;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .lesson-table th {
+      color: var(--navy);
+      background: var(--paper-soft);
+      font-weight: 850;
+    }
+
+    .lesson-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .technical-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(107,69,207,.08), rgba(42,91,215,.07));
+      border: 1px solid rgba(107,69,207,.14);
+      color: var(--ink-2);
+      font-weight: 650;
+    }
+
+    .reference-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .reference-list a {
+      color: var(--blue);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
     .footer {
       margin-top: 46px;
       background: #fff;
@@ -781,7 +869,7 @@
       <img src="./logo-geotatica.png" onerror="this.onerror=null;this.src='../logo-geotatica.png';" alt="Logo GeoTática" />
       <div>
         <div class="brand-title">GeoTática</div>
-        <small>Aula 01 — Mapas e Cartas Topográficas</small>
+        <small>Aula 01 — Mapas, cartas e plantas</small>
       </div>
     </a>
 
@@ -806,9 +894,9 @@
     <div class="container lesson-hero">
       <div class="hero-main">
         <div class="kicker">Trilha de Cartografia e Geoprocessamento</div>
-        <h1>Mapas e cartas topográficas</h1>
+        <h1>Mapas, cartas e plantas</h1>
         <p class="subtitle">
-          Uma aula para entender os principais produtos cartográficos, seus elementos essenciais e como eles ajudam na leitura, interpretação e comunicação do espaço geográfico.
+          Uma aula sobre leitura técnica de produtos cartográficos: finalidade, escala, nível de detalhe, fonte, data, sistema de referência e adequação ao uso.
         </p>
 
         <div class="hero-actions">
@@ -830,9 +918,9 @@
       <aside class="side-card">
         <div>
           <span class="label blue">Resumo</span>
-          <h3>Antes da escala, vem a leitura do mapa</h3>
+          <h3>Antes da escala, vem a leitura do produto cartográfico</h3>
           <p class="lead">
-            Mapas, cartas e plantas são formas de representar o território. Cada produto tem finalidade, escala, nível de detalhe e elementos próprios.
+            Mapas, cartas e plantas representam o espaço de formas diferentes. Cada produto possui finalidade, escala, nível de detalhe, método e limites próprios.
           </p>
         </div>
 
@@ -860,224 +948,357 @@
         <aside class="toc" aria-label="Sumário da aula">
           <div class="toc-title">Nesta aula</div>
           <a href="#video">Vídeo</a>
-          <a href="#conceito">Conceito</a>
-          <a href="#tipos">Mapas, cartas e plantas</a>
-          <a href="#elementos">Elementos do mapa</a>
-          <a href="#cartas">Cartas topográficas</a>
-          <a href="#leitura">Leitura cartográfica</a>
-          <a href="#aplicacoes">Aplicações</a>
+          <a href="#representacao">Representação</a>
+          <a href="#diferenciar">Por que diferenciar</a>
+          <a href="#mapa">Mapa</a>
+          <a href="#carta">Carta topográfica</a>
+          <a href="#planta">Planta</a>
+          <a href="#comparacao">Comparação</a>
+          <a href="#leitura">Leitura técnica</a>
+          <a href="#escolha">Como escolher</a>
+          <a href="#erros">Erros comuns</a>
           <a href="#material">Material</a>
           <a href="#referencias">Referências</a>
         </aside>
 
         <div class="content-stack">
-          <article class="lesson-block soft">
+          <article class="lesson-block soft" id="video">
             <span class="label purple">Vídeo da aula</span>
             <h2>Comece pelo vídeo</h2>
             <p class="lead text-justify">
-              O vídeo apresenta a diferença entre os principais produtos cartográficos e mostra por que mapas, cartas e plantas são instrumentos fundamentais para representar, analisar e comunicar informações sobre o território.
+              A Aula 01 organiza a base conceitual da trilha: antes de calcular escala ou medir distâncias, é preciso reconhecer que tipo de produto cartográfico está sendo usado e quais limites técnicos orientam sua interpretação.
             </p>
 
             <div class="video-shell">
               <div class="video-wrap">
                 <iframe
                   src="https://www.youtube-nocookie.com/embed/FC552qTKbuE?rel=0"
-                  title="Aula 01 — Mapas e Cartas Topográficas"
+                  title="Aula 01 — Mapas, cartas e plantas"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                   loading="lazy"
                   allowfullscreen></iframe>
               </div>
               <div class="video-note">
-                <p>Aula 01 — Mapas e Cartas Topográficas</p>
+                <p>Aula 01 — Mapas, cartas e plantas</p>
                 <a class="btn btn-secondary" href="https://youtu.be/FC552qTKbuE" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a>
               </div>
             </div>
           </article>
 
-          <article class="lesson-block" id="conceito">
-            <span class="label blue">Conceito</span>
-            <h2>Por que estudar mapas e cartas?</h2>
+          <article class="lesson-block" id="representacao">
+            <span class="label blue">Representação cartográfica</span>
+            <h2>Representar o espaço é selecionar, simplificar e organizar</h2>
             <p class="text-justify">
-              A cartografia organiza informações espaciais para representar fenômenos, orientar deslocamentos, apoiar análises e comunicar características do território. Um mapa não é apenas uma imagem: ele é uma construção técnica, simbólica e seletiva da realidade.
+              Antes de falar em escala cartográfica, é importante compreender o tipo de representação espacial que está sendo utilizado.
             </p>
             <p class="text-justify">
-              Para interpretar corretamente um produto cartográfico, é preciso observar finalidade, escala, legenda, orientação, sistema de coordenadas, fonte dos dados e nível de generalização.
+              No uso cotidiano, diferentes produtos cartográficos costumam ser chamados simplesmente de “mapa”. Essa generalização funciona em conversas informais, mas pode gerar problemas quando o material é usado em estudos técnicos, projetos, análises territoriais ou tomada de decisão.
+            </p>
+            <p class="text-justify">
+              Na cartografia, mapas, cartas e plantas são formas de representação do espaço, mas não têm necessariamente a mesma finalidade, o mesmo nível de detalhe, o mesmo rigor geométrico ou o mesmo tipo de uso esperado.
+            </p>
+            <p class="text-justify">
+              O IBGE apresenta a cartografia como uma representação geométrica plana, simplificada e convencional da superfície terrestre, ou de parte dela, apresentada por meio de mapas, cartas ou plantas. Essa formulação coloca os três produtos dentro do campo cartográfico, mas não significa que eles sejam equivalentes em finalidade e uso técnico.
+            </p>
+            <p class="text-justify">
+              Um produto cartográfico não é uma cópia neutra da realidade. Ele resulta de escolhas técnicas: recorte espacial, escala, projeção, simbologia, fonte dos dados, nível de generalização, finalidade e forma de comunicação.
+            </p>
+            <p class="text-justify">
+              Ao transformar uma realidade territorial complexa em uma representação plana, todo produto cartográfico simplifica alguma coisa. Isso não é um defeito. É parte do processo cartográfico. O problema começa quando a representação é interpretada como se mostrasse tudo, com a mesma precisão e atualidade da realidade.
             </p>
 
             <div class="callout">
-              Todo mapa faz escolhas: o que mostrar, o que simplificar, o que destacar e como comunicar uma leitura do espaço.
+              Antes de analisar um mapa, uma carta ou uma planta, observe finalidade, área representada, escala, fonte, data de produção ou atualização, sistema de referência, método de produção e nível de detalhe compatível com o uso pretendido.
             </div>
           </article>
 
-          <article class="lesson-block" id="tipos">
-            <span class="label green">Produtos cartográficos</span>
-            <h2>Mapa, carta e planta não são a mesma coisa</h2>
+          <article class="lesson-block" id="diferenciar">
+            <span class="label green">Por que diferenciar</span>
+            <h2>Mapa, carta e planta não devem ser tratados como equivalentes</h2>
             <p class="text-justify">
-              Embora os termos sejam usados de forma parecida em conversas cotidianas, mapas, cartas e plantas têm finalidades e níveis de detalhamento diferentes. Entender essa diferença ajuda a escolher o produto adequado para cada tipo de análise.
+              A diferença entre mapa, carta e planta não deve ser tratada apenas como uma questão de nome. Essa distinção importa porque cada produto cartográfico costuma responder a uma necessidade diferente.
+            </p>
+            <p class="text-justify">
+              Quando todos são tratados como equivalentes, aumenta o risco de usar uma representação fora de sua finalidade. Isso pode levar a interpretações frágeis, como tentar extrair detalhe local de um mapa produzido para visão regional, usar um mapa temático como se fosse uma planta cadastral ou comparar produtos de escalas diferentes sem critério.
+            </p>
+            <p class="text-justify">
+              A distinção entre mapa, carta topográfica e planta não deve ser feita apenas pela escala. Embora a escala interfira diretamente no nível de detalhe, ela não é suficiente, sozinha, para definir o produto cartográfico.
             </p>
 
             <div class="grid-3">
               <div class="mini-card">
                 <span class="label blue">Mapa</span>
-                <h3>Visão geral</h3>
-                <p>Representa áreas maiores e costuma trazer uma leitura mais sintética do espaço, com maior generalização.</p>
-                <div class="tags">
-                  <span class="tag">regional</span>
-                  <span class="tag">nacional</span>
-                  <span class="tag">temático</span>
-                </div>
+                <h3>Síntese e análise temática</h3>
+                <p>Mais associado à comunicação, localização, síntese territorial e análise da distribuição espacial de temas ou fenômenos.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Carta</span>
-                <h3>Representação técnica</h3>
-                <p>Apresenta maior precisão e detalhamento, sendo muito utilizada em levantamentos, planejamento e análise territorial.</p>
-                <div class="tags">
-                  <span class="tag">topográfica</span>
-                  <span class="tag">sistemática</span>
-                  <span class="tag">coordenadas</span>
-                </div>
+                <span class="label green">Carta topográfica</span>
+                <h3>Leitura técnica do terreno</h3>
+                <p>Voltada à representação sistemática de elementos naturais e artificiais da superfície, como relevo, drenagem, vias e localidades.</p>
               </div>
 
               <div class="mini-card">
                 <span class="label purple">Planta</span>
-                <h3>Detalhe local</h3>
-                <p>Representa áreas pequenas com alto nível de detalhe, comum em projetos, edificações, quadras, lotes e infraestrutura.</p>
-                <div class="tags">
-                  <span class="tag">local</span>
-                  <span class="tag">projeto</span>
-                  <span class="tag">detalhe</span>
-                </div>
+                <h3>Detalhamento local</h3>
+                <p>Orientada ao detalhe de áreas pequenas, com foco em projetos, cadastros, lotes, quadras, edificações e infraestrutura.</p>
               </div>
             </div>
 
-            <div class="image-example-gallery">
-              <div class="image-example-card">
-                <div class="image-example-visual">
-                  <img src="mapa.png" alt="Exemplo de mapa temático" loading="lazy">
-                </div>
-                <div class="image-example-body">
-                  <h3>Exemplo de mapa</h3>
-                  <p>Representação mais sintética e abrangente, útil para visualizar temas, regiões e padrões espaciais em escala mais ampla.</p>
-                </div>
-              </div>
-
-              <div class="image-example-card">
-                <div class="image-example-visual">
-                  <img src="carta.png" alt="Exemplo de carta topográfica" loading="lazy">
-                </div>
-                <div class="image-example-body">
-                  <h3>Exemplo de carta topográfica</h3>
-                  <p>Produto técnico com maior detalhamento, curvas de nível, hidrografia, vias, vegetação, coordenadas, legenda e escala.</p>
-                </div>
-              </div>
-
-              <div class="image-example-card">
-                <div class="image-example-visual">
-                  <img src="planta.png" alt="Exemplo de planta cartográfica" loading="lazy">
-                </div>
-                <div class="image-example-body">
-                  <h3>Exemplo de planta</h3>
-                  <p>Representação local, com grande escala e alto nível de detalhe, comum em quadras, lotes, edificações e projetos.</p>
-                </div>
-              </div>
+            <div class="technical-note">
+              Nem toda representação em escala maior é uma planta, e nem toda representação em escala intermediária é, por si só, uma carta topográfica. A finalidade do produto continua sendo um critério central de distinção.
             </div>
           </article>
 
-          <article class="lesson-block" id="elementos">
-            <span class="label purple">Elementos</span>
-            <h2>O que observar em um mapa?</h2>
+          <article class="lesson-block" id="mapa">
+            <span class="label blue">Mapa</span>
+            <h2>Mapa: síntese, comunicação e análise temática</h2>
             <p class="text-justify">
-              A leitura cartográfica depende de elementos que orientam a interpretação. Eles ajudam o usuário a entender o que está sendo representado, onde está localizado, qual escala foi usada e quais símbolos traduzem as informações do mapa.
+              O mapa é uma representação cartográfica que pode mostrar uma área, um tema ou a distribuição espacial de determinado fenômeno.
+            </p>
+            <p class="text-justify">
+              Ele pode representar diferentes recortes, como país, estado, município, bacia hidrográfica, unidade de conservação, área urbana, área rural ou área de estudo. Também pode representar temas como uso e cobertura da terra, vegetação, clima, relevo, população, infraestrutura, hidrografia, risco ambiental, zoneamento e indicadores socioeconômicos.
+            </p>
+            <p class="text-justify">
+              Em muitos casos, o mapa organiza informações para evidenciar padrões espaciais. Ele ajuda a perceber onde um fenômeno ocorre, como se distribui, quais áreas se destacam e como diferentes regiões se relacionam.
             </p>
 
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label blue">Elementos básicos</span>
-                <h3>Título, legenda, escala e orientação</h3>
-                <p>Esses elementos ajudam a identificar o tema, interpretar símbolos, estimar distâncias e localizar a direção norte.</p>
-              </div>
+            <h3>Escala em mapas</h3>
+            <p class="text-justify">
+              A escala do mapa varia conforme o objetivo da representação. Mapas de abrangência nacional, estadual ou regional costumam trabalhar com escalas menores, adequadas para visão geral, síntese territorial e comparação entre grandes áreas.
+            </p>
+            <p class="text-justify">
+              Como referência didática, mapas de síntese regional podem aparecer em escalas como <strong>1:1.000.000, 1:500.000 ou 1:250.000</strong>. Mapas municipais, urbanos ou de áreas de estudo podem usar escalas maiores, como <strong>1:100.000, 1:50.000, 1:25.000 ou 1:10.000</strong>, quando a fonte dos dados, o tema representado e o objetivo da análise permitem maior detalhamento.
+            </p>
+            <p class="text-justify">
+              Esses valores não devem ser lidos como regra fixa. Em cartografia, a escala precisa ser compatível com o fenômeno representado, com a resolução da fonte de dados e com o tipo de análise pretendida.
+            </p>
+            <p class="text-justify">
+              Um mapa de uso e cobertura da terra, por exemplo, pode indicar áreas urbanas, vegetação, agricultura, corpos d’água e solo exposto. Esse tipo de produto ajuda a compreender padrões de organização territorial, mas sua leitura depende da escala, da resolução dos dados utilizados, da legenda, da data e do método de classificação.
+            </p>
 
-              <div class="mini-card">
-                <span class="label green">Referência espacial</span>
-                <h3>Coordenadas, fonte e projeção</h3>
-                <p>A referência espacial informa como os dados foram posicionados, projetados e documentados.</p>
-              </div>
-            </div>
-
-            <div class="callout">
-              Para interpretar um mapa com mais segurança, observe primeiro o título, depois a legenda, a escala, a orientação e a referência espacial. Esses elementos ajudam a entender o que está sendo representado, em qual recorte e com que nível de detalhe.
-            </div>
-
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label blue">Leitura básica</span>
-                <h3>Elementos que orientam a interpretação</h3>
-                <p>Título, legenda, escala, orientação e coordenadas são os elementos mais imediatos para começar a leitura cartográfica.</p>
-              </div>
-
-              <div class="mini-card">
-                <span class="label green">Perguntas úteis</span>
-                <h3>O que vale observar primeiro?</h3>
-                <p>Qual é o tema do mapa? Qual área está sendo representada? Que símbolos e cores estão sendo usados? Qual é a escala e a fonte das informações?</p>
-              </div>
-            </div>
+            <figure class="lesson-figure">
+              <img src="mapa.png" alt="Exemplo de mapa temático" loading="lazy">
+              <figcaption><strong>Figura 1. Exemplo de mapa temático.</strong> Representação voltada à leitura de padrões espaciais, classes temáticas e distribuição de fenômenos em determinado recorte territorial.</figcaption>
+            </figure>
           </article>
 
-          <article class="lesson-block" id="cartas">
-            <span class="label blue">Cartas topográficas</span>
-            <h2>Como uma carta topográfica organiza o terreno</h2>
+          <article class="lesson-block" id="carta">
+            <span class="label green">Carta topográfica</span>
+            <h2>Carta topográfica: leitura técnica do terreno</h2>
             <p class="text-justify">
-              A carta topográfica representa elementos naturais e antrópicos do território, como relevo, hidrografia, vias, edificações, limites, vegetação e outros elementos de referência. Ela é importante porque permite interpretar o espaço com maior precisão.
+              A carta topográfica é um produto cartográfico voltado à representação técnica do terreno e dos principais elementos naturais e artificiais da superfície.
+            </p>
+            <p class="text-justify">
+              Em geral, reúne informações como relevo, curvas de nível, pontos cotados, hidrografia, vias, localidades, vegetação, limites, nomes geográficos, coordenadas, escala, legenda, orientação e informações marginais da folha.
+            </p>
+            <p class="text-justify">
+              A carta topográfica é especialmente útil quando a análise exige leitura do terreno. Ela pode apoiar interpretação de relevo, identificação de drenagens, planejamento de campo, reconhecimento territorial, análise preliminar de acessos, estudos ambientais, geoprocessamento, mineração, licenciamento e planejamento territorial.
+            </p>
+            <p class="text-justify">
+              No contexto brasileiro, uma referência importante são as folhas topográficas do Mapeamento Topográfico Sistemático Terrestre do Brasil. Segundo o IBGE, a folha topográfica é uma representação gráfica bidimensional do território, delimitada por paralelos e meridianos, produzida nas escalas <strong>1:250.000, 1:100.000, 1:50.000 e 1:25.000</strong>, com acidentes geográficos físicos e culturais identificados por nomes, cores e símbolos, confeccionada no sistema de projeção UTM e referenciada ao Sistema Geodésico Brasileiro.
+            </p>
+            <p class="text-justify">
+              Aqui é importante uma ressalva: a Carta Internacional do Mundo ao Milionésimo, em escala 1:1.000.000, não deve ser usada nesta aula como exemplo de carta topográfica. Ela é um produto cartográfico de visão geral e síntese territorial, não uma referência adequada para explicar carta topográfica no sentido didático trabalhado aqui.
             </p>
 
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label green">Relevo</span>
-                <h3>Curvas de nível e altitude</h3>
-                <p>As curvas de nível ajudam a interpretar declividade, formas do relevo, vales, divisores de água e áreas mais elevadas.</p>
-              </div>
+            <figure class="lesson-figure">
+              <img src="carta.png" alt="Exemplo de carta topográfica" loading="lazy">
+              <figcaption><strong>Figura 2. Exemplo de carta topográfica.</strong> Produto cartográfico com estrutura técnica para leitura de relevo, drenagem, vias, vegetação, coordenadas, legenda, escala e convenções cartográficas.</figcaption>
+            </figure>
+          </article>
 
-              <div class="mini-card">
-                <span class="label purple">Ocupação</span>
-                <h3>Elementos naturais e construídos</h3>
-                <p>Hidrografia, vias, áreas urbanas, vegetação e limites são representados por símbolos e convenções cartográficas.</p>
-              </div>
+          <article class="lesson-block" id="planta">
+            <span class="label purple">Planta</span>
+            <h2>Planta: detalhamento local em escala grande</h2>
+            <p class="text-justify">
+              A planta representa uma área menor, normalmente em escala grande e com maior nível de detalhe local.
+            </p>
+            <p class="text-justify">
+              É comum encontrar plantas em contextos como lotes, quadras, edificações, glebas, áreas institucionais, infraestrutura, redes, parcelamento do solo, projetos urbanos, regularização, cadastro, gestão imobiliária, engenharia e arquitetura.
+            </p>
+
+            <h3>Escala em plantas</h3>
+            <p class="text-justify">
+              A planta costuma trabalhar com escalas grandes, como <strong>1:500, 1:1.000, 1:2.000 ou 1:5.000</strong>, dependendo da finalidade, do tipo de levantamento e da precisão necessária.
+            </p>
+            <p class="text-justify">
+              Essa ordem de escala ajuda a contrastar a planta com as cartas topográficas do mapeamento sistemático, que trabalham com recortes territoriais maiores.
+            </p>
+            <p class="text-justify">
+              Enquanto o mapa tende a comunicar padrões espaciais mais amplos e a carta topográfica organiza elementos técnicos do terreno, a planta concentra-se em uma área específica. Ela pode apresentar limites, medidas, confrontações, edificações, acessos, ruas, calçadas, áreas livres, estruturas e outros elementos de detalhe.
+            </p>
+            <p class="text-justify">
+              A planta também precisa ser lida criticamente. Ela depende da data do levantamento, da escala, da finalidade do documento, da precisão adotada, da fonte das informações e do sistema de referência utilizado.
+            </p>
+
+            <figure class="lesson-figure">
+              <img src="planta.png" alt="Exemplo de planta cartográfica" loading="lazy">
+              <figcaption><strong>Figura 3. Exemplo de planta.</strong> Representação local em escala grande, com detalhamento de quadras, lotes, ruas, edificações, medidas e elementos de projeto.</figcaption>
+            </figure>
+          </article>
+
+          <article class="lesson-block" id="comparacao">
+            <span class="label blue">Comparação técnica</span>
+            <h2>Mapa, carta e planta: o que muda na prática?</h2>
+            <p class="text-justify">
+              A diferença entre esses produtos pode ser compreendida a partir de alguns critérios: finalidade, escala, nível de detalhe, uso frequente e cuidados de leitura.
+            </p>
+
+            <div class="table-wrap">
+              <table class="lesson-table">
+                <thead>
+                  <tr>
+                    <th>Critério</th>
+                    <th>Mapa</th>
+                    <th>Carta topográfica</th>
+                    <th>Planta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Finalidade comum</strong></td>
+                    <td>Síntese, comunicação, localização ou análise temática.</td>
+                    <td>Leitura técnica do terreno e dos elementos naturais e artificiais.</td>
+                    <td>Detalhamento local de área pequena.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Escala usual</strong></td>
+                    <td>Variável. Pode ir de escalas pequenas, como 1:1.000.000, 1:500.000 e 1:250.000, até escalas maiores, como 1:50.000, 1:25.000 e 1:10.000, conforme tema e recorte.</td>
+                    <td>Escalas sistemáticas como 1:250.000, 1:100.000, 1:50.000 e 1:25.000 no contexto das folhas topográficas brasileiras.</td>
+                    <td>Escalas grandes, como 1:500, 1:1.000, 1:2.000 e 1:5.000.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nível de detalhe</strong></td>
+                    <td>Depende da escala, da fonte, da resolução e do método de produção.</td>
+                    <td>Intermediário a detalhado, conforme a escala e as convenções adotadas.</td>
+                    <td>Alto detalhamento local.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Uso frequente</strong></td>
+                    <td>Ensino, planejamento, análise temática, comunicação territorial, síntese regional ou municipal.</td>
+                    <td>Campo, estudos ambientais, relevo, drenagem, acessos, geoprocessamento e planejamento territorial.</td>
+                    <td>Projetos, lotes, edificações, cadastro, infraestrutura, regularização e gestão imobiliária.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Principal cuidado</strong></td>
+                    <td>Verificar escala, fonte, data, resolução, método e adequação ao tema.</td>
+                    <td>Verificar escala, data, fonte, generalização, convenções e atualização.</td>
+                    <td>Verificar levantamento, precisão, sistema de referência, data e finalidade.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="technical-note">
+              A escala aparece nos três produtos, mas não define sozinha se uma representação é mapa, carta ou planta. A finalidade, o conteúdo representado, o método de produção e o nível de detalhe continuam sendo critérios centrais.
             </div>
           </article>
 
           <article class="lesson-block" id="leitura">
-            <span class="label green">Leitura cartográfica</span>
-            <h2>Ler um mapa é interpretar escolhas</h2>
+            <span class="label green">Leitura técnica</span>
+            <h2>Como iniciar a leitura de um produto cartográfico</h2>
             <p class="text-justify">
-              A leitura de mapas exige atenção ao objetivo da representação, ao recorte espacial, à escala e aos símbolos utilizados. A mesma área pode ser representada de formas diferentes conforme o propósito do mapa.
-            </p>
-
-            <div class="steps">
-              <div class="step"><div class="step-num">1</div><p>Observe o título e identifique o tema representado.</p></div>
-              <div class="step"><div class="step-num">2</div><p>Leia a legenda antes de interpretar as formas e cores.</p></div>
-              <div class="step"><div class="step-num">3</div><p>Verifique escala, orientação e fonte dos dados.</p></div>
-              <div class="step"><div class="step-num">4</div><p>Relacione os elementos do mapa com a finalidade da análise.</p></div>
-            </div>
-          </article>
-
-          <article class="lesson-block" id="aplicacoes">
-            <span class="label purple">Aplicações</span>
-            <h2>Onde mapas e cartas são usados?</h2>
-            <p class="text-justify">
-              Mapas e cartas apoiam diferentes atividades profissionais, acadêmicas e institucionais. Eles servem para comunicar informações, orientar decisões e organizar análises sobre fenômenos espaciais.
+              A leitura cartográfica começa antes da interpretação de cores, símbolos e formas. Primeiro, é necessário observar os elementos que estruturam o produto.
             </p>
 
             <div class="grid-2">
               <div class="mini-card">
-                <h3>Planejamento e gestão territorial</h3>
-                <p>Mapas ajudam a visualizar áreas, infraestrutura, conflitos de uso, limites, acessos e condicionantes espaciais.</p>
+                <span class="label blue">Título e legenda</span>
+                <h3>O que está sendo representado?</h3>
+                <p>O título indica tema, recorte ou objetivo. A legenda traduz cores, linhas, pontos, hachuras, símbolos e classes.</p>
               </div>
 
               <div class="mini-card">
-                <h3>Meio ambiente e pesquisa</h3>
-                <p>Cartas e mapas apoiam diagnósticos ambientais, estudos de campo, análise de paisagem e interpretação de dados geográficos.</p>
+                <span class="label green">Escala e orientação</span>
+                <h3>Qual é o nível de detalhe?</h3>
+                <p>A escala define a relação entre representação e terreno. A orientação ajuda a compreender a posição relativa dos elementos no espaço.</p>
               </div>
+
+              <div class="mini-card">
+                <span class="label purple">Coordenadas e referência</span>
+                <h3>Como o dado foi posicionado?</h3>
+                <p>As coordenadas só fazem sentido quando associadas a um sistema de referência. No Brasil, o SIRGAS2000 é o sistema geodésico de referência oficialmente adotado.</p>
+              </div>
+
+              <div class="mini-card">
+                <span class="label blue">Fonte e data</span>
+                <h3>De onde veio a informação?</h3>
+                <p>A fonte indica a origem dos dados e a data informa o momento de produção ou atualização.</p>
+              </div>
+            </div>
+
+            <div class="technical-note">
+              Em projetos de SIG, deslocamentos entre camadas podem ocorrer quando dados produzidos em referenciais diferentes são sobrepostos sem conferência adequada de datum, projeção e sistema de referência. A confusão entre SIRGAS2000, SAD 69, Córrego Alegre e outros referenciais antigos ainda aparece em bases históricas e exige conferência técnica.
+            </div>
+
+            <div class="technical-note">
+              Na cartografia digital e no geoprocessamento atual, a validação de fonte e data ficou ainda mais importante. Imagens de satélite, levantamentos com drone, bases colaborativas, dados municipais, camadas vetoriais e serviços web podem ter frequências de atualização muito diferentes.
+            </div>
+          </article>
+
+          <article class="lesson-block" id="escolha">
+            <span class="label blue">Escolha técnica</span>
+            <h2>Como escolher o produto cartográfico adequado</h2>
+            <p class="text-justify">
+              A escolha do produto cartográfico deve partir da finalidade do trabalho. O produto adequado é aquele cuja escala, fonte, método e nível de detalhe são compatíveis com a análise.
+            </p>
+
+            <div class="table-wrap">
+              <table class="lesson-table">
+                <thead>
+                  <tr>
+                    <th>Situação</th>
+                    <th>Produto mais indicado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Visualizar uso e cobertura da terra em um município.</td>
+                    <td>Mapa temático.</td>
+                  </tr>
+                  <tr>
+                    <td>Analisar relevo e drenagem de uma área de estudo.</td>
+                    <td>Carta topográfica.</td>
+                  </tr>
+                  <tr>
+                    <td>Planejar uma ida a campo com referências territoriais.</td>
+                    <td>Carta topográfica.</td>
+                  </tr>
+                  <tr>
+                    <td>Verificar limites e organização interna de um lote.</td>
+                    <td>Planta.</td>
+                  </tr>
+                  <tr>
+                    <td>Representar infraestrutura regional.</td>
+                    <td>Mapa.</td>
+                  </tr>
+                  <tr>
+                    <td>Detalhar quadras, ruas, edificações e acessos.</td>
+                    <td>Planta.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="lesson-block" id="erros">
+            <span class="label purple">Erros comuns</span>
+            <h2>Onde a interpretação cartográfica costuma falhar</h2>
+            <p class="text-justify">
+              Um dos erros mais frequentes é interpretar qualquer representação espacial como se tivesse o mesmo nível de detalhe. Outro erro é confundir boa aparência visual com precisão técnica.
+            </p>
+
+            <div class="steps">
+              <div class="step"><div class="step-num">1</div><p>Usar mapa temático como se fosse planta cadastral.</p></div>
+              <div class="step"><div class="step-num">2</div><p>Extrair detalhe local de produto produzido para visão regional.</p></div>
+              <div class="step"><div class="step-num">3</div><p>Ignorar escala, fonte, data e sistema de referência.</p></div>
+              <div class="step"><div class="step-num">4</div><p>Comparar produtos em escalas diferentes sem considerar generalização e método.</p></div>
+              <div class="step"><div class="step-num">5</div><p>Usar produto cartográfico fora da finalidade para a qual foi produzido.</p></div>
+            </div>
+
+            <div class="callout">
+              Esses cuidados são importantes porque mapas, cartas e plantas podem apoiar diagnósticos, relatórios técnicos, análises espaciais e decisões sobre o território.
             </div>
           </article>
 
@@ -1085,7 +1306,7 @@
             <span class="label blue">Material</span>
             <h2>Baixe o PDF da Aula 01</h2>
             <p class="text-justify">
-              O material de apoio reúne os principais conceitos da aula e pode ser usado para revisar o conteúdo, acompanhar os exemplos e consultar os elementos essenciais da representação cartográfica.
+              Use o material de apoio para revisar os principais conceitos da aula e acompanhar a sequência da trilha de Cartografia e Geoprocessamento da GeoTática.
             </p>
 
             <div class="hero-actions">
@@ -1096,36 +1317,43 @@
           </article>
 
           <article class="lesson-block" id="referencias">
-            <span class="label purple">Referências</span>
-            <h2>Fontes utilizadas como apoio didático</h2>
+            <span class="label green">Referências</span>
+            <h2>Referências técnicas utilizadas</h2>
             <p class="text-justify">
-              A aula foi organizada com apoio de referências didáticas e técnicas sobre cartografia, leitura de mapas e representação topográfica.
+              O conteúdo foi revisado com base em referências técnicas do IBGE sobre cartografia, escala, folhas topográficas e sistema geodésico de referência.
             </p>
 
-            <div class="grid-3">
+            <div class="reference-list">
               <div class="mini-card reference-card">
-                <span class="label blue">IBGE</span>
-                <h3>Noções Básicas de Cartografia</h3>
-                <p>Instituto Brasileiro de Geografia e Estatística. Manuais Técnicos em Geociências, nº 8. Rio de Janeiro: IBGE, 1999.</p>
+                <h3>IBGE — Atlas Escolar: Cartografia</h3>
+                <p>Referência conceitual sobre cartografia como representação geométrica plana, simplificada e convencional por meio de mapas, cartas e plantas.</p>
+                <p><a href="https://atlasescolar.ibge.gov.br/cartografia/21728-cartografia.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
 
               <div class="mini-card reference-card">
-                <span class="label green">Cartografia</span>
-                <h3>Leitura e interpretação</h3>
-                <p>Materiais didáticos de apoio à leitura de mapas, cartas topográficas, escala, legenda, orientação e representação espacial.</p>
+                <h3>IBGE — Atlas Escolar: Escala</h3>
+                <p>Referência sobre relação entre medida no mapa e medida real, escala numérica, escala gráfica e mudança de detalhamento conforme a escala.</p>
+                <p><a href="https://atlasescolar.ibge.gov.br/cartografia/21734-escala.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
 
               <div class="mini-card reference-card">
-                <span class="label purple">GeoTática</span>
-                <h3>Trilha de aulas</h3>
-                <p>Conteúdo organizado para apoiar estudos introdutórios em cartografia, geoprocessamento e análise territorial.</p>
+                <h3>IBGE — Folha Topográfica</h3>
+                <p>Referência sobre folhas topográficas no Mapeamento Topográfico Sistemático Terrestre do Brasil.</p>
+                <p><a href="https://anda.ibge.gov.br/144-geociencias/cartas-e-mapas/430-folha-topografica.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
+              </div>
+
+              <div class="mini-card reference-card">
+                <h3>IBGE — SIRGAS2000</h3>
+                <p>Referência sobre o sistema geodésico oficialmente adotado no Brasil.</p>
+                <p><a href="https://www.ibge.gov.br/geociencias/informacoes-sobre-posicionamento-geodesico/sirgas/16691-.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
             </div>
           </article>
 
           <div class="dark-note">
-            <h3>Continue pela GeoTática</h3>
-            <p>Esta aula abre a trilha de Cartografia e Geoprocessamento. Depois dela, siga para a Aula 02 sobre Escala Cartográfica e conheça também a plataforma de fontes de dados geográficos.</p>
+            <h3>Fechamento da Aula 01</h3>
+            <p>Mapa, carta e planta não são apenas nomes diferentes para uma mesma representação. Cada produto organiza o espaço de uma forma, com finalidade, escala, nível de detalhe, método e limites próprios.</p>
+            <p>A partir daqui, surge a próxima questão da trilha: qual é a relação entre a medida representada no produto cartográfico e a medida real no terreno? Essa relação é o tema da Aula 02: escala cartográfica.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
               <a class="btn btn-secondary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
@@ -1134,7 +1362,7 @@
             </div>
           </div>
 
-        </div>
+        </div>        </div>
       </div>
     </div>
   </section>
@@ -1152,7 +1380,7 @@
     </div>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2001%20sobre%20Mapas%20e%20Cartas%20Topogr%C3%A1ficas%20no%20site%20da%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle.%20Vi%20a%20Aula%2001%20sobre%20Mapas%2C%20cartas%20e%20plantas%20no%20site%20da%20GeoT%C3%A1tica." target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a class="btn btn-secondary" href="mailto:geo.daniellecorrea@gmail.com">E-mail</a>
     </div>
   </div>
