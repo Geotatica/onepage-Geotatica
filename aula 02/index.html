@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>GeoTática | Aula 02 — Escalas Cartográficas</title>
-  <meta name="description" content="Aula 02 da GeoTática sobre escalas cartográficas: conceito, tipos de escala, classificação, cálculo de distâncias, erro admissível e aplicações práticas." />
+  <title>GeoTática | Aula 02 — Escala Cartográfica</title>
+  <meta name="description" content="Aula 02 da GeoTática sobre escala cartográfica: leitura, cálculo, escala numérica, escala gráfica, generalização, erro gráfico, PEC, PEC-PCD, SIG e aplicações práticas em geoprocessamento." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -551,7 +551,7 @@
     }
 
     .formula {
-      padding: 24px;
+      padding: 34px 28px;
       border-radius: 20px;
       background:
         radial-gradient(circle at 88% 18%, rgba(107,69,207,.16), transparent 28%),
@@ -559,18 +559,28 @@
         linear-gradient(135deg, #10203b, #14284b);
       color: #fff;
       border: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+      display: grid;
+      justify-items: center;
+      align-content: center;
     }
 
     .formula strong {
       display: block;
       color: #fff;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2.4rem, 5vw, 4.1rem);
       letter-spacing: -.04em;
       line-height: 1;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      text-align: center;
     }
 
-    .formula p { color: rgba(255,255,255,.78); margin: 0; }
+    .formula p {
+      color: rgba(255,255,255,.82);
+      margin: 0;
+      max-width: 760px;
+      text-align: center;
+    }
 
     .formula-visual {
       margin-top: 26px;
@@ -660,6 +670,108 @@
       color: var(--blue);
       font-weight: 800;
       word-break: break-word;
+    }
+
+
+    .lesson-figure {
+      margin: 26px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lesson-figure img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #f8fbff;
+    }
+
+    .lesson-figure.wide img {
+      aspect-ratio: 3 / 1;
+    }
+
+    .lesson-figure figcaption {
+      padding: 14px 16px 16px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.5;
+      border-top: 1px solid var(--line);
+      background: var(--paper-soft);
+    }
+
+    .lesson-figure figcaption strong {
+      color: var(--navy);
+    }
+
+    .table-wrap {
+      margin-top: 22px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    .lesson-table th,
+    .lesson-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .lesson-table th {
+      color: var(--navy);
+      background: var(--paper-soft);
+      font-weight: 850;
+    }
+
+    .lesson-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .technical-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(107,69,207,.08), rgba(42,91,215,.07));
+      border: 1px solid rgba(107,69,207,.14);
+      color: var(--ink-2);
+      font-weight: 650;
+    }
+
+    .reference-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .reference-list a {
+      color: var(--blue);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .inline-list {
+      margin-top: 0;
+      color: var(--muted);
+      padding-left: 1.2rem;
+    }
+
+    .inline-list li {
+      margin: 6px 0;
     }
 
     .footer {
@@ -763,11 +875,12 @@
       <a href="#video">Vídeo</a>
       <a href="#conceito">Conceito</a>
       <a href="#tipos">Tipos</a>
-      <a href="#classificacao">Classificação</a>
+      <a href="#detalhe">Detalhe</a>
+      <a href="#produtos">Produtos</a>
       <a href="#calculo">Cálculo</a>
       <a href="#erro">Erro</a>
+      <a href="#sig">SIG</a>
       <a href="#aplicacoes">Aplicações</a>
-      <a href="#material">Material</a>
     </nav>
 
     <a class="btn btn-primary" href="./1.2%20Escala.pdf" download>Baixar PDF</a>
@@ -780,9 +893,9 @@
     <div class="container lesson-hero">
       <div class="hero-main">
         <div class="kicker">Trilha de Cartografia e Geoprocessamento</div>
-        <h1>Escalas cartográficas na prática</h1>
+        <h1>Escala cartográfica: leitura, cálculo e limites</h1>
         <p class="subtitle">
-          Uma aula para entender como a escala conecta o mapa ao terreno, define o nível de detalhe da representação e orienta cálculos simples de distância real.
+          Uma aula para compreender como a escala relaciona a representação cartográfica ao terreno, orientando o nível de detalhe, a generalização, o cálculo de distâncias e a adequação do produto ao uso técnico.
         </p>
 
         <div class="hero-actions">
@@ -797,16 +910,16 @@
           <span class="chip">escala numérica</span>
           <span class="chip">escala gráfica</span>
           <span class="chip">cálculo de distâncias</span>
-          <span class="chip">erro admissível</span>
+          <span class="chip">erro gráfico</span>
         </div>
       </div>
 
       <aside class="side-card">
         <div>
           <span class="label blue">Resumo</span>
-          <h3>A matemática do espaço</h3>
+          <h3>Escala como critério técnico</h3>
           <p class="lead">
-            A escala mostra quantas vezes a realidade foi reduzida para caber em um mapa, carta ou planta.
+            A escala não é só cálculo: ela orienta leitura, medição, generalização, precisão e adequação do produto cartográfico ao uso pretendido.
           </p>
         </div>
 
@@ -835,21 +948,24 @@
           <div class="toc-title">Nesta aula</div>
           <a href="#video">Vídeo</a>
           <a href="#conceito">Conceito</a>
-          <a href="#tipos">Tipos de escala</a>
-          <a href="#classificacao">Classificação</a>
-          <a href="#calculo">Cálculo</a>
-          <a href="#erro">Erro admissível</a>
+          <a href="#tipos">Escala numérica e gráfica</a>
+          <a href="#classificacao">Grande e pequena escala</a>
+          <a href="#detalhe">Detalhe e generalização</a>
+          <a href="#produtos">Produtos cartográficos</a>
+          <a href="#calculo">Cálculo de distância</a>
+          <a href="#sig">Escala no SIG</a>
+          <a href="#erro">Erro gráfico e precisão</a>
           <a href="#aplicacoes">Aplicações</a>
           <a href="#material">Material</a>
           <a href="#referencias">Referências</a>
         </aside>
 
         <div class="content-stack">
-          <article class="lesson-block soft">
+          <article class="lesson-block soft" id="video">
             <span class="label purple">Vídeo da aula</span>
             <h2>Comece pelo vídeo</h2>
             <p class="lead text-justify">
-              O vídeo apresenta os conceitos centrais de escala cartográfica e mostra como a relação entre mapa e realidade interfere no detalhamento, na generalização e na confiabilidade das análises espaciais.
+              A Aula 02 aprofunda um dos elementos centrais da leitura cartográfica: a escala. Antes de calcular distâncias ou interpretar detalhes, é preciso compreender o que a escala permite observar, medir e analisar em um mapa, carta ou planta.
             </p>
 
             <div class="video-shell">
@@ -869,16 +985,37 @@
 
           <article class="lesson-block" id="conceito">
             <span class="label blue">Conceito</span>
-            <h2>O que é escala cartográfica?</h2>
+            <h2>Escala cartográfica como critério de leitura técnica</h2>
             <p class="text-justify">
-              A escala cartográfica é a relação de proporção entre uma medida representada no mapa e a medida correspondente no terreno. Ela indica quantas vezes a realidade foi reduzida para ser representada graficamente.
+              Na Aula 01, vimos que mapas, cartas topográficas e plantas não devem ser avaliados apenas pela aparência visual. Cada produto cartográfico precisa ser interpretado a partir de sua finalidade, escala, fonte, data, método de produção, sistema de referência e nível de detalhe.
             </p>
             <p class="text-justify">
-              Em uma escala como <b>1:50.000</b>, uma unidade no mapa corresponde a 50.000 unidades no terreno. Se a unidade usada for centímetro, então 1 centímetro no mapa representa 50.000 centímetros na realidade.
+              Agora, vamos aprofundar um desses elementos: a <strong>escala cartográfica</strong>. A escala indica a relação entre aquilo que está representado no mapa, carta ou planta e sua dimensão real no terreno. Ela ajuda a entender o quanto a realidade foi reduzida, qual nível de detalhe pode ser observado e quais tipos de leitura são compatíveis com a representação.
+            </p>
+            <p class="text-justify">
+              O IBGE define a escala como a relação entre a medida de uma porção territorial representada no papel e sua medida real na superfície terrestre. Também ressalta que as escalas variam conforme os assuntos representados e a necessidade de observar o espaço com maior ou menor nível de detalhamento.
             </p>
 
             <div class="callout">
-              Sem escala, não é possível interpretar corretamente distâncias, áreas, nível de detalhe e limites de precisão de um mapa.
+              Nesta aula, a escala será tratada não apenas como um cálculo, mas como critério técnico para avaliar detalhe, generalização, precisão, compatibilidade da base e adequação ao uso.
+            </div>
+          </article>
+
+          <article class="lesson-block" id="oque-informa">
+            <span class="label green">Leitura da escala</span>
+            <h2>O que a escala informa, e o que ela não informa</h2>
+            <p class="text-justify">
+              Em uma escala <strong>1:50.000</strong>, uma unidade medida no mapa corresponde a <strong>50.000 unidades no terreno</strong>. Se a medida estiver em centímetros, 1 cm no mapa representa 50.000 cm no terreno, ou seja, 500 metros.
+            </p>
+            <p class="text-justify">
+              Essa relação permite estimar distâncias, compreender o nível de detalhamento da representação e avaliar se o produto cartográfico é adequado para determinada análise.
+            </p>
+            <p class="text-justify">
+              Mas a escala não informa tudo. Ela não substitui a verificação da fonte dos dados, da data de produção, do sistema de referência, da resolução espacial, da precisão posicional e da finalidade do produto.
+            </p>
+
+            <div class="technical-note">
+              Um mapa pode ter uma escala aparentemente adequada e ainda assim ser impróprio para uma análise se a base estiver desatualizada, generalizada ou produzida para outro objetivo.
             </div>
           </article>
 
@@ -886,186 +1023,268 @@
             <span class="label green">Tipos</span>
             <h2>Escala numérica e escala gráfica</h2>
             <p class="text-justify">
-              As escalas podem ser apresentadas de formas diferentes. As duas mais comuns são a escala numérica, expressa por uma razão matemática, e a escala gráfica, representada por uma barra graduada.
+              A escala pode ser representada de duas formas principais: <strong>numérica</strong> e <strong>gráfica</strong>.
+            </p>
+            <p class="text-justify">
+              A escala numérica expressa a relação por meio de uma razão, como 1:10.000, 1:50.000 ou 1:250.000. A leitura é direta: em uma escala 1:50.000, uma unidade no mapa equivale a 50.000 unidades no terreno.
+            </p>
+            <p class="text-justify">
+              A escala gráfica aparece como uma barra graduada. Ela permite comparar diretamente a distância medida no mapa com a distância correspondente no terreno. Em mapas impressos ou redimensionados, a escala gráfica tende a ser mais segura para leitura visual, porque acompanha a ampliação ou redução do documento.
             </p>
 
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label blue">Escala numérica</span>
-                <h3>Relação em forma de razão</h3>
-                <p>Aparece como 1:n. Permite cálculos de distância, desde que as unidades sejam convertidas corretamente.</p>
-                <div class="tags">
-                  <span class="tag">1:10.000</span>
-                  <span class="tag">1:50.000</span>
-                  <span class="tag">1:250.000</span>
-                </div>
-              </div>
+            <figure class="lesson-figure">
+              <img src="escala-numerica-grafica.png" alt="Comparação entre escala numérica e escala gráfica" loading="lazy">
+              <figcaption><strong>Figura 1. Escala numérica e escala gráfica.</strong> A escala numérica expressa a proporção por uma razão matemática. A escala gráfica apresenta essa relação por meio de uma barra graduada, útil para leitura direta de distâncias.</figcaption>
+            </figure>
 
-              <div class="mini-card">
-                <span class="label green">Escala gráfica</span>
-                <h3>Leitura por barra graduada</h3>
-                <p>Permite medir distâncias diretamente no mapa e mantém a proporcionalidade em ampliações ou reduções.</p>
-                <div class="tags">
-                  <span class="tag">leitura visual</span>
-                  <span class="tag">ampliação</span>
-                  <span class="tag">impressão</span>
-                </div>
-              </div>
-            </div>
+            <figure class="lesson-figure wide">
+              <img src="escala-grafica.png" alt="Exemplo de escala gráfica" loading="lazy">
+              <figcaption><strong>Figura 2. Exemplo de escala gráfica.</strong> A barra graduada permite estimar distâncias diretamente na representação cartográfica, sem conversão inicial de centímetros para metros ou quilômetros.</figcaption>
+            </figure>
           </article>
 
           <article class="lesson-block" id="classificacao">
             <span class="label purple">Classificação</span>
-            <h2>Grande, média e pequena escala</h2>
+            <h2>Escala grande, média e pequena</h2>
             <p class="text-justify">
-              A classificação das escalas depende do denominador. Escalas grandes têm denominadores menores e mostram mais detalhe. Escalas pequenas têm denominadores maiores, cobrem áreas extensas e exigem maior generalização.
+              Na linguagem cartográfica, a expressão <strong>escala grande</strong> pode confundir quem está começando. Uma escala é considerada maior quando o denominador é menor.
             </p>
 
             <div class="grid-3">
               <div class="mini-card">
-                <span class="label blue">Escalas grandes</span>
-                <h3>Mais detalhe</h3>
-                <p>Usadas para áreas menores, como plantas, cadastros, lotes, quadras e infraestrutura.</p>
-                <div class="tags">
-                  <span class="tag">1:500</span>
-                  <span class="tag">1:1.000</span>
-                  <span class="tag">1:5.000</span>
-                </div>
+                <span class="label blue">Escala maior</span>
+                <h3>Mais detalhe, menor área</h3>
+                <p>Exemplos: 1:500, 1:1.000, 1:5.000 e 1:10.000.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Escalas médias</span>
+                <span class="label green">Escala intermediária</span>
                 <h3>Equilíbrio</h3>
-                <p>Comuns em cartas topográficas, com bom equilíbrio entre abrangência e nível de detalhe.</p>
-                <div class="tags">
-                  <span class="tag">1:25.000</span>
-                  <span class="tag">1:50.000</span>
-                  <span class="tag">1:100.000</span>
-                </div>
+                <p>Exemplos: 1:25.000, 1:50.000 e 1:100.000, dependendo do produto e da finalidade.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label purple">Escalas pequenas</span>
-                <h3>Visão ampla</h3>
-                <p>Representam áreas maiores, com menor detalhe, como mapas regionais, nacionais e mundiais.</p>
-                <div class="tags">
-                  <span class="tag">1:500.000</span>
-                  <span class="tag">1:1.000.000</span>
-                </div>
+                <span class="label purple">Escala menor</span>
+                <h3>Mais área, menos detalhe</h3>
+                <p>Exemplos: 1:250.000, 1:500.000 e 1:1.000.000.</p>
               </div>
             </div>
 
             <div class="callout">
-              Regra prática: quanto maior o denominador, menor o nível de detalhe e maior a área representada.
+              De forma didática: escala maior significa menor área representada e maior detalhamento. Escala menor significa maior área representada e maior generalização.
             </div>
+
+            <figure class="lesson-figure">
+              <img src="escalas-diferentes.png" alt="Comparação da mesma área em diferentes escalas" loading="lazy">
+              <figcaption><strong>Figura 3. Mesma área em escalas diferentes.</strong> Quanto maior a escala, maior o detalhamento da representação e menor a área coberta.</figcaption>
+            </figure>
+          </article>
+
+          <article class="lesson-block" id="detalhe">
+            <span class="label blue">Generalização</span>
+            <h2>Escala, detalhe e generalização</h2>
+            <p class="text-justify">
+              A escala interfere diretamente na quantidade de informação que pode ser representada. Em escalas menores, como 1:250.000 ou 1:1.000.000, grandes áreas podem ser mostradas em uma única representação. Para isso, muitos elementos precisam ser simplificados, agrupados ou omitidos. Esse processo é chamado de <strong>generalização cartográfica</strong>.
+            </p>
+            <p class="text-justify">
+              A generalização pode envolver simplificação de linhas, agrupamento de classes, omissão de elementos pequenos, deslocamento gráfico de símbolos, seleção do que será representado, redução do nível de detalhe geométrico e adaptação da simbologia à escala.
+            </p>
+            <p class="text-justify">
+              Em escalas maiores, como 1:10.000, 1:5.000 ou 1:1.000, é possível representar elementos com mais detalhe. Ainda assim, isso não significa que todo produto em escala grande tenha alta precisão. A qualidade depende também da fonte, do método de levantamento, da resolução dos dados, da precisão posicional e da finalidade da produção.
+            </p>
+
+            <div class="technical-note">
+              A escala orienta o nível de detalhe possível, mas não garante qualidade por si só.
+            </div>
+          </article>
+
+          <article class="lesson-block" id="produtos">
+            <span class="label green">Produtos cartográficos</span>
+            <h2>Escala e tipos de produto cartográfico</h2>
+            <p class="text-justify">
+              A Aula 01 mostrou que mapa, carta topográfica e planta se diferenciam por finalidade, conteúdo representado, nível de detalhe, método de produção e uso técnico. A escala ajuda a compreender essas diferenças, mas não define sozinha o tipo de produto cartográfico.
+            </p>
+            <p class="text-justify">
+              De forma geral, mapas podem aparecer em escalas muito variadas, conforme tema, recorte e finalidade. Cartas topográficas, no contexto das folhas topográficas brasileiras, aparecem em escalas sistemáticas como 1:250.000, 1:100.000, 1:50.000 e 1:25.000. Plantas costumam trabalhar com escalas grandes, como 1:5.000, 1:2.000, 1:1.000 ou 1:500, quando o objetivo é detalhamento local.
+            </p>
+
+            <figure class="lesson-figure">
+              <img src="produtos-escalas.png" alt="Relação entre produtos cartográficos e faixas de escala" loading="lazy">
+              <figcaption><strong>Figura 4. Produtos cartográficos e faixas de escala.</strong> A escala ajuda a compreender o nível de detalhe, mas a finalidade e o tipo de conteúdo representado continuam sendo critérios centrais para diferenciar mapa, carta topográfica e planta.</figcaption>
+            </figure>
           </article>
 
           <article class="lesson-block" id="calculo">
             <span class="label blue">Cálculo</span>
-            <h2>Como calcular distâncias reais</h2>
+            <h2>Cálculo de distância pela escala</h2>
             <p class="text-justify">
-              A relação entre distância no mapa e distância no terreno pode ser expressa pela fórmula <b>D = N × d</b>. O cálculo é simples, mas exige atenção às unidades.
+              A escala permite calcular distâncias aproximadas no terreno a partir de medidas realizadas no mapa. A relação básica pode ser escrita como:
             </p>
 
-            <div class="grid-2">
-              <div class="formula">
-                <strong>D = N × d</strong>
-                <p>D é a distância real no terreno, N é o denominador da escala e d é a distância medida no mapa.</p>
+            <div class="formula">
+              <strong>D = d × N</strong>
+              <p>D é a distância real no terreno, d é a distância medida no mapa e N é o denominador da escala.</p>
+            </div>
 
-                <div class="formula-visual" aria-hidden="true">
-                  <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <defs>
-                      <linearGradient id="pillGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#7aa5ff"/>
-                        <stop offset="100%" stop-color="#8f6dff"/>
-                      </linearGradient>
-                      <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="rgba(255,255,255,0.16)"/>
-                        <stop offset="100%" stop-color="rgba(255,255,255,0.07)"/>
-                      </linearGradient>
-                    </defs>
+            <p class="text-justify" style="margin-top: 22px;">
+              Considere uma escala 1:50.000. Se uma distância medida no mapa é de 3 cm, então D = 3 × 50.000, resultando em 150.000 cm. Convertendo a unidade, 150.000 cm correspondem a 1.500 m, ou 1,5 km.
+            </p>
+            <p class="text-justify">
+              Esse cálculo é simples, mas exige atenção às unidades. Se a medida no mapa está em centímetros, o resultado inicial também estará em centímetros. Depois, é necessário converter para metros ou quilômetros.
+            </p>
 
-                    <rect x="18" y="78" width="110" height="90" rx="20" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.16)"/>
-                    <path d="M40 138 L58 122 L78 133 L98 106" fill="none" stroke="#91b4ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="40" cy="138" r="5" fill="#8ad8bf"/>
-                    <circle cx="58" cy="122" r="5" fill="#8ad8bf"/>
-                    <circle cx="78" cy="133" r="5" fill="#8ad8bf"/>
-                    <circle cx="98" cy="106" r="5" fill="#8ad8bf"/>
-                    <rect x="32" y="92" width="58" height="12" rx="6" fill="rgba(255,255,255,0.14)"/>
-                    <text x="73" y="150" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="16" font-family="Manrope, sans-serif" font-weight="700">mapa</text>
+            <figure class="lesson-figure">
+              <img src="calculo-escala.png" alt="Exemplo de cálculo de distância com escala cartográfica" loading="lazy">
+              <figcaption><strong>Figura 5. Cálculo de distância pela escala.</strong> A fórmula permite transformar uma medida feita no mapa em distância real no terreno, desde que as unidades sejam convertidas corretamente.</figcaption>
+            </figure>
 
-                    <line x1="138" y1="122" x2="282" y2="122" stroke="rgba(255,255,255,0.28)" stroke-width="3" stroke-dasharray="8 8"/>
-                    <circle cx="146" cy="122" r="5" fill="#ffffff"/>
-                    <circle cx="274" cy="122" r="5" fill="#ffffff"/>
-                    <rect x="170" y="99" width="80" height="34" rx="17" fill="url(#pillGrad)"/>
-                    <text x="210" y="121" text-anchor="middle" fill="#ffffff" font-size="16" font-family="Manrope, sans-serif" font-weight="800">N × d</text>
+            <div class="technical-note">
+              Em softwares de geoprocessamento, como o QGIS, ferramentas de medição calculam distâncias e áreas automaticamente, considerando configurações do projeto, sistema de referência, elipsoide e unidades. Mesmo assim, compreender a lógica da escala continua sendo essencial para configurar layouts de impressão, conferir produtos cartográficos e garantir que a escala do papel reflita corretamente a escala real do projeto.
+            </div>
+          </article>
 
-                    <rect x="292" y="44" width="110" height="140" rx="22" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.16)"/>
-                    <circle cx="325" cy="90" r="17" fill="rgba(122,165,255,0.18)" stroke="rgba(122,165,255,0.58)" stroke-width="2"/>
-                    <path d="M325 74 C336 74 345 83 345 94 C345 107 325 127 325 127 C325 127 305 107 305 94 C305 83 314 74 325 74 Z" fill="#8f6dff"/>
-                    <circle cx="325" cy="94" r="6.5" fill="#ffffff"/>
-                    <path d="M344 130 L360 110 L376 136 L390 120" fill="none" stroke="#8ad8bf" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M308 138 Q326 124 344 138 T380 138" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="3"/>
-                    <text x="347" y="162" text-anchor="middle" fill="rgba(255,255,255,0.78)" font-size="16" font-family="Manrope, sans-serif" font-weight="700">terreno</text>
+          <article class="lesson-block" id="sig">
+            <span class="label green">SIG</span>
+            <h2>Escala de origem, visualização e análise</h2>
+            <p class="text-justify">
+              No geoprocessamento, é comum trabalhar com mapas digitais, camadas vetoriais, imagens de satélite, ortofotos, dados de drone, bases cadastrais e serviços web. Nesse contexto, é importante distinguir três ideias.
+            </p>
 
-                    <rect x="148" y="156" width="124" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)"/>
-                    <text x="210" y="178" text-anchor="middle" fill="rgba(255,255,255,0.84)" font-size="15" font-family="Manrope, sans-serif" font-weight="700">D = distância real</text>
-                  </svg>
-                </div>
+            <div class="grid-3">
+              <div class="mini-card">
+                <span class="label blue">Escala de origem</span>
+                <h3>Como o dado foi produzido</h3>
+                <p>Uma base produzida para escala regional não deve ser usada como detalhe local apenas porque foi ampliada na tela.</p>
               </div>
 
               <div class="mini-card">
-                <span class="label green">Unidades</span>
-                <h3>Não pule a conversão</h3>
-                <p>Se a medida do mapa está em centímetros, o resultado inicial também estará em centímetros. Depois, converta para metros ou quilômetros.</p>
-                <div class="steps">
-                  <div class="step"><div class="step-num">1</div><p>Meça a distância no mapa.</p></div>
-                  <div class="step"><div class="step-num">2</div><p>Multiplique pelo denominador da escala.</p></div>
-                  <div class="step"><div class="step-num">3</div><p>Converta o resultado para a unidade desejada.</p></div>
-                </div>
+                <span class="label purple">Escala de visualização</span>
+                <h3>O zoom do software</h3>
+                <p>No SIG, é possível dar zoom indefinidamente, mas isso não cria detalhe novo. O zoom amplia a visualização da informação existente.</p>
               </div>
+
+              <div class="mini-card">
+                <span class="label green">Escala de análise</span>
+                <h3>A pergunta técnica</h3>
+                <p>A escala adequada depende da pergunta do projeto. Análise municipal, análise de lote e análise regional exigem bases diferentes.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              Muitos erros em SIG ocorrem quando a escala de visualização é confundida com a escala de origem ou com a escala adequada de análise.
             </div>
           </article>
 
           <article class="lesson-block" id="erro">
             <span class="label purple">Precisão</span>
-            <h2>Erro admissível e limite gráfico</h2>
+            <h2>Erro gráfico, PEC e PEC-PCD</h2>
             <p class="text-justify">
-              Todo produto cartográfico tem limitações. O erro admissível está relacionado ao menor traço distinguível no papel, frequentemente associado ao limite gráfico mínimo. Por isso, a escala interfere diretamente na precisão possível de uma representação.
+              A escala também está relacionada ao limite de precisão compatível com a representação. Em cartografia, é comum trabalhar com a ideia de <strong>erro gráfico</strong>, frequentemente associado ao limite mínimo perceptível na representação impressa. Um valor didático bastante usado é 0,2 mm no mapa.
+            </p>
+            <p class="text-justify">
+              A lógica é direta: o mesmo erro gráfico no papel corresponde a distâncias diferentes no terreno conforme a escala.
             </p>
 
-            <div class="grid-2">
-              <div class="mini-card">
-                <span class="label blue">Limite</span>
-                <h3>Nem tudo pode ser desenhado</h3>
-                <p>Feições muito pequenas podem não aparecer com fidelidade quando a escala não comporta esse nível de detalhe.</p>
-              </div>
+            <div class="table-wrap">
+              <table class="lesson-table">
+                <thead>
+                  <tr>
+                    <th>Escala</th>
+                    <th>Cálculo</th>
+                    <th>Correspondência no terreno</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1:10.000</td>
+                    <td>0,2 mm × 10.000 = 2.000 mm</td>
+                    <td>2 m</td>
+                  </tr>
+                  <tr>
+                    <td>1:50.000</td>
+                    <td>0,2 mm × 50.000 = 10.000 mm</td>
+                    <td>10 m</td>
+                  </tr>
+                  <tr>
+                    <td>1:100.000</td>
+                    <td>0,2 mm × 100.000 = 20.000 mm</td>
+                    <td>20 m</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <div class="mini-card">
-                <span class="label green">Escolha técnica</span>
-                <h3>Escala depende da finalidade</h3>
-                <p>Projetos, estudos ambientais, ensino, planejamento e engenharia exigem níveis diferentes de precisão e detalhamento.</p>
-              </div>
+            <figure class="lesson-figure">
+              <img src="erro-grafico.png" alt="Exemplo de erro gráfico e precisão em diferentes escalas" loading="lazy">
+              <figcaption><strong>Figura 6. Erro gráfico e precisão.</strong> O mesmo erro perceptível no mapa corresponde a diferentes distâncias no terreno, conforme a escala adotada.</figcaption>
+            </figure>
+
+            <p class="text-justify">
+              O Decreto nº 89.817/1984 permanece como referência importante para as Normas Técnicas da Cartografia Nacional e para o Padrão de Exatidão Cartográfica, o PEC. Porém, ele foi concebido em um contexto de cartografia analógica e impressa.
+            </p>
+            <p class="text-justify">
+              Para produtos cartográficos digitais, como ortofotos, bases vetoriais, modelos digitais de terreno e mapeamentos derivados de sensores, é necessário considerar também o <strong>PEC-PCD</strong>, Padrão de Exatidão Cartográfica dos Produtos Cartográficos Digitais, tratado nas especificações técnicas de controle de qualidade de dados geoespaciais, como a <strong>ET-CQDG</strong>.
+            </p>
+
+            <div class="technical-note">
+              O erro gráfico ajuda na compreensão didática da relação entre escala e precisão. Para produtos digitais, a avaliação formal de qualidade posicional deve considerar normas e especificações próprias, como PEC-PCD e ET-CQDG.
+            </div>
+          </article>
+
+          <article class="lesson-block" id="erros-comuns">
+            <span class="label blue">Cuidados</span>
+            <h2>Erros comuns no uso da escala</h2>
+            <p class="text-justify">
+              Alguns erros aparecem com frequência no uso de escala em cartografia e geoprocessamento.
+            </p>
+
+            <div class="steps">
+              <div class="step"><div class="step-num">1</div><p>Interpretar zoom de tela como aumento real de detalhe.</p></div>
+              <div class="step"><div class="step-num">2</div><p>Usar base regional para análise local.</p></div>
+              <div class="step"><div class="step-num">3</div><p>Calcular distância sem converter unidades.</p></div>
+              <div class="step"><div class="step-num">4</div><p>Ampliar ou reduzir mapa impresso e continuar usando a escala numérica original.</p></div>
+              <div class="step"><div class="step-num">5</div><p>Comparar camadas produzidas em escalas diferentes sem critério.</p></div>
+            </div>
+
+            <div class="technical-note">
+              A leitura correta da escala é uma forma de controle de qualidade. Ela ajuda a evitar análises com aparência sofisticada, mas base técnica frágil.
             </div>
           </article>
 
           <article class="lesson-block" id="aplicacoes">
             <span class="label green">Aplicações</span>
-            <h2>Escala muda a forma de observar o território</h2>
+            <h2>Escala, resolução e uso prático</h2>
             <p class="text-justify">
-              Um mesmo fenômeno pode ser interpretado de formas diferentes dependendo da escala. Em uma escala local, aparecem detalhes que desaparecem em uma análise regional. Em uma escala nacional, o objetivo costuma ser reconhecer padrões gerais.
+              Em produtos digitais, a escala precisa dialogar com a resolução e com a natureza do dado. Em imagens de satélite, a resolução espacial indica o tamanho do menor elemento representado por um pixel. Em ortofotos e levantamentos com drone, a resolução pode ser muito mais detalhada, mas isso não elimina a necessidade de verificar método de produção, data, precisão, sistema de referência e finalidade.
+            </p>
+            <p class="text-justify">
+              Em dados vetoriais, o problema aparece de outra forma. Uma linha pode parecer muito precisa quando vista com zoom, mas sua geometria pode ter sido digitalizada a partir de uma base de escala menor.
             </p>
 
             <div class="grid-2">
               <div class="mini-card">
-                <h3>Planejamento urbano e engenharia</h3>
-                <p>Demandam escalas maiores quando o objetivo é detalhar lotes, vias, infraestrutura e projetos.</p>
+                <h3>Planejamento territorial</h3>
+                <p>Ajuda a escolher produtos adequados para análise regional, municipal, urbana ou local.</p>
               </div>
 
               <div class="mini-card">
-                <h3>Meio ambiente e pesquisa</h3>
-                <p>Podem alternar entre escalas locais, municipais, regionais e nacionais conforme o fenômeno analisado.</p>
+                <h3>Estudos ambientais</h3>
+                <p>Permite avaliar se a base é compatível com identificação de drenagens, APPs, uso do solo, cobertura vegetal e elementos de campo.</p>
               </div>
+
+              <div class="mini-card">
+                <h3>Regularização e cadastro</h3>
+                <p>Em processos como REURB, escalas grandes, como 1:1.000 ou 1:500, favorecem a representação de lotes, confrontações, vértices, acessos e elementos construídos com detalhe compatível com a análise cadastral e registral.</p>
+              </div>
+
+              <div class="mini-card">
+                <h3>Comunicação cartográfica</h3>
+                <p>Ajuda a definir o nível de simplificação necessário para produzir mapas legíveis e compatíveis com o público-alvo.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              No SIG, a pergunta técnica não é apenas “consigo dar zoom?”. A pergunta correta é: o dado foi produzido com escala, resolução e precisão compatíveis com a análise que quero fazer?
             </div>
           </article>
 
@@ -1073,7 +1292,7 @@
             <span class="label blue">Material</span>
             <h2>Baixe o PDF da Aula 02</h2>
             <p class="text-justify">
-              O material de apoio reúne os principais conceitos da aula e pode ser usado para revisar o conteúdo, acompanhar os exemplos e consultar as relações de cálculo durante os estudos.
+              Use o material de apoio para revisar os principais conceitos da aula e acompanhar a sequência da trilha de Cartografia e Geoprocessamento da GeoTática.
             </p>
 
             <div class="hero-actions">
@@ -1085,37 +1304,48 @@
 
           <article class="lesson-block" id="referencias">
             <span class="label purple">Referências</span>
-            <h2>Fontes utilizadas como apoio didático</h2>
+            <h2>Referências técnicas utilizadas</h2>
             <p class="text-justify">
-              A aula foi organizada com apoio de materiais didáticos e técnicos de instituições públicas de ensino, pesquisa e produção cartográfica.
+              A aula foi organizada com apoio de referências técnicas sobre escala cartográfica, cartografia básica, medição em SIG e qualidade de produtos cartográficos digitais.
             </p>
 
-            <div class="grid-3">
+            <div class="reference-list">
               <div class="mini-card reference-card">
-                <span class="label blue">IFRN</span>
-                <h3>Escala Cartográfica</h3>
-                <p>COSTA, Jordana. Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte.</p>
-                <p><a href="https://docente.ifrn.edu.br/jordanacosta/disciplinas/caico-1o-ano-2014/informatica/escala-cartografica" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
+                <h3>IBGE — Atlas Escolar: Escala</h3>
+                <p>Referência sobre relação entre medida no mapa e medida real, escala numérica, escala gráfica e variação de detalhamento conforme a escala.</p>
+                <p><a href="https://atlasescolar.ibge.gov.br/cartografia/21734-escala.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
 
               <div class="mini-card reference-card">
-                <span class="label purple">UNESP</span>
-                <h3>Escala Cartográfica</h3>
-                <p>WATANABE, Fernanda Sayuri Yoshino. Departamento de Cartografia, FCT/UNESP.</p>
-                <p><a href="https://www2.fct.unesp.br/docentes/carto/fernanda/Cartografia_EA/Aula2-EA-CAR-2020_Escala.pdf" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
+                <h3>IBGE — Noções Básicas de Cartografia</h3>
+                <p>Manual técnico de apoio para fundamentos de cartografia, representação espacial e leitura cartográfica.</p>
+                <p><a href="https://loja.ibge.gov.br/nocoes-basicas-de-cartografia-1999-manuais-tecnicos-em-geociencias-n-8.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
 
               <div class="mini-card reference-card">
-                <span class="label green">IBGE</span>
-                <h3>Noções Básicas de Cartografia</h3>
-                <p>Instituto Brasileiro de Geografia e Estatística. Manuais Técnicos em Geociências, nº 8. Rio de Janeiro: IBGE, 1999.</p>
+                <h3>QGIS — Ferramentas de medição</h3>
+                <p>Documentação sobre medições, unidades, elipsoide e configurações de projeto em ambiente SIG.</p>
+                <p><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/map_views/map_view.html" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
+              </div>
+
+              <div class="mini-card reference-card">
+                <h3>Decreto nº 89.817/1984</h3>
+                <p>Normas Técnicas da Cartografia Nacional e referência para o Padrão de Exatidão Cartográfica.</p>
+                <p><a href="https://www.planalto.gov.br/ccivil_03/decreto/1980-1989/D89817.htm" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
+              </div>
+
+              <div class="mini-card reference-card">
+                <h3>ET-CQDG e PEC-PCD</h3>
+                <p>Referências técnicas relacionadas ao controle de qualidade de dados geoespaciais e ao padrão de exatidão para produtos cartográficos digitais.</p>
+                <p><a href="https://antigo.infraestrutura.gov.br/images/MAPAS/1.pdf" target="_blank" rel="noopener noreferrer">Acessar referência</a></p>
               </div>
             </div>
           </article>
 
           <div class="dark-note">
-            <h3>Continue pela GeoTática</h3>
-            <p>Esta aula faz parte da trilha de Cartografia e Geoprocessamento. Você também pode acessar a plataforma de fontes de dados geográficos e acompanhar novos conteúdos pelo YouTube e Instagram.</p>
+            <h3>Fechamento da Aula 02</h3>
+            <p>A escala cartográfica não é apenas uma informação colocada no canto do mapa. Ela orienta leitura, cálculo, nível de detalhe, generalização e compatibilidade entre o produto cartográfico e o uso pretendido.</p>
+            <p>A principal ideia desta aula é: escala não é só cálculo. É critério técnico de interpretação.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
               <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2001/" target="_blank" rel="noopener noreferrer">Ver Aula 01</a>
@@ -1124,7 +1354,7 @@
             </div>
           </div>
 
-        </div>
+        </div>        </div>
       </div>
     </div>
   </section>
