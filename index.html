@@ -960,6 +960,280 @@
       .whatsapp-float { bottom: 14px; right: 14px; width: 52px; height: 52px; }
       .back-to-top { bottom: 78px; right: 16px; width: 46px; height: 46px; }
     }
+
+    /* Biblioteca de e-books */
+    .ebook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .ebook-card {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 16px;
+      align-items: start;
+      min-height: 100%;
+    }
+
+    .ebook-card::before { opacity: .35; }
+
+    .ebook-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      padding: 8px;
+      object-fit: cover;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .ebook-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .ebook-card p {
+      font-size: .92rem;
+      margin-bottom: 14px;
+    }
+
+    .ebook-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .ebook-actions .btn {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: .84rem;
+    }
+
+    /* Tati Quinha - assistente do site */
+    .tati-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 150px;
+      z-index: 70;
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 16px 0 10px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(42, 91, 215, .30);
+      font-family: inherit;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .tati-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(107, 69, 207, .34);
+    }
+
+    .tati-toggle img {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.85);
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .tati-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 214px;
+      z-index: 70;
+      width: min(420px, calc(100vw - 32px));
+      max-height: min(720px, calc(100vh - 120px));
+      display: none;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 28px 90px rgba(8, 24, 48, .26);
+    }
+
+    .tati-panel.is-open {
+      display: block;
+    }
+
+    .tati-head {
+      display: grid;
+      grid-template-columns: 48px 1fr 34px;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 16px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #fff;
+    }
+
+    .tati-head img {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,.84);
+      background: #fff;
+    }
+
+    .tati-head strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .tati-head span {
+      display: block;
+      margin-top: 3px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.72);
+      font-weight: 650;
+    }
+
+    .tati-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .tati-body {
+      padding: 16px;
+      overflow-y: auto;
+      max-height: calc(min(720px, 100vh - 120px) - 78px);
+    }
+
+    .tati-video {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      margin-bottom: 14px;
+    }
+
+    .tati-video video {
+      width: 100%;
+      display: block;
+      background: var(--surface-soft);
+    }
+
+    .tati-message {
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      color: var(--ink-2);
+      font-size: .92rem;
+      margin-bottom: 14px;
+    }
+
+    .tati-options {
+      display: grid;
+      gap: 9px;
+    }
+
+    .tati-option {
+      width: 100%;
+      min-height: 48px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--navy);
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .tati-option img {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--surface-soft);
+    }
+
+    .tati-option:hover {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .tati-answer {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(42,91,215,.07), rgba(27,143,107,.06));
+      border: 1px solid rgba(42,91,215,.12);
+      color: var(--ink-2);
+      font-size: .92rem;
+    }
+
+    .tati-answer a {
+      color: var(--blue);
+      font-weight: 850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .ebook-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ebook-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ebook-card {
+        grid-template-columns: 64px 1fr;
+      }
+
+      .ebook-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+      }
+
+      .tati-toggle {
+        right: 14px;
+        bottom: 140px;
+        padding-right: 14px;
+      }
+
+      .tati-toggle span {
+        display: none;
+      }
+
+      .tati-panel {
+        right: 14px;
+        bottom: 198px;
+      }
+    }
+
   </style>
 </head>
 
@@ -988,6 +1262,7 @@ Se os links abrirem conteúdo trocado, o problema está no conteúdo publicado d
         <a href="#ecossistema">Ecossistema</a>
         <a href="#plataforma">Plataforma</a>
         <a href="#conteudos">Conteúdos</a>
+        <a href="#ebooks">E-books</a>
         <a href="#aplicacoes">Aplicações</a>
         <a href="#danielle">Sobre</a>
         <a href="#contato">Contato</a>
@@ -1252,6 +1527,94 @@ Se os links abrirem conteúdo trocado, o problema está no conteúdo publicado d
       </div>
     </section>
 
+
+    <section class="section" id="ebooks">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Biblioteca GeoTática</p>
+          <h2>E-books e materiais em PDF para baixar</h2>
+          <p class="lead text-justify">
+            Materiais visuais e técnicos produzidos pela GeoTática para apoiar estudos, aulas, análises espaciais, tomada de decisão territorial e rotinas de geoprocessamento.
+          </p>
+        </div>
+
+        <div class="ebook-grid">
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label green">Estatística espacial</span>
+              <h3>Getis-Ord Gi*: hotspots e coldspots</h3>
+              <p>Guia visual sobre análise de hotspots, interpretação estatística, fórmulas, cálculo e cuidados de aplicação.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-getis-ord-gi.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label blue">Negócios e território</span>
+              <h3>5 decisões que dependem do território</h3>
+              <p>Material sobre como mix, preço, canais, crescimento, execução e conhecimento local dependem de leitura territorial.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-5-decisoes-territorio.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label purple">Análise multicritério</span>
+              <h3>Mapa multicritério</h3>
+              <p>Material didático sobre critérios, pesos de evidência, padronização, álgebra de mapas e decisão territorial.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-mapa-multicriterio.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label blue">Dados espaciais</span>
+              <h3>Geoprocessamento e engenharia de dados</h3>
+              <p>Conteúdo sobre estruturação, qualidade, integração, análise e transformação de dados espaciais em decisão.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-geoprocessamento-engenharia-dados.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label green">Ferramentas GIS</span>
+              <h3>Principais ferramentas utilizadas no GIS</h3>
+              <p>Resumo visual de operações como clip, merge, buffer, intersect, dissolve, spatial join e ferramentas raster.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-geoprocessamento-ferramentas-gis.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label purple">Geoprocessamento</span>
+              <h3>8 estratégias estruturais em geoprocessamento</h3>
+              <p>Guia prático para estruturar análises espaciais com qualidade, consistência, integração e valor técnico.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="ebook-8-estrategias-geoprocessamento.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <section class="section dark-section" id="aplicacoes">
       <div class="container">
         <div class="section-head wide">
@@ -1370,6 +1733,68 @@ Se os links abrirem conteúdo trocado, o problema está no conteúdo publicado d
     </div>
   </footer>
 
+
+  <button class="tati-toggle" id="tatiToggle" type="button" aria-label="Abrir assistente Tati Quinha">
+    <img src="tati-quinha-icon.png" alt="" aria-hidden="true" />
+    <span>Posso ajudar?</span>
+  </button>
+
+  <div class="tati-panel" id="tatiPanel" aria-label="Assistente Tati Quinha da GeoTática">
+    <div class="tati-head">
+      <img src="tati-quinha-icon.png" alt="Tati Quinha, assistente da GeoTática" />
+      <div>
+        <strong>Tati Quinha</strong>
+        <span>Assistente da GeoTática</span>
+      </div>
+      <button class="tati-close" id="tatiClose" type="button" aria-label="Fechar assistente">×</button>
+    </div>
+
+    <div class="tati-body">
+      <div class="tati-video">
+        <video controls playsinline preload="metadata" poster="tati-quinha-avatar.png">
+          <source src="tati-quinha-avatar.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+
+      <div class="tati-message">
+        Oi! Eu sou a Tati Quinha. Posso te ajudar a encontrar a plataforma, as aulas, os e-books, as fontes de dados e os canais da GeoTática.
+      </div>
+
+      <div class="tati-options">
+        <button class="tati-option" data-question="plataforma">
+          <img src="icone-plataforma.png" alt="" aria-hidden="true" />
+          <span>Conhecer a plataforma de dados</span>
+        </button>
+
+        <button class="tati-option" data-question="gratuita">
+          <img src="icone-fontes.png" alt="" aria-hidden="true" />
+          <span>Acessar fontes gratuitas</span>
+        </button>
+
+        <button class="tati-option" data-question="aulas">
+          <img src="icone-aulas.png" alt="" aria-hidden="true" />
+          <span>Ver aulas e materiais</span>
+        </button>
+
+        <button class="tati-option" data-question="ebooks">
+          <img src="icone-ebook-download.png" alt="" aria-hidden="true" />
+          <span>Baixar e-books em PDF</span>
+        </button>
+
+        <button class="tati-option" data-question="suporte">
+          <img src="icone-contato.png" alt="" aria-hidden="true" />
+          <span>Falar com a Danielle</span>
+        </button>
+      </div>
+
+      <div class="tati-answer" id="tatiAnswer">
+        Escolha uma opção acima para eu te direcionar.
+      </div>
+    </div>
+  </div>
+
+
   <a class="back-to-top" href="#inicio" aria-label="Voltar ao topo" title="Voltar ao topo">
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 5L5.5 11.5M12 5l6.5 6.5M12 5v14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1382,6 +1807,70 @@ Se os links abrirem conteúdo trocado, o problema está no conteúdo publicado d
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const tatiToggle = document.getElementById("tatiToggle");
+    const tatiPanel = document.getElementById("tatiPanel");
+    const tatiClose = document.getElementById("tatiClose");
+    const tatiAnswer = document.getElementById("tatiAnswer");
+
+    const tatiResponses = {
+      plataforma: `
+        A Plataforma GeoTática de Dados reúne fontes geográficas e estatísticas organizadas por tema, tipo de dado e aplicação técnica.
+        <br><br>
+        Você pode acessar a versão beta aqui:
+        <br>
+        <a href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma beta</a>
+      `,
+
+      gratuita: `
+        A versão gratuita apresenta uma amostra aberta da curadoria, com fontes selecionadas para começar.
+        <br><br>
+        Acesse aqui:
+        <br>
+        <a href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir versão gratuita</a>
+      `,
+
+      aulas: `
+        A GeoTática possui aulas públicas em formato onepage.
+        <br><br>
+        <a href="https://geotatica.github.io/onepage-Geotatica/aula%2001/" target="_blank" rel="noopener noreferrer">Aula 01 - Mapas, cartas e plantas</a>
+        <br>
+        <a href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Aula 02 - Escala cartográfica</a>
+      `,
+
+      ebooks: `
+        Os e-books estão disponíveis na Biblioteca GeoTática.
+        <br><br>
+        <a href="#ebooks">Ir para a seção de e-books</a>
+        <br><br>
+        Você encontrará materiais sobre Getis-Ord Gi*, mapa multicritério, engenharia de dados, ferramentas GIS e estratégias estruturais em geoprocessamento.
+      `,
+
+      suporte: `
+        Você pode falar diretamente com Danielle Corrêa pelos canais oficiais.
+        <br><br>
+        <a href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+        <br>
+        <a href="mailto:geo.daniellecorrea@gmail.com">Enviar e-mail</a>
+      `
+    };
+
+    if (tatiToggle && tatiPanel && tatiClose && tatiAnswer) {
+      tatiToggle.addEventListener("click", () => {
+        tatiPanel.classList.toggle("is-open");
+      });
+
+      tatiClose.addEventListener("click", () => {
+        tatiPanel.classList.remove("is-open");
+      });
+
+      document.querySelectorAll(".tati-option").forEach((button) => {
+        button.addEventListener("click", () => {
+          const question = button.dataset.question;
+          tatiAnswer.innerHTML = tatiResponses[question] || "Ainda não tenho essa resposta cadastrada.";
+        });
+      });
+    }
   </script>
 </body>
 </html>
