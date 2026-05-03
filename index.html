@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -929,33 +930,50 @@
       margin-bottom: 0;
     }
 
-    /* Figura 5: imagem horizontal ajustada para caber dentro do quadro */
-    .lesson-figure--utm-fit {
+      .lesson-figure--utm-fit figcaption {
+        margin: 12px -10px -10px;
+      }
+    }
+
+    /* Figura 5: enquadramento sem corte */
+    .lesson-figure--utm-frame {
       padding: 18px;
+      overflow: visible;
       background: #fff;
     }
 
-    .lesson-figure--utm-fit img {
-      width: min(100%, 920px);
+    .lesson-figure--utm-frame .figure-image-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .lesson-figure--utm-frame .figure-image-wrap img {
+      display: block;
+      width: 100%;
       max-width: 100%;
       height: auto;
+      max-height: none;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
       margin: 0 auto;
-      aspect-ratio: auto;
-      object-fit: contain;
-      border-radius: 14px;
       background: #fff;
+      border-radius: 14px;
     }
 
-    .lesson-figure--utm-fit figcaption {
-      margin: 16px -18px -18px;
+    .lesson-figure--utm-frame figcaption {
+      margin: 14px -18px -18px;
     }
 
     @media (max-width: 760px) {
-      .lesson-figure--utm-fit {
+      .lesson-figure--utm-frame {
         padding: 10px;
       }
 
-      .lesson-figure--utm-fit figcaption {
+      .lesson-figure--utm-frame figcaption {
         margin: 12px -10px -10px;
       }
     }
@@ -1391,8 +1409,13 @@
               Belo Horizonte e grande parte de Minas Gerais estão na zona UTM 23S em SIRGAS 2000. Em softwares de SIG, esse sistema aparece frequentemente como <span class="inline-code">EPSG:31983</span>, correspondente a <strong>SIRGAS 2000 / UTM zone 23S</strong>.
             </p>
 
-            <figure class="lesson-figure lesson-figure--utm-fit">
-              <img src="img/aula03_07_utm-fusos-e-estrutura.png" alt="Infográfico didático sobre UTM, fusos no Brasil, meridianos centrais, easting, northing e convenções de coordenadas." loading="lazy">
+            <figure class="lesson-figure lesson-figure--utm-frame">
+              <div class="figure-image-wrap">
+                <img src="img/aula03_07_utm-fusos-e-estrutura.png"
+                     alt="Infográfico didático sobre UTM, fusos no Brasil, meridianos centrais, easting, northing e convenções de coordenadas."
+                     loading="lazy"
+                     style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:auto;object-fit:contain;margin:0 auto;background:#fff;">
+              </div>
               <figcaption><strong>Figura 5. UTM, fusos e estrutura.</strong> Representação esquemática dos fusos UTM no Brasil para fins didáticos. Interpretar coordenadas UTM exige compreender fuso, meridiano central, hemisfério, datum, easting e northing.</figcaption>
             </figure>
           </article>
