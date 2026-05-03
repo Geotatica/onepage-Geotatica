@@ -929,6 +929,37 @@
       margin-bottom: 0;
     }
 
+    /* Figura 5: imagem horizontal ajustada para caber dentro do quadro */
+    .lesson-figure--utm-fit {
+      padding: 18px;
+      background: #fff;
+    }
+
+    .lesson-figure--utm-fit img {
+      width: min(100%, 920px);
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .lesson-figure--utm-fit figcaption {
+      margin: 16px -18px -18px;
+    }
+
+    @media (max-width: 760px) {
+      .lesson-figure--utm-fit {
+        padding: 10px;
+      }
+
+      .lesson-figure--utm-fit figcaption {
+        margin: 12px -10px -10px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1360,7 +1391,7 @@
               Belo Horizonte e grande parte de Minas Gerais estão na zona UTM 23S em SIRGAS 2000. Em softwares de SIG, esse sistema aparece frequentemente como <span class="inline-code">EPSG:31983</span>, correspondente a <strong>SIRGAS 2000 / UTM zone 23S</strong>.
             </p>
 
-            <figure class="lesson-figure lesson-figure--full">
+            <figure class="lesson-figure lesson-figure--utm-fit">
               <img src="img/aula03_07_utm-fusos-e-estrutura.png" alt="Infográfico didático sobre UTM, fusos no Brasil, meridianos centrais, easting, northing e convenções de coordenadas." loading="lazy">
               <figcaption><strong>Figura 5. UTM, fusos e estrutura.</strong> Representação esquemática dos fusos UTM no Brasil para fins didáticos. Interpretar coordenadas UTM exige compreender fuso, meridiano central, hemisfério, datum, easting e northing.</figcaption>
             </figure>
