@@ -728,6 +728,12 @@
       color: var(--navy);
     }
 
+    .lesson-figure--full img {
+      aspect-ratio: auto;
+      object-fit: contain;
+      height: auto;
+    }
+
     .table-wrap {
       margin-top: 22px;
       overflow-x: auto;
@@ -1511,7 +1517,7 @@
               <div class="step"><div class="step-num">7</div><p><strong>Validação:</strong> compare com bases confiáveis, verifique deslocamentos e teste medições.</p></div>
             </div>
 
-            <figure class="lesson-figure">
+            <figure class="lesson-figure lesson-figure--full">
               <img src="img/aula03_08_checklist-referencia-espacial.png" alt="Checklist técnico para conferência de sistema de referência, datum, coordenadas, projeção, fuso UTM e metadados." loading="lazy">
               <figcaption><strong>Figura 8. Checklist de referência espacial.</strong> Sem referência espacial correta, não há precisão, integração nem comparação confiável.</figcaption>
             </figure>
