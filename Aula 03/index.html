@@ -535,6 +535,48 @@
       border: 0;
     }
 
+
+    .form-shell {
+      margin-top: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-wrap {
+      width: 100%;
+      min-height: 720px;
+      background: var(--paper-soft);
+    }
+
+    .form-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 720px;
+      border: 0;
+      background: #fff;
+    }
+
+    .download-gate-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--blue-soft);
+      border: 1px solid rgba(42,91,215,.14);
+      color: var(--ink-2);
+      font-size: .94rem;
+      font-weight: 650;
+    }
+
+    @media (max-width: 560px) {
+      .form-wrap,
+      .form-wrap iframe {
+        min-height: 860px;
+      }
+    }
+
     .video-placeholder {
       min-height: 260px;
       display: grid;
@@ -954,7 +996,7 @@
       <a href="#material">Material</a>
     </nav>
 
-    <a class="btn btn-primary" href="Sistemas_informacoes_Geograficas.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF</a>
+    <a class="btn btn-primary" href="#material">Acessar material</a>
   </div>
 </header>
 
@@ -971,7 +1013,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#video">Assistir aula</a>
-          <a class="btn btn-secondary" href="#material">Baixar material</a>
+          <a class="btn btn-secondary" href="#material">Acessar material da aula</a>
           <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
           <a class="btn btn-secondary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
         </div>
@@ -1046,7 +1088,7 @@
             <div class="video-shell">
               <div class="video-wrap">
                 <iframe
-                  src="https://www.youtube.com/embed/uwDpifIQBLo"
+                  src="https://www.youtube.com/embed/zv85fTa2Hl4"
                   title="Aula 03 — Sistemas de Coordenadas no SIG"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
@@ -1055,7 +1097,7 @@
               </div>
               <div class="video-note">
                 <p>Aula 03 — Sistemas de Coordenadas no SIG</p>
-                <a class="btn btn-secondary" href="https://youtu.be/uwDpifIQBLo" target="_blank" rel="noopener noreferrer">Abrir vídeo no YouTube</a>
+                <a class="btn btn-secondary" href="https://youtu.be/zv85fTa2Hl4" target="_blank" rel="noopener noreferrer">Abrir vídeo no YouTube</a>
               </div>
             </div>
           </article>
@@ -1736,15 +1778,33 @@
 
           <article class="lesson-block" id="material">
             <span class="label blue">Material</span>
-            <h2>Baixe o PDF da Aula 03</h2>
+            <h2>Material de apoio da Aula 03</h2>
             <p class="text-justify">
-              Use o material de apoio para revisar os principais conceitos da Aula 03. Também deixei acesso direto à Aula 02 sobre escala cartográfica, caso você queira seguir a trilha.
+              Para acessar o material de apoio da Aula 03, preencha um cadastro rápido. As respostas ajudam a GeoTática a entender quem está acompanhando os conteúdos, quais temas geram mais interesse e como melhorar as próximas aulas.
+            </p>
+            <p class="text-justify">
+              Após o envio, a mensagem de confirmação do Microsoft Forms libera o acesso ao material. Caso o formulário não carregue incorporado na página, use o botão abaixo para abrir em uma nova aba.
             </p>
 
+            <div class="form-shell">
+              <div class="form-wrap">
+                <iframe
+                  src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAKXGJPdUMTdPMDZISlVMRURHTkVQN0xHR0kzNFpKVi4u&amp;embed=true"
+                  title="Questionário da Aula 03 — Sistemas de Coordenadas no SIG"
+                  allowfullscreen
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+
             <div class="hero-actions">
-              <a class="btn btn-primary" href="Sistemas_informacoes_Geograficas.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF</a>
-              <a class="btn btn-secondary" href="./Sistemas_informacoes_Geograficas.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
+              <a class="btn btn-primary" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAKXGJPdUMTdPMDZISlVMRURHTkVQN0xHR0kzNFpKVi4u" target="_blank" rel="noopener noreferrer">Acessar material em nova aba</a>
+              <a class="btn btn-secondary" href="https://youtu.be/zv85fTa2Hl4" target="_blank" rel="noopener noreferrer">Assistir no YouTube</a>
               <a class="btn btn-secondary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
+            </div>
+
+            <div class="download-gate-note">
+              <strong>Nota para publicação:</strong> configure no Microsoft Forms a mensagem final de agradecimento com o link do PDF da Aula 03. Assim, o material fica disponível depois do envio do formulário, sem botão direto nesta página.
             </div>
           </article>
 
@@ -1826,7 +1886,7 @@
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Ver Aula 02</a>
               <a class="btn btn-secondary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma</a>
-              <a class="btn btn-secondary" href="https://youtu.be/uwDpifIQBLo" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a class="btn btn-secondary" href="https://youtu.be/zv85fTa2Hl4" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a class="btn btn-secondary" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </div>
@@ -1861,7 +1921,7 @@
       <a href="#video">Vídeo</a>
       <a href="#material">Material</a>
       <a href="https://geotatica.github.io/onepage-Geotatica/aula%2002/" target="_blank" rel="noopener noreferrer">Aula 02</a>
-      <a href="https://youtu.be/uwDpifIQBLo" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://youtu.be/zv85fTa2Hl4" target="_blank" rel="noopener noreferrer">YouTube</a>
       <a href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </div>
