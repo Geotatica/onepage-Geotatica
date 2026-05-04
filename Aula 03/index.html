@@ -547,16 +547,27 @@
 
     .form-wrap {
       width: 100%;
-      min-height: 720px;
+      height: 430px;
+      max-height: 430px;
+      overflow: hidden;
       background: var(--paper-soft);
     }
 
     .form-wrap iframe {
       display: block;
       width: 100%;
-      min-height: 720px;
+      height: 430px;
       border: 0;
       background: #fff;
+    }
+
+    .form-compact-note {
+      padding: 12px 16px;
+      border-top: 1px solid var(--line);
+      background: var(--paper-soft);
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 650;
     }
 
     .download-gate-note {
@@ -573,7 +584,8 @@
     @media (max-width: 560px) {
       .form-wrap,
       .form-wrap iframe {
-        min-height: 860px;
+        height: 520px;
+        max-height: 520px;
       }
     }
 
@@ -1780,10 +1792,10 @@
             <span class="label blue">Material</span>
             <h2>Material de apoio da Aula 03</h2>
             <p class="text-justify">
-              Para acessar o material de apoio da Aula 03, preencha um cadastro rápido. As respostas ajudam a GeoTática a entender quem está acompanhando os conteúdos, quais temas geram mais interesse e como melhorar as próximas aulas.
+              Para acessar o material de apoio da Aula 03, preencha um cadastro rápido. As respostas ajudam a GeoTática a entender quem está acompanhando os conteúdos e quais temas geram mais interesse.
             </p>
             <p class="text-justify">
-              Após o envio, a mensagem de confirmação do Microsoft Forms libera o acesso ao material. Caso o formulário não carregue incorporado na página, use o botão abaixo para abrir em uma nova aba.
+              O formulário aparece em formato compacto nesta página. Caso prefira responder com mais espaço, use o botão para abrir em nova aba.
             </p>
 
             <div class="form-shell">
@@ -1794,6 +1806,9 @@
                   allowfullscreen
                   loading="lazy">
                 </iframe>
+              </div>
+              <div class="form-compact-note">
+                Role dentro do quadro para responder todas as perguntas ou abra o formulário em uma nova aba.
               </div>
             </div>
 
