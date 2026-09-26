@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoTática | Inteligência territorial, dados geográficos e geotecnologias</title>
+  <meta name="description" content="Site oficial da GeoTática: inteligência territorial, geotecnologias, curadoria de dados geográficos e estatísticos, aulas, conteúdos técnicos e plataforma de fontes." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f4f8fd;
+      --bg-soft: #edf3fb;
+      --surface: #ffffff;
+      --surface-soft: #f7faff;
+      --ink: #18243b;
+      --ink-2: #293753;
+      --muted: #62728d;
+      --muted-2: #8a96aa;
+      --line: #d7e2f0;
+      --line-strong: #c6d3e5;
+
+      --navy: #10203b;
+      --navy-2: #14284b;
+      --blue: #2a5bd7;
+      --blue-dark: #2047b8;
+      --purple: #6b45cf;
+      --purple-dark: #5232a7;
+      --green: #1b8f6b;
+      --green-dark: #167055;
+
+      --green-soft: #e8f6f0;
+      --purple-soft: #f0eaff;
+      --blue-soft: #eaf1ff;
+
+      --shadow: 0 18px 48px rgba(16, 32, 59, 0.08);
+      --shadow-soft: 0 10px 28px rgba(16, 32, 59, 0.05);
+      --radius: 14px;
+      --radius-lg: 18px;
+      --container: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(42,91,215,.06), transparent 24%),
+        radial-gradient(circle at 92% 14%, rgba(107,69,207,.06), transparent 26%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    p { margin-top: 0; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(16, 32, 59, 0.04);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 215px;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 5px;
+    }
+
+    .brand-title {
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.77rem;
+      font-weight: 650;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(16, 32, 59, 0.04);
+    }
+
+    .nav-links a {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: var(--ink-2);
+      font-size: 0.88rem;
+      font-weight: 750;
+      transition: .18s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+    }
+
+    .btn {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.94rem;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border .18s ease, color .18s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(107, 69, 207, .24);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--blue-dark), var(--purple-dark));
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(82, 50, 167, .30);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--blue);
+      border-color: rgba(42, 91, 215, .18);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 22px;
+      max-width: 860px;
+      color: #fff;
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      font-weight: 760;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: clamp(1.65rem, 2.65vw, 2.55rem);
+      line-height: 1.14;
+      letter-spacing: -0.028em;
+      font-weight: 800;
+    }
+
+    h3 {
+      color: var(--navy);
+      font-size: 1.08rem;
+      line-height: 1.24;
+      font-weight: 800;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 720px;
+      margin-bottom: 0;
+    }
+
+    .text-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    .card .text-justify {
+      max-width: none;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section.compact { padding: 54px 0; }
+
+    .section-head {
+      max-width: 1080px;
+      margin-bottom: 28px;
+    }
+
+    .section-head .lead {
+      max-width: 980px;
+    }
+
+    .section-head.narrow {
+      max-width: 780px;
+    }
+
+    .section-head.narrow .lead {
+      max-width: 720px;
+    }
+
+    .section-head.wide {
+      max-width: 1080px;
+    }
+
+    .section-head.wide .lead {
+      max-width: 980px;
+    }
+
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        radial-gradient(circle at 80% 16%, rgba(107, 69, 207, .34), transparent 26%),
+        radial-gradient(circle at 14% 82%, rgba(27, 143, 107, .18), transparent 30%),
+        radial-gradient(circle at 48% 18%, rgba(42, 91, 215, .22), transparent 28%),
+        linear-gradient(135deg, #10203b 0%, #172d54 54%, #0e1c35 100%);
+      background-size: 56px 56px, 56px 56px, auto, auto, auto, auto;
+      padding: 78px 0 66px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
+      gap: 38px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.08);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #45d39c;
+      box-shadow: 0 0 0 5px rgba(69,211,156,.16);
+    }
+
+    .hero-copy .lead {
+      color: rgba(255,255,255,.76);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero .btn-secondary {
+      background: rgba(255,255,255,.96);
+      color: var(--navy);
+      border-color: rgba(255,255,255,.38);
+      box-shadow: 0 14px 30px rgba(7, 18, 35, .16);
+    }
+
+    .hero .btn-secondary:hover {
+      background: #ffffff;
+      color: var(--purple-dark);
+      border-color: rgba(255,255,255,.55);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(7, 18, 35, .20);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: .82rem;
+      font-weight: 750;
+    }
+
+    .ecosystem-panel {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 28px 90px rgba(8, 24, 48, .26);
+      border: 1px solid rgba(255,255,255,.20);
+    }
+
+    .panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(42,91,215,.06), rgba(107,69,207,.06), rgba(27,143,107,.05));
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+    }
+
+    .window-dots span:nth-child(1) { background: #b9c6dc; }
+    .window-dots span:nth-child(2) { background: #9cb1d6; }
+    .window-dots span:nth-child(3) { background: #86d2b6; }
+
+    .preview-label {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .panel-body {
+      padding: 20px;
+    }
+
+    .ecosystem-title {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ecosystem-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .eco-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+    }
+
+    .ecosystem-item:nth-child(2) .eco-icon { background: linear-gradient(135deg, var(--green), var(--blue)); }
+    .ecosystem-item:nth-child(3) .eco-icon { background: linear-gradient(135deg, var(--purple), var(--green)); }
+
+    .ecosystem-item b {
+      display: block;
+      color: var(--navy);
+      font-size: .96rem;
+      line-height: 1.2;
+    }
+
+    .ecosystem-item small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 1.38;
+    }
+
+    .mini-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .mini-strip span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 650;
+    }
+
+    .strip {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .proof-item {
+      padding: 22px 20px;
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0), rgba(42,91,215,.015));
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.58rem;
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .proof-item span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(42,91,215,.65), rgba(107,69,207,.55), rgba(27,143,107,.55));
+      opacity: .58;
+    }
+
+    .card.clean {
+      box-shadow: none;
+    }
+
+    .card.clean::before { opacity: .35; }
+
+    .card.featured {
+      border-color: rgba(107, 69, 207, .22);
+      box-shadow: 0 18px 48px rgba(107, 69, 207, .10);
+      background: linear-gradient(180deg, #fff, #faf8ff);
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 16px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .mini-label.blue {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-color: rgba(42,91,215,.14);
+    }
+
+    .mini-label.purple {
+      color: var(--purple);
+      background: var(--purple-soft);
+      border-color: rgba(107,69,207,.16);
+    }
+
+    .mini-label.green {
+      color: var(--green);
+      background: var(--green-soft);
+      border-color: rgba(27,143,107,.16);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .platform-preview {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .searchbar {
+      height: 46px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 12px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    .preview-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .preview-stat {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .preview-stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .preview-stat span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 650;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .source-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .source-row b {
+      display: block;
+      color: var(--navy);
+      font-size: .92rem;
+      line-height: 1.22;
+    }
+
+    .source-row small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 9px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge.green { background: var(--green-soft); color: var(--green); }
+    .badge.purple { background: var(--purple-soft); color: var(--purple); }
+    .badge.blue { background: var(--blue-soft); color: var(--blue); }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 560;
+    }
+
+    .list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px rgba(42, 91, 215, .08);
+    }
+
+    .version-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .version-card .number {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4.6vw, 3.55rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+      font-weight: 800;
+    }
+
+    .version-actions { margin-top: auto; padding-top: 24px; }
+
+    .content-cards {
+      align-items: stretch;
+    }
+
+    .content-cards > .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .content-cards > .card p {
+      flex-grow: 1;
+    }
+
+    .dark-section {
+      background:
+        radial-gradient(circle at 85% 12%, rgba(107,69,207,.18), transparent 28%),
+        radial-gradient(circle at 12% 85%, rgba(27,143,107,.12), transparent 24%),
+        linear-gradient(135deg, #10203b 0%, #13284b 100%);
+      color: #fff;
+    }
+
+    .dark-section h2,
+    .dark-section h3 { color: #fff; }
+
+    .dark-section .section-kicker { color: #c5b6ff; }
+    .dark-section .lead,
+    .dark-section p { color: rgba(255,255,255,.72); }
+
+    .dark-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .dark-card p { margin-bottom: 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 11px;
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      font-size: .82rem;
+      font-weight: 750;
+    }
+
+    .tag:nth-child(3n+1) { background: var(--blue-soft); border-color: rgba(42,91,215,.12); color: var(--blue-dark); }
+    .tag:nth-child(3n+2) { background: var(--purple-soft); border-color: rgba(107,69,207,.12); color: var(--purple-dark); }
+    .tag:nth-child(3n) { background: var(--green-soft); border-color: rgba(27,143,107,.12); color: var(--green-dark); }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .profile-photo {
+      min-height: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .footer {
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-cta h2 { margin-bottom: 10px; }
+    .footer-cta p { margin-bottom: 0; color: var(--muted); max-width: 740px; }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a:hover { color: var(--blue); }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 45;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(37, 211, 102, .28);
+    }
+
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      z-index: 45;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 16px 30px rgba(42, 91, 215, .26);
+      transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 36px rgba(107, 69, 207, .30);
+    }
+
+    .back-to-top svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 1100px) {
+      .nav { flex-wrap: wrap; padding: 14px 0; }
+      .brand { min-width: auto; }
+      .nav-links { order: 3; width: 100%; overflow-x: auto; justify-content: flex-start; }
+      .hero-grid,
+      .split,
+      .profile { grid-template-columns: 1fr; }
+      .ecosystem-panel,
+      .platform-preview { max-width: 640px; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(1), .proof-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 820px) {
+      .section { padding: 56px 0; }
+      #aplicacoes .dark-card[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      #aplicacoes .dark-card[style*="grid-template-columns"] .btn { width: 100%; }
+      .hero { padding: 56px 0 50px; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .footer-cta { grid-template-columns: 1fr; }
+      .profile-photo { min-height: 320px; }
+      .preview-stats { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .text-justify { text-align: left; }
+      .container { width: min(calc(100% - 28px), var(--container)); }
+      .nav { gap: 12px; }
+      .nav > .btn { width: 100%; }
+      .hero-actions .btn,
+      .version-actions .btn,
+      .footer-cta .btn { width: 100%; }
+      h1 { font-size: clamp(2rem, 12vw, 3.15rem); }
+      .card, .dark-card { padding: 20px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .source-row { grid-template-columns: 1fr; }
+      .whatsapp-float { bottom: 14px; right: 14px; width: 52px; height: 52px; }
+      .back-to-top { bottom: 78px; right: 16px; width: 46px; height: 46px; }
+    }
+
+
+    .btn-disabled {
+      opacity: .58;
+      pointer-events: none;
+      cursor: not-allowed;
+      background: var(--surface-soft);
+      color: var(--muted);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .json-warning {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(107,69,207,.18);
+      background: var(--purple-soft);
+      color: var(--ink-2);
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    /* Biblioteca de e-books */
+    .ebook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .ebook-card {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 16px;
+      align-items: start;
+      min-height: 100%;
+    }
+
+    .ebook-card::before { opacity: .35; }
+
+    .ebook-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      padding: 8px;
+      object-fit: cover;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .ebook-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .ebook-card p {
+      font-size: .92rem;
+      margin-bottom: 14px;
+    }
+
+    .ebook-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .ebook-actions .btn {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: .84rem;
+    }
+
+    /* Tati Quinha - assistente do site */
+    .tati-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 150px;
+      z-index: 70;
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 16px 0 10px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(42, 91, 215, .30);
+      font-family: inherit;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .tati-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(107, 69, 207, .34);
+    }
+
+    .tati-toggle img {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.85);
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .tati-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 214px;
+      z-index: 70;
+      width: min(420px, calc(100vw - 32px));
+      max-height: min(720px, calc(100vh - 120px));
+      display: none;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 28px 90px rgba(8, 24, 48, .26);
+    }
+
+    .tati-panel.is-open {
+      display: block;
+    }
+
+    .tati-head {
+      display: grid;
+      grid-template-columns: 48px 1fr 34px;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 16px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #fff;
+    }
+
+    .tati-head img {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,.84);
+      background: #fff;
+    }
+
+    .tati-head strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .tati-head span {
+      display: block;
+      margin-top: 3px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.72);
+      font-weight: 650;
+    }
+
+    .tati-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .tati-body {
+      padding: 16px;
+      overflow-y: auto;
+      max-height: calc(min(720px, 100vh - 120px) - 78px);
+    }
+
+    .tati-video {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      margin-bottom: 14px;
+    }
+
+    .tati-video video {
+      width: 100%;
+      display: block;
+      background: var(--surface-soft);
+    }
+
+    .tati-message {
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      color: var(--ink-2);
+      font-size: .92rem;
+      margin-bottom: 14px;
+    }
+
+    .tati-options {
+      display: grid;
+      gap: 9px;
+    }
+
+    .tati-option {
+      width: 100%;
+      min-height: 48px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--navy);
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .tati-option img {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--surface-soft);
+    }
+
+    .tati-option:hover {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .tati-answer {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(42,91,215,.07), rgba(27,143,107,.06));
+      border: 1px solid rgba(42,91,215,.12);
+      color: var(--ink-2);
+      font-size: .92rem;
+    }
+
+    .tati-answer a {
+      color: var(--blue);
+      font-weight: 850;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .ebook-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ebook-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ebook-card {
+        grid-template-columns: 64px 1fr;
+      }
+
+      .ebook-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+      }
+
+      .tati-toggle {
+        right: 14px;
+        bottom: 140px;
+        padding-right: 14px;
+      }
+
+      .tati-toggle span {
+        display: none;
+      }
+
+      .tati-panel {
+        right: 14px;
+        bottom: 198px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<!--
+As aulas do curso são carregadas a partir de:
+- dados/aulas.json
+
+Para publicar uma nova aula, basta adicionar um novo objeto no JSON e manter o index.html principal sem edição manual.
+Status sugeridos:
+- publicada: aparece com botão ativo
+- em_breve: aparece com botão desativado
+- rascunho: não aparece no site
+-->
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="GeoTática">
+        <img src="logo-geotatica.png" alt="Logo GeoTática" />
+        <div>
+          <div class="brand-title">GeoTática</div>
+          <small>inteligência territorial aplicada</small>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#plataforma">Plataforma</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#ebooks">E-books</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#danielle">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar beta</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Site oficial da GeoTática</div>
+          <h1>Geotecnologias, dados e inteligência territorial em um só ecossistema</h1>
+          <p class="lead text-justify">
+            A GeoTática reúne curadoria de dados, conteúdos técnicos e aplicações em geotecnologias para apoiar quem trabalha com território, mapas, análise espacial, meio ambiente, pesquisa e tomada de decisão.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#plataforma">Conhecer a plataforma</a>
+            <a class="btn btn-secondary" href="#conteudos">Ver aulas e materiais</a>
+          </div>
+
+          <div class="hero-meta" aria-label="Resumo da GeoTática">
+            <span>curadoria de fontes</span>
+            <span>conteúdo técnico</span>
+            <span>análise territorial</span>
+            <span>GeoTática por Danielle Corrêa</span>
+          </div>
+        </div>
+
+        <aside class="ecosystem-panel" aria-label="Visão geral do ecossistema GeoTática">
+          <div class="panel-top">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="preview-label">GeoTática</div>
+          </div>
+
+          <div class="panel-body">
+            <p class="ecosystem-title">O que você encontra por aqui</p>
+
+            <div class="ecosystem-grid">
+              <div class="ecosystem-item">
+                <div class="eco-icon">01</div>
+                <div>
+                  <b>Plataforma de dados</b>
+                  <small>Hub com fontes geográficas e estatísticas organizadas por tema, aplicação e tipo de dado.</small>
+                </div>
+              </div>
+
+              <div class="ecosystem-item">
+                <div class="eco-icon">02</div>
+                <div>
+                  <b>Conteúdos e aulas</b>
+                  <small>Materiais de cartografia, geoprocessamento, análise espacial e leitura territorial aplicada.</small>
+                </div>
+              </div>
+
+              <div class="ecosystem-item">
+                <div class="eco-icon">03</div>
+                <div>
+                  <b>Inteligência territorial</b>
+                  <small>Discussões técnicas para conectar dados espaciais, contexto e decisão.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="mini-strip">
+              <span>dados</span>
+              <span>mapas</span>
+              <span>território</span>
+              <span>formação aplicada</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Resumo da GeoTática">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>2.185</strong><span>fontes na plataforma beta</span></div>
+        <div class="proof-item"><strong>100</strong><span>fontes abertas na versão gratuita</span></div>
+        <div class="proof-item"><strong>29</strong><span>temas para busca e organização</span></div>
+        <div class="proof-item"><strong id="aulas-publicadas-count">3</strong><span>aulas públicas do curso de Cartografia e Geoprocessamento</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="ecossistema">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Ecossistema GeoTática</p>
+          <h2>Um espaço para conectar dados geográficos, conteúdos técnicos e inteligência territorial</h2>
+          <p class="lead text-justify">
+            A GeoTática reúne curadoria de fontes, conteúdos aplicados e referências em geotecnologias para apoiar profissionais, estudantes, pesquisadores e equipes que trabalham com mapas, dados espaciais e análise territorial. O site funciona como ponto de entrada para conhecer a plataforma de dados, acessar aulas e acompanhar a produção técnica da marca.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card clean">
+            <span class="mini-label blue">Curadoria de dados</span>
+            <h3>Fontes geográficas e estatísticas com contexto</h3>
+            <p>Organização de portais, bases, catálogos e serviços úteis para quem precisa iniciar estudos, mapas, diagnósticos e análises territoriais.</p>
+          </article>
+
+          <article class="card clean">
+            <span class="mini-label green">Formação aplicada</span>
+            <h3>Aulas e materiais para aprender fazendo</h3>
+            <p>Conteúdos sobre cartografia, escala, geotecnologias e conceitos espaciais, com linguagem técnica, mas acessível.</p>
+          </article>
+
+          <article class="card clean">
+            <span class="mini-label purple">Inteligência territorial</span>
+            <h3>Dados espaciais conectados ao problema real</h3>
+            <p>Discussões e materiais voltados a planejamento, meio ambiente, pesquisa, negócio, governança e tomada de decisão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="plataforma">
+      <div class="container split">
+        <div class="section-head narrow">
+          <p class="section-kicker">Produto em destaque</p>
+          <h2>Plataforma GeoTática de Dados</h2>
+          <p class="lead text-justify">
+            A primeira entrega pública do ecossistema é o Hub de Fontes de Dados Geográficos e Estatísticos. Ele foi criado para reduzir a busca dispersa por fontes e apoiar a etapa inicial de trabalhos com mapas, diagnósticos, pesquisa, consultoria e análise espacial.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Testar beta por 7 dias</a>
+            <a class="btn btn-secondary" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Acessar versão gratuita</a>
+          </div>
+        </div>
+
+        <aside class="platform-preview" aria-label="Prévia conceitual da plataforma">
+          <div class="panel-top">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="preview-label">Hub de Fontes</div>
+          </div>
+
+          <div class="panel-body">
+            <div class="searchbar">Pesquisar por fonte, tema, território ou tipo de dado</div>
+
+            <div class="preview-stats">
+              <div class="preview-stat"><strong>2.185</strong><span>fontes beta</span></div>
+              <div class="preview-stat"><strong>29</strong><span>temas</span></div>
+              <div class="preview-stat"><strong>7 dias</strong><span>acesso beta</span></div>
+            </div>
+
+            <div class="source-list">
+              <div class="source-row">
+                <div>
+                  <b>Clima e meteorologia</b>
+                  <small>dados, séries, mapas e portais técnicos</small>
+                </div>
+                <span class="badge blue">tema</span>
+              </div>
+
+              <div class="source-row">
+                <div>
+                  <b>Socioeconômico e estatístico</b>
+                  <small>censos, indicadores e bases territoriais</small>
+                </div>
+                <span class="badge purple">estatística</span>
+              </div>
+
+              <div class="source-row">
+                <div>
+                  <b>Imagens de satélite e cobertura da terra</b>
+                  <small>catálogos, serviços e bases para análise espacial</small>
+                </div>
+                <span class="badge green">geodado</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="versoes">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Como acessar</p>
+          <h2>Duas portas de entrada para conhecer a curadoria</h2>
+          <p class="lead text-justify">
+            A versão gratuita apresenta uma amostra aberta da curadoria. A versão beta permite testar a base ampliada por 7 dias, com acesso por login.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card version-card">
+            <span class="mini-label green">Acesso aberto</span>
+            <span class="number">100</span>
+            <h3>Fontes gratuitas para começar</h3>
+            <p>Uma versão pública para conhecer a proposta, navegar por fontes selecionadas e entender como a GeoTática organiza referências para uso técnico.</p>
+            <ul class="list">
+              <li>Sem cadastro</li>
+              <li>Boa para estudantes, profissionais e primeiras consultas</li>
+              <li>Amostra da lógica de organização da plataforma</li>
+            </ul>
+            <div class="version-actions">
+              <a class="btn btn-secondary" href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir versão gratuita</a>
+            </div>
+          </article>
+
+          <article class="card featured version-card">
+            <span class="mini-label purple">Beta controlado</span>
+            <span class="number">2.185</span>
+            <h3>Fontes na versão beta</h3>
+            <p>A base ampliada reúne fontes geográficas e estatísticas para testar a escala da curadoria, os filtros temáticos e a utilidade prática do repositório.</p>
+            <ul class="list">
+              <li>7 dias de acesso gratuito</li>
+              <li>Cadastro individual por login</li>
+              <li>29 temas organizados para busca e análise</li>
+            </ul>
+            <div class="version-actions">
+              <a class="btn btn-primary" href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Solicitar acesso beta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conteudos">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Curso GeoTática</p>
+          <h2>Curso de Cartografia e Geoprocessamento</h2>
+          <p class="lead text-justify">
+            A GeoTática reúne aulas em formato onepage para apoiar o estudo de cartografia, geoprocessamento e análise territorial aplicada.
+          </p>
+        </div>
+
+        <div class="grid-3 content-cards" id="aulas-container" aria-live="polite">
+          <article class="card clean">
+            <span class="mini-label blue">Carregando</span>
+            <h3>Aulas do curso</h3>
+            <p>As aulas serão carregadas automaticamente a partir do arquivo dados/aulas.json.</p>
+          </article>
+        </div>
+
+        <noscript>
+          <div class="card clean" style="margin-top:16px;">
+            <span class="mini-label purple">JavaScript desativado</span>
+            <h3>Ative o JavaScript para carregar as aulas automaticamente</h3>
+            <p>Você também pode acessar as aulas diretamente pelas pastas aula 01, aula 02 e aula 03 no repositório da GeoTática.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+
+    <section class="section" id="ebooks">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Biblioteca GeoTática</p>
+          <h2>E-books e materiais em PDF para baixar</h2>
+          <p class="lead text-justify">
+            Materiais visuais e técnicos produzidos pela GeoTática para apoiar estudos, aulas, análises espaciais, tomada de decisão territorial e rotinas de geoprocessamento.
+          </p>
+        </div>
+
+        <div class="ebook-grid">
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label green">Estatística espacial</span>
+              <h3>Getis-Ord Gi*: hotspots e coldspots</h3>
+              <p>Guia visual sobre análise de hotspots, interpretação estatística, fórmulas, cálculo e cuidados de aplicação.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="An_lise_de_Hotspots_Getis_Ord_Gi__1777508004.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label blue">Negócios e território</span>
+              <h3>5 decisões que dependem do território</h3>
+              <p>Material sobre como mix, preço, canais, crescimento, execução e conhecimento local dependem de leitura territorial.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="carrossel_5_decisoes_territorio.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label purple">Análise multicritério</span>
+              <h3>Mapa multicritério</h3>
+              <p>Material didático sobre critérios, pesos de evidência, padronização, álgebra de mapas e decisão territorial.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="carrossel_mapa_multicriterio.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label blue">Dados espaciais</span>
+              <h3>Geoprocessamento e engenharia de dados</h3>
+              <p>Conteúdo sobre estruturação, qualidade, integração, análise e transformação de dados espaciais em decisão.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="geoprocessamento_engenharia_dados.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label green">Ferramentas GIS</span>
+              <h3>Principais ferramentas utilizadas no GIS</h3>
+              <p>Resumo visual de operações como clip, merge, buffer, intersect, dissolve, spatial join e ferramentas raster.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="geoprocessamento_ferramentas.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card clean ebook-card">
+            <img class="ebook-icon" src="icone-ebook-download.png" alt="Ícone de e-book para download" />
+            <div>
+              <span class="mini-label purple">Geoprocessamento</span>
+              <h3>8 estratégias estruturais em geoprocessamento</h3>
+              <p>Guia prático para estruturar análises espaciais com qualidade, consistência, integração e valor técnico.</p>
+              <div class="ebook-actions">
+                <a class="btn btn-secondary" href="O%20que%20%C3%A9%20geoprocessamento.pdf" download>Baixar PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section dark-section" id="aplicacoes">
+      <div class="container">
+        <div class="section-head wide">
+          <p class="section-kicker">Aplicações</p>
+          <h2>Onde a GeoTática pode apoiar</h2>
+          <p class="lead text-justify">
+            O ponto comum é o território. A partir dele, a GeoTática organiza dados, conteúdos e referências para diferentes usos técnicos.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="dark-card">
+            <h3>Geoprocessamento</h3>
+            <p>Fontes, conceitos e referências para análise espacial, mapas, bases GIS e leitura territorial.</p>
+          </article>
+
+          <article class="dark-card">
+            <h3>Meio ambiente</h3>
+            <p>Dados e conteúdos úteis para estudos ambientais, diagnóstico, planejamento e apoio técnico.</p>
+          </article>
+
+          <article class="dark-card">
+            <h3>Pesquisa e ensino</h3>
+            <p>Materiais para estudantes, docentes, pesquisadores e profissionais em formação ou transição.</p>
+          </article>
+
+          <article class="dark-card">
+            <h3>Gestão e decisão</h3>
+            <p>Organização de dados espaciais para apoiar planejamento, indicadores, comunicação e tomada de decisão.</p>
+          </article>
+        </div>
+
+        <div class="dark-card" style="margin-top:24px; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:center; background:linear-gradient(135deg, rgba(255,255,255,.09), rgba(107,69,207,.12)); border-color:rgba(255,255,255,.18);">
+          <div>
+            <span class="mini-label green">Aplicação interativa</span>
+            <h3 style="font-size:1.35rem; margin-bottom:10px;">Diagnóstico de Governança de Dados Geoespaciais</h3>
+            <p>Quer entender como sua organização trata seus dados geoespaciais? Acesse a ferramenta da GeoTática e avalie aspectos como responsabilidades, metadados, qualidade, atualização, rastreabilidade e uso do dado como ativo.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="https://geotatica.github.io/governanca_dados/" target="_blank" rel="noopener noreferrer">Avaliar governança</a>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">dados geográficos</span>
+          <span class="tag">fontes estatísticas</span>
+          <span class="tag">cartografia</span>
+          <span class="tag">sensoriamento remoto</span>
+          <span class="tag">meio ambiente</span>
+          <span class="tag">planejamento territorial</span>
+          <span class="tag">análise espacial</span>
+          <span class="tag">governança de dados</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="danielle">
+      <div class="container profile">
+        <aside class="profile-photo">
+          <img src="danielle-perfil.jpg" alt="Foto de Danielle Corrêa" />
+        </aside>
+
+        <article class="card">
+          <span class="mini-label purple">Quem está por trás</span>
+          <h2>Danielle Corrêa</h2>
+          <p class="lead text-justify">
+            Profissional com 10+ anos de experiência em empresas de grande porte, com atuação no setor público e privado. Trabalha com geotecnologias aplicadas à gestão de ativos e território, apoio a licenciamento, estruturação de dados espaciais, indicadores, BI, gestão de projetos e tomada de decisão.
+          </p>
+
+          <ul class="list">
+            <li>Atuação em geoprocessamento, inteligência territorial, análise ambiental, gestão de ativos, governança documental e rotinas de acompanhamento técnico.</li>
+            <li>Experiência com projetos e portfólio, incluindo práticas de PMBOK 7, FEL, Agile, cronogramas, riscos, stakeholders, priorização e indicadores.</li>
+            <li>Entrega valor conectando dados espaciais ao negócio: bases GIS, padronização, qualidade da informação, dashboards em Power BI e relatórios executivos.</li>
+            <li>Vivência em gestão imobiliária, mineração, administração pública, meio ambiente, planejamento urbano/territorial, ESG e desenvolvimento territorial.</li>
+            <li>Criação da GeoTática como um espaço para reunir curadoria de fontes, conteúdos técnicos e aplicações em inteligência territorial.</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">ArcGIS Pro</span>
+            <span class="tag">QGIS</span>
+            <span class="tag">AutoCAD</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">KPIs</span>
+            <span class="tag">PMBOK 7</span>
+            <span class="tag">FEL</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Gestão territorial</span>
+            <span class="tag">Mineração</span>
+            <span class="tag">Meio ambiente</span>
+            <span class="tag">Setor público</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/danielle-correa-gc/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="container footer-cta">
+      <div>
+        <p class="section-kicker">Contato</p>
+        <h2>Quer conhecer a plataforma, acompanhar os conteúdos ou conversar sobre dados territoriais?</h2>
+        <p class="text-justify">
+          Use os canais oficiais da GeoTática para acessar a plataforma, acompanhar as aulas, seguir as redes ou entrar em contato com Danielle Corrêa.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:geo.daniellecorrea@gmail.com">E-mail</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© <span id="year"></span> GeoTática. Inteligência territorial aplicada.</div>
+      <div class="footer-links">
+        <a href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Beta</a>
+        <a href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Versão gratuita</a>
+        <a href="https://www.linkedin.com/company/34876970" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/geo_tatica/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@geotatica7" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <button class="tati-toggle" id="tatiToggle" type="button" aria-label="Abrir assistente Tati Quinha">
+    <img src="tati-quinha-icon.png" alt="" aria-hidden="true" />
+    <span>Posso ajudar?</span>
+  </button>
+
+  <div class="tati-panel" id="tatiPanel" aria-label="Assistente Tati Quinha da GeoTática">
+    <div class="tati-head">
+      <img src="tati-quinha-icon.png" alt="Tati Quinha, assistente da GeoTática" />
+      <div>
+        <strong>Tati Quinha</strong>
+        <span>Assistente da GeoTática</span>
+      </div>
+      <button class="tati-close" id="tatiClose" type="button" aria-label="Fechar assistente">×</button>
+    </div>
+
+    <div class="tati-body">
+      <div class="tati-video">
+        <video controls playsinline preload="metadata" poster="tati-quinha-avatar.png">
+          <source src="tati-quinha-avatar.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+
+      <div class="tati-message">
+        Oi! Eu sou a Tati Quinha. Posso te ajudar a encontrar a plataforma, as aulas, os e-books, as fontes de dados e os canais da GeoTática.
+      </div>
+
+      <div class="tati-options">
+        <button class="tati-option" data-question="plataforma">
+          <img src="icone-plataforma.png" alt="" aria-hidden="true" />
+          <span>Conhecer a plataforma de dados</span>
+        </button>
+
+        <button class="tati-option" data-question="gratuita">
+          <img src="icone-fontes.png" alt="" aria-hidden="true" />
+          <span>Acessar fontes gratuitas</span>
+        </button>
+
+        <button class="tati-option" data-question="aulas">
+          <img src="icone-aulas.png" alt="" aria-hidden="true" />
+          <span>Ver aulas e materiais</span>
+        </button>
+
+        <button class="tati-option" data-question="ebooks">
+          <img src="icone-ebook-download.png" alt="" aria-hidden="true" />
+          <span>Baixar e-books em PDF</span>
+        </button>
+
+        <button class="tati-option" data-question="suporte">
+          <img src="icone-contato.png" alt="" aria-hidden="true" />
+          <span>Falar com a Danielle</span>
+        </button>
+      </div>
+
+      <div class="tati-answer" id="tatiAnswer">
+        Escolha uma opção acima para eu te direcionar.
+      </div>
+    </div>
+  </div>
+
+
+  <a class="back-to-top" href="#inicio" aria-label="Voltar ao topo" title="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5L5.5 11.5M12 5l6.5 6.5M12 5v14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <a class="whatsapp-float" href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.35c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.6.07-.27-.14-1.15-.42-2.18-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.34.98 2.64 1.11 2.82.14.18 1.91 2.92 4.63 4.1.65.28 1.15.45 1.55.57.65.2 1.24.17 1.7.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"></path><path d="M16.02 3.2c-7.08 0-12.82 5.74-12.82 12.82 0 2.27.6 4.49 1.74 6.43L3.1 28.8l6.54-1.71a12.77 12.77 0 0 0 6.38 1.73h.01c7.08 0 12.82-5.74 12.82-12.82S23.1 3.2 16.02 3.2Zm0 23.48h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.39a10.68 10.68 0 0 1-1.64-5.77c0-5.92 4.82-10.74 10.75-10.74 2.87 0 5.57 1.12 7.6 3.14a10.7 10.7 0 0 1 3.15 7.6c0 5.93-4.82 10.75-10.75 10.75Z"></path></svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const aulasFallback = [
+      {
+        id: "aula-01",
+        numero: "Aula 01",
+        tag: "Cartografia",
+        titulo: "Mapas, Cartas e Plantas",
+        descricao: "Introdução à leitura técnica de produtos cartográficos: finalidade, escala, nível de detalhe, fonte, data, sistema de referência e adequação ao uso.",
+        url: "https://geotatica.github.io/onepage-Geotatica/aula%2001/",
+        status: "publicada",
+        botao: "Abrir Aula 01"
+      },
+      {
+        id: "aula-02",
+        numero: "Aula 02",
+        tag: "Escala cartográfica",
+        titulo: "Escala Cartográfica na Prática",
+        descricao: "Conceito de escala, escala numérica e gráfica, cálculo cartométrico, erro admissível e aplicações práticas em mapas, cartas e estudos territoriais.",
+        url: "https://geotatica.github.io/onepage-Geotatica/aula%2002/",
+        status: "publicada",
+        botao: "Abrir Aula 02"
+      },
+      {
+        id: "aula-03",
+        numero: "Aula 03",
+        tag: "SIG",
+        titulo: "Sistemas de Coordenadas no SIG",
+        descricao: "Coordenadas geográficas, coordenadas projetadas, projeções cartográficas, UTM, datum, SIRGAS 2000, EPSG e transformação entre sistemas de referência.",
+        url: "https://geotatica.github.io/onepage-Geotatica/aula%2003/",
+        status: "publicada",
+        botao: "Abrir Aula 03"
+      }
+    ];
+
+    const tatiToggle = document.getElementById("tatiToggle");
+    const tatiPanel = document.getElementById("tatiPanel");
+    const tatiClose = document.getElementById("tatiClose");
+    const tatiAnswer = document.getElementById("tatiAnswer");
+    const aulasContainer = document.getElementById("aulas-container");
+    const aulasPublicadasCount = document.getElementById("aulas-publicadas-count");
+
+    const tatiResponses = {
+      plataforma: `
+        A Plataforma GeoTática de Dados reúne fontes geográficas e estatísticas organizadas por tema, tipo de dado e aplicação técnica.
+        <br><br>
+        Você pode acessar a versão beta aqui:
+        <br>
+        <a href="https://geotatica.github.io/Plataforma_Dados/" target="_blank" rel="noopener noreferrer">Acessar plataforma beta</a>
+      `,
+
+      gratuita: `
+        A versão gratuita apresenta uma amostra aberta da curadoria, com fontes selecionadas para começar.
+        <br><br>
+        Acesse aqui:
+        <br>
+        <a href="https://geotatica.github.io/fontes-dados-geograficos/" target="_blank" rel="noopener noreferrer">Abrir versão gratuita</a>
+      `,
+
+      aulas: `
+        As aulas do curso de Cartografia e Geoprocessamento estão sendo carregadas.
+        <br><br>
+        <a href="#conteudos">Ir para a seção de aulas</a>
+      `,
+
+      ebooks: `
+        Os e-books estão disponíveis na Biblioteca GeoTática.
+        <br><br>
+        <a href="#ebooks">Ir para a seção de e-books</a>
+        <br><br>
+        Você encontrará materiais sobre Getis-Ord Gi*, mapa multicritério, engenharia de dados, ferramentas GIS e estratégias estruturais em geoprocessamento.
+      `,
+
+      suporte: `
+        Você pode falar diretamente com Danielle Corrêa pelos canais oficiais.
+        <br><br>
+        <a href="https://wa.me/5531993065319?text=Ol%C3%A1%2C%20Danielle%20Corr%C3%AAa.%20Vi%20o%20site%20da%20GeoT%C3%A1tica%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+        <br>
+        <a href="mailto:geo.daniellecorrea@gmail.com">Enviar e-mail</a>
+      `
+    };
+
+    function escapeHTML(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function labelColor(index) {
+      const colors = ["blue", "green", "purple"];
+      return colors[index % colors.length];
+    }
+
+    function normalizarStatus(status) {
+      return String(status || "").trim().toLowerCase();
+    }
+
+    function renderAulas(aulas, veioDoFallback = false) {
+      if (!aulasContainer) return;
+
+      const aulasVisiveis = aulas.filter((aula) => normalizarStatus(aula.status) !== "rascunho");
+      const aulasPublicadas = aulas.filter((aula) => normalizarStatus(aula.status) === "publicada");
+
+      if (aulasPublicadasCount) {
+        aulasPublicadasCount.textContent = String(aulasPublicadas.length);
+      }
+
+      if (!aulasVisiveis.length) {
+        aulasContainer.innerHTML = `
+          <article class="card clean">
+            <span class="mini-label purple">Curso</span>
+            <h3>Nenhuma aula publicada</h3>
+            <p>Atualize o arquivo dados/aulas.json para exibir as aulas do curso de Cartografia e Geoprocessamento.</p>
+          </article>
+        `;
+        return;
+      }
+
+      aulasContainer.innerHTML = aulasVisiveis.map((aula, index) => {
+        const status = normalizarStatus(aula.status);
+        const publicada = status === "publicada";
+        const emBreve = status === "em_breve" || status === "em breve";
+        const botao = publicada
+          ? `<a class="btn btn-secondary" href="${escapeHTML(aula.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(aula.botao || "Abrir aula")}</a>`
+          : `<span class="btn btn-disabled">${emBreve ? "Em breve" : "Indisponível"}</span>`;
+
+        return `
+          <article class="card clean">
+            <span class="mini-label ${labelColor(index)}">${escapeHTML(aula.numero || aula.tag || "Aula")}</span>
+            <h3>${escapeHTML(aula.titulo)}</h3>
+            <p>${escapeHTML(aula.descricao)}</p>
+            <div class="tags">
+              <span class="tag">${escapeHTML(aula.tag || "Cartografia e Geoprocessamento")}</span>
+              <span class="tag">${publicada ? "publicada" : (emBreve ? "em breve" : escapeHTML(aula.status))}</span>
+            </div>
+            <div class="version-actions">
+              ${botao}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      if (veioDoFallback) {
+        aulasContainer.insertAdjacentHTML("afterend", `
+          <div class="json-warning">
+           Bons Estudos!
+          </div>
+        `);
+      }
+
+      atualizarTatiAulas(aulasPublicadas);
+    }
+
+    function atualizarTatiAulas(aulasPublicadas) {
+      if (!aulasPublicadas.length) return;
+
+      const links = aulasPublicadas.map((aula) => {
+        return `<a href="${escapeHTML(aula.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(aula.numero)} - ${escapeHTML(aula.titulo)}</a>`;
+      }).join("<br>");
+
+      tatiResponses.aulas = `
+        A GeoTática possui ${aulasPublicadas.length} aulas publicadas no curso de Cartografia e Geoprocessamento.
+        <br><br>
+        ${links}
+      `;
+    }
+
+    async function carregarAulas() {
+      try {
+        const resposta = await fetch("dados/aulas.json", { cache: "no-store" });
+        if (!resposta.ok) throw new Error("Arquivo dados/aulas.json não encontrado.");
+        const aulas = await resposta.json();
+        if (!Array.isArray(aulas)) throw new Error("O arquivo aulas.json precisa conter uma lista de aulas.");
+        renderAulas(aulas);
+      } catch (erro) {
+        console.warn("Não foi possível carregar dados/aulas.json:", erro);
+        renderAulas(aulasFallback, true);
+      }
+    }
+
+    carregarAulas();
+
+    if (tatiToggle && tatiPanel && tatiClose && tatiAnswer) {
+      tatiToggle.addEventListener("click", () => {
+        tatiPanel.classList.toggle("is-open");
+      });
+
+      tatiClose.addEventListener("click", () => {
+        tatiPanel.classList.remove("is-open");
+      });
+
+      document.querySelectorAll(".tati-option").forEach((button) => {
+        button.addEventListener("click", () => {
+          const question = button.dataset.question;
+          tatiAnswer.innerHTML = tatiResponses[question] || "Ainda não tenho essa resposta cadastrada.";
+        });
+      });
+    }
+  </script>
+</body>
+</html>
